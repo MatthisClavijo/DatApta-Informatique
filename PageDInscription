@@ -156,6 +156,7 @@
             padding: 30px;
            margin-left: 500px;
            margin-top: 125px;
+           border: 1px solid #D4AE4C
         }
         #title{
             margin-left: 40%;
@@ -225,8 +226,7 @@
             </li>
             <li><a href="mon profil">Mon profil</a></li>
             <div >
-                <a href="#sign up" id="inscription">Sign up</a>
-                <a href="sign in" id="connexion">Sign in</a>
+              
             </div>
         </ul>
     </head>
