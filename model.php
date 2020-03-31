@@ -13,23 +13,23 @@ function dbConnect()
     }
 }
 
-function InsertUser($nom, $prenom, $mdp,$email,$date_de_naissance)
+function InsertUser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance)
 {
 
-    $photo=NULL;
-    $message=NULL;
+    $photo='vide';
+    $message='vide';
+    $ID=NULL;
     $db = dbConnect();
 
-    $req = $db->prepare("INSERT INTO 'client'(nom,prénom,Adresse mail,date_de_naissance,mot de passe,photo,Message) VALUES(:nom, :prenom, :email, :date_de_naissance , :mdp, :photo, :message)");
+    $req = $db->prepare("INSERT INTO `client` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date _de_naissance`, `mot_de_passe`, `message`) VALUES (:ID, :photo, :nom, :prenom, :email, :date_de_naissance, :mot_de_passe, :message);");
+    $req->execute(array('nom'=>$nom,
+                       'prenom'=>$prenom,
+                        'email'=>$email,
+                        'date_de_naissance'=>$date_de_naissance,
+                        'mot_de_passe'=>$mot_de_passe,
+                         'photo'=>$photo,
+                        'message'=>$message,
+                        'ID'=>$ID));
 
-    $req->bindParam("nom", $nom);
-    $req->bindParam("prenom", $prenom);
-    $req->bindParam("email", $email);
-    $req->bindParam("date_de_naissance", $date_de_naissance);
-    $req->bindParam("mdp", $mdp);
-    $req->bindParam("photo",$photo);
-    $req->bindParam("message",$message);
-
-    $req->execute();
     $req->closeCursor();
 }

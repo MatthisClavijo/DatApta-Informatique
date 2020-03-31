@@ -1,16 +1,23 @@
 <?php
 require "controler.php";
+require "view.php";
 if (isset($_GET["action"])) {
-    $action = htmlspecialchars($_GET["action"]); // Petite fonction de sécurité
+    $action = htmlspecialchars($_GET["action"]);
 
     switch($action) {
         case "inscription":
-            inscritpion();
+            viewinscription();
             break;
         case "add_user":
             adduser();
             break;
+        case "modifprofil":
+            viewModif();
+            break;
+        case "acceuil" :
+            viewAcceuil();
+            break;
     }
 } else {
-    inscription();
+    viewAcceuil();
 }
