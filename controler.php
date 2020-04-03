@@ -27,6 +27,7 @@ function adduser( ){
 
 }
 function connexion(){
+        session_start();
 
         if($_POST["email"] && $_POST["psw"]){
             $email=htmlspecialchars($_POST["email"]);
