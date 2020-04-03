@@ -17,6 +17,9 @@ if (isset($_GET["action"])) {
         case "acceuil" :
             viewAcceuil();
             break;
+        case "connexion" :
+            connexion();
+            break;
     }
 } else {
     viewAcceuil();

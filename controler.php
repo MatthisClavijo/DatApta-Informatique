@@ -26,3 +26,12 @@ function adduser( ){
     }
 
 }
+function connexion(){
+
+        if($_POST["email"] && $_POST["psw"]){
+            $email=htmlspecialchars($_POST["email"]);
+            $psw=htmlspecialchars($_POST["psw"]);
+            testconnexion($email,$psw);
+            viewAcceuil();
+        }
+}
