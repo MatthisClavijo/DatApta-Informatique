@@ -1,0 +1,135 @@
+body{
+    font-family: Trebuchet MS;
+    font-size:20px;
+}
+ul {
+    list-style-type: none;
+    margin-top: 0;
+    padding: 0;
+    overflow: hidden;
+
+    top : 0;
+    background-color: white;
+}
+
+li {
+    float: left;
+    margin-top: 70px;
+    margin-left: 85px;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+}
+
+li a:hover{
+    border-bottom: 6px solid #D4AE4C;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 4;
+    margin-left: 20px;
+    margin-top: 0px;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.dropdown-content a:hover {background-color: #D4AE4C;}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.active {
+    border-bottom:6px solid #D4AE4C;
+    color: black;
+}
+
+p{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+img {
+    float : left;
+    margin-right: 50px;
+    margin-top: 0;
+}
+
+
+
+#mail{
+    text-decoration: none;
+    color: black;
+    float: left;
+}
+.mail{
+    width: 45px;
+    float: left;
+    text-align: center;
+}
+.phone{
+    padding: 0;
+
+    margin-left: 5px;
+}
+#phone {
+    margin-bottom: 15px;
+    text-align: center;
+    margin-right: 150px;
+
+
+
+}
+.mention{
+    display: inline-block;
+    text-align: center;
+    margin-left: 400px;
+
+}
+.contact{
+    display: inline-block;
+}
+#facebook{
+    width: 50px;
+}
+#twitter{
+    width: 50px;
+}
+#instagram{
+    width: 50px;
+}
+#linkedin{
+    width: 50px;
+}
+.logo{
+    display: inline-block;
+    float: right;
+    margin-top: 65px;
+}
+#ProfilBox{
+     border: #3C3E40 solid;
+    border-radius: 5px;
+    text-align: center;
+    padding-bottom: 25px;
+    margin-left: 75%;
+}
