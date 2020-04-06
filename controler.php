@@ -33,6 +33,10 @@ function connexion(){
             $email=htmlspecialchars($_POST["email"]);
             $psw=htmlspecialchars($_POST["psw"]);
             testconnexion($email,$psw);
-            viewAcceuil();
         }
+}
+function deconnexion(){
+        session_abort();
+        viewAcceuil();
+
 }
