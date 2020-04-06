@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 
     <link rel="stylesheet" href="AcceuilConnexion.css">
@@ -25,6 +25,7 @@
                 $affichage='<p>Bienvenue '.$_SESSION['nom'].'  '.$_SESSION['prénom'].'';
                 echo ($affichage);
                 ?>
+                    <a href="index.php?action=deconnexion" id="deconnexion" ></br>Déconnexion</a>
                 </p>
             </div>
         </ul>
