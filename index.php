@@ -20,7 +20,13 @@ if (isset($_GET["action"])) {
         case "connexion" :
             connexion();
             break;
+        case "deconnexion" :
+            deconnexion();
+            break;
+
     }
+
+
 } else {
     viewAcceuil();
 }
