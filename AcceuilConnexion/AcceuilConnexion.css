@@ -76,56 +76,6 @@ img {
 }
 
 
-
-#mail{
-    text-decoration: none;
-    color: black;
-    float: left;
-}
-.mail{
-    width: 45px;
-    float: left;
-    text-align: center;
-}
-.phone{
-    padding: 0;
-
-    margin-left: 5px;
-}
-#phone {
-    margin-bottom: 15px;
-    text-align: center;
-    margin-right: 150px;
-
-
-
-}
-.mention{
-    display: inline-block;
-    text-align: center;
-    margin-left: 400px;
-
-}
-.contact{
-    display: inline-block;
-}
-#facebook{
-    width: 50px;
-}
-#twitter{
-    width: 50px;
-}
-#instagram{
-    width: 50px;
-}
-#linkedin{
-    width: 50px;
-}
-.logo{
-    display: inline-block;
-    float: right;
-    margin-top: 65px;
-}
 #ProfilBox{
      border: #3C3E40 solid;
     border-radius: 5px;
