@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<title>Acceuil</title>
 <head>
     <link rel="stylesheet" href="PageDAcceuil.css">
 
@@ -19,7 +20,7 @@
             </li>
             <li><a href="mon profil">Mon profil</a></li>
             <div >
-                <a href="index.php?action=inscription" id="inscription" >Sign up</a>
+                <a href="inscription" id="inscription" >Sign up</a>
                 <a class="open-button" onclick="openForm()" id="connexion">Sign in</a>
             </div>
         </ul>
@@ -31,7 +32,7 @@
         height = "588">
 </p>
 <div class="form-popup" id="myForm">
-    <form action="index.php?action=connexion" class="form-container" method="post">
+    <form action="connexion" class="form-container" method="post">
         <h1>Login</h1>
 
         <label for="email"><b>Email</b></label>
