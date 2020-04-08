@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+<title>Inscription</title>
 <head>
     <link rel="stylesheet" href="PageDInscription.css">
     <head>
         </p>
         <ul>
             <img src = 'Infinite_measures_logo.png'width = "170"height="145">
-            <li><a class = "active" href="index.php?action=acceuil">Accueil</a></li>
+            <li><a class = "active" href="acceuil">Accueil</a></li>
             <li><a href="#statistiques">Statistiques</a></li>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Communauté</a>
@@ -28,7 +29,7 @@
             width = 100%
             height = "588">
     </p>
-    <form id="boxInscription" method="post" action="index.php?action=add_user">
+    <form id="boxInscription" method="post" action="add_user">
         <h3 id="title">Inscription</h3>
         <div id="ligne"></div>
         <p>
