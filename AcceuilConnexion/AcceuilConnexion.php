@@ -19,7 +19,7 @@
                     <a href="#">Classement</a>
                 </div>
             </li>
-            <li><a href="mon profil">Mon profil</a></li>
+            <li><a href="profil">Mon profil</a></li>
             <div id="ProfilBox">
                 <p>
                 <?php
