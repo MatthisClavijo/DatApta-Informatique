@@ -1,4 +1,5 @@
 <?php
+
 require "model.php";
 
     try
@@ -22,12 +23,12 @@ function adduser( ){
         $mdp=htmlspecialchars($_POST["password"]);
         $date=htmlspecialchars($_POST["date"]);
         InsertUser($nom,$prenom,$mdp,$email,$date);
+        echo"Veuillez vous connecter maintenant ! ";
         viewAcceuil();
     }
 
 }
 function connexion(){
-        session_start();
 
         if($_POST["email"] && $_POST["psw"]){
             $email=htmlspecialchars($_POST["email"]);
@@ -36,7 +37,7 @@ function connexion(){
         }
 }
 function deconnexion(){
-        session_abort();
+        session_destroy();
         viewAcceuil();
 
 }

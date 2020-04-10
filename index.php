@@ -1,10 +1,10 @@
 <?php
+session_start();
 require "controler.php";
 require "view.php";
 if (isset($_GET["action"])) {
-    $action = htmlspecialchars($_GET["action"]);
-
-    switch($action) {
+    $action=explode('/',$_GET['action']);
+    switch($action[0]) {
         case "inscription":
             viewinscription();
             break;
@@ -15,13 +15,30 @@ if (isset($_GET["action"])) {
             viewModif();
             break;
         case "acceuil" :
-            viewAcceuil();
+            if(sizeof($_SESSION)==0){
+                viewAcceuil();
+            }
+            else{
+                viewAcceuilConnexion();
+            }
             break;
         case "connexion" :
+            $connexion=1;
             connexion();
             break;
         case "deconnexion" :
+            $connexion=0;
             deconnexion();
+            break;
+        case "profil" :
+
+            if(sizeof($_SESSION)==0){
+                echo "Il faut vous connecter pour voir votre profil";
+                viewAcceuil();
+            }
+            else{
+                viewProfil();
+            }
             break;
 
     }

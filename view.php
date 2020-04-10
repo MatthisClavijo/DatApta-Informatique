@@ -8,3 +8,9 @@ function viewAcceuil() {
 function viewModif(){
     require "PageDeModificationDeProfil.php";
 }
+function viewProfil(){
+    require"PageProfil.php";
+}
+function viewAcceuilConnexion(){
+    require "AcceuilConnexion.php";
+}

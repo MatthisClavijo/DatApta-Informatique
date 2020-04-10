@@ -45,10 +45,10 @@ function testconnexion($email,$password){
         $_SESSION['prénom']=$data['prénom'];
         $_SESSION['Adresse mail']=$data['Adresse mail'];
         $_SESSION['date_de_naissance']=$data['date_de_naissance'];
-        require"AcceuilConnexion.php";
+        viewAcceuilConnexion();
     }
     if ($existence!=1){
         echo"Il y a eu une erreur dans la connexion. Veuillez réessayer.";
-        require "PageDAcceuil.php";
+        viewAcceuil();
     }
 }
