@@ -18,7 +18,7 @@
                     <a href="#">Classement</a>
                 </div>
             </li>
-            <li><a href="mon profil">Mon profil</a></li>
+            <li><a href="profil">Mon profil</a></li>
             <div >
                 <a href="inscription" id="inscription" >Sign up</a>
                 <a class="open-button" onclick="openForm()" id="connexion">Sign in</a>
