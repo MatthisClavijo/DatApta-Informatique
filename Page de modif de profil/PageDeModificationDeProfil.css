@@ -76,28 +76,9 @@ img {
     position: relative;
 }
 
-#inscription  {
-    display: inline-block;
-    color : black;
-    background-color: #D4AE4C;
-    padding: 7px;
-    margin-left: 45px;
-    text-decoration: none;
-    margin-top: 20px;
-    border-radius: 5px;
-}
 
-#connexion{
-    display: inline-block;
-    color : white;
-    text-decoration: none;
-    padding: 7px;
-    margin-left: 50px;
-    background-color: #3C3E40;
-    border-radius: 5px;
-}
 
-#boxInscription{
+#boxmodification{
     position: absolute;
     background-color: white;
     border-radius: 10px;
