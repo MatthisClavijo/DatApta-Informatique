@@ -52,3 +52,11 @@ function testconnexion($email,$password){
         viewAcceuil();
     }
 }
+function modificationuser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance){
+    $ID=$_SESSION['ID'];
+    $db=dbConnect();
+    $req=$db->prepare("UPDATE `client` SET `nom` = :nom, `prénom` = :prenom, `Adresse mail` = :email, `date_de_naissance` = :date_de_naissance, `mot_de_passe` = :mot_de_passe WHERE `client`.`ID` = :ID ");
+    $req->execute(array('nom'=> $nom, 'prenom'=> $prenom, 'email'=>$email, 'mot_de_passe'=> $mot_de_passe, 'ID'=> $ID,'date_de_naissance'=>$date_de_naissance));
+    $req->closeCursor();
+
+}
