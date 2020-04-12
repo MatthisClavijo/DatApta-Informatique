@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 03 avr. 2020 à 14:06
+-- Généré le :  Dim 12 avr. 2020 à 15:19
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.5
 
@@ -72,15 +72,18 @@ CREATE TABLE IF NOT EXISTS `client` (
   `mot_de_passe` mediumtext COLLATE utf8_bin NOT NULL,
   `message` mediumtext COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `client`
 --
 
 INSERT INTO `client` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot_de_passe`, `message`) VALUES
+(19, 'vide', 'Admin', 'Test', 'datapta.officiel@gmail.com', '0001-01-01', 'youdied', 'vide'),
 (17, 'vide', 'bob', 'bob', 'bob@gmail.com', '5120-08-04', 'bob', 'vide'),
-(16, 'vide', 'Ferry', 'Julien', 'julien.ferry@isep.fr', '1999-02-15', 'Thecakeisalie#Infinite', 'vide');
+(18, 'vide', 'Picsou', 'Balthazar', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', 'vide'),
+(16, 'vide', 'Ferry', 'Julien', 'julien.ferry@isep.fr', '1999-02-15', 'Salut', 'vide'),
+(20, 'vide', 'autre', 'test', 'test@hotmail.fr', '0100-03-15', 'bobencore', 'vide');
 
 -- --------------------------------------------------------
 
