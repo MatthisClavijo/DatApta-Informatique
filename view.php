@@ -1,16 +1,17 @@
 <?php
 function viewinscription(){
-    require "PageDInscription.php";
+    require "Page d'inscription/PageDInscription.php";
 }
 function viewAcceuil() {
-    require "PageDAcceuil.php";
+    require "Page d'acceuil/PageDAcceuil.php";
+
 }
 function viewModif(){
-    require "PageDeModificationDeProfil.php";
+    require "Page de modif de profil/PageDeModificationDeProfil.php";
 }
 function viewProfil(){
-    require"PageProfil.php";
+    require"PageProfil/PageProfil.php";
 }
 function viewAcceuilConnexion(){
-    require "AcceuilConnexion.php";
+    require "AcceuilConnexion/AcceuilConnexion.php";
 }

@@ -40,7 +40,8 @@ if (isset($_GET["action"])) {
                 viewProfil();
             }
             break;
-
+        case "modif_user" :
+            modifuser();
     }
 
 
