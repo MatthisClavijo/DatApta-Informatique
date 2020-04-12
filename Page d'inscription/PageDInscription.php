@@ -2,11 +2,11 @@
 <html>
 <title>Inscription</title>
 <head>
-    <link rel="stylesheet" href="PageDInscription.css">
+    <link rel="stylesheet" href="Page d'inscription/PageDInscription.css">
     <head>
         </p>
         <ul>
-            <img src = 'Infinite_measures_logo.png'width = "170"height="145">
+            <img src = 'Images/Infinite_measures_logo.png'width = "170"height="145">
             <li><a class = "active" href="acceuil">Accueil</a></li>
             <li><a href="#statistiques">Statistiques</a></li>
             <li class="dropdown">
@@ -16,7 +16,7 @@
                     <a href="#">Classement</a>
                 </div>
             </li>
-            <li><a href="mon profil">Mon profil</a></li>
+            <li><a href="profil">Mon profil</a></li>
             <div >
 
             </div>
@@ -25,7 +25,7 @@
 
 <body>
 <div>
-    <p><img src = 'aircraft-01-1254871.jpg'
+    <p><img src = 'Images/aircraft-01-1254871.jpg'
             width = 100%
             height = "588">
     </p>
@@ -69,6 +69,6 @@
 </div>
 </body>
 <?php
-require "footer.php";
+require "footer/footer.php";
 ?>
 </html>
