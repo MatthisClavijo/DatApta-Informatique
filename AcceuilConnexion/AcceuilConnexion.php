@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
-<title>Acceuil</title>
+<title>Accueil</title>
 <head>
 
     <link rel="stylesheet" href="AcceuilConnexion/AcceuilConnexion.css">
@@ -10,7 +10,7 @@
         </p>
         <ul>
             <img src = 'Images/Infinite_measures_logo.png'width = "170"height="145">
-            <li><a class = "active" href="#accueil">Accueil</a></li>
+            <li><a class = "active" href="accueil">Accueil</a></li>
             <li><a href="#statistiques">Statistiques</a></li>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Communauté</a>
