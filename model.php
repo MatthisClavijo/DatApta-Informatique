@@ -35,7 +35,7 @@ function InsertUser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance)
 }
 function testconnexion($email,$password){
     $db=dbConnect();
-    $req=$db->prepare("SELECT * FROM `client` WHERE `Adresse mail`= ? AND `mot_de_passe` = ?");
+    $req=$db->prepare("SELECT * FROM `client`  WHERE `Adresse mail`= ? AND `mot_de_passe` = ?");
     $req->execute(array($email,$password));
     $existence=$req->rowCount();
     if($existence==1){
@@ -45,7 +45,7 @@ function testconnexion($email,$password){
         $_SESSION['prénom']=$data['prénom'];
         $_SESSION['Adresse mail']=$data['Adresse mail'];
         $_SESSION['date_de_naissance']=$data['date_de_naissance'];
-        viewAcceuilConnexion();
+        viewAccueilConnexion();
     }
     if ($existence!=1){
         echo"Il y a eu une erreur dans la connexion. Veuillez réessayer.";
@@ -58,5 +58,18 @@ function modificationuser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance
     $req=$db->prepare("UPDATE `client` SET `nom` = :nom, `prénom` = :prenom, `Adresse mail` = :email, `date_de_naissance` = :date_de_naissance, `mot_de_passe` = :mot_de_passe WHERE `client`.`ID` = :ID ");
     $req->execute(array('nom'=> $nom, 'prenom'=> $prenom, 'email'=>$email, 'mot_de_passe'=> $mot_de_passe, 'ID'=> $ID,'date_de_naissance'=>$date_de_naissance));
     $req->closeCursor();
+
+}
+function selectuser(){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT * FROM `client` ");
+    $req->execute();
+    $data=$req->fetchAll();
+    return $data;
+}
+function deleteuser($ID){
+    $db=dbConnect();
+    $req=$db->prepare("DELETE FROM `client` WHERE (`ID`=:ID)");
+    $req->execute(array('ID'=>$ID));
 
 }

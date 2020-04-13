@@ -14,27 +14,30 @@ if (isset($_GET["action"])) {
         case "modifprofil":
             viewModif();
             break;
-        case "acceuil" :
+        case "accueil" :
             if(sizeof($_SESSION)==0){
-                viewAcceuil();
+                viewAccueil();
             }
             else{
-                viewAcceuilConnexion();
+                if($_SESSION['nom'] == "Admin"){
+                    viewAccueilAdmin();
+                }
+                else{
+                    viewAccueilConnexion();
+                }
             }
             break;
         case "connexion" :
-            $connexion=1;
             connexion();
             break;
         case "deconnexion" :
-            $connexion=0;
             deconnexion();
             break;
         case "profil" :
 
             if(sizeof($_SESSION)==0){
                 echo "Il faut vous connecter pour voir votre profil";
-                viewAcceuil();
+                viewAccueil();
             }
             else{
                 viewProfil();
@@ -42,9 +45,20 @@ if (isset($_GET["action"])) {
             break;
         case "modif_user" :
             modifuser();
+            break;
+        case "delete":
+            deleteuser($action[1]);
+            viewgestionutilisateur();
+            break;
+
+        case "gestion_u":
+            viewgestionutilisateur();
+            break;
+
+        }
     }
 
 
-} else {
-    viewAcceuil();
+    else {
+    viewAccueil();
 }

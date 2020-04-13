@@ -56,6 +56,6 @@ function connexion(){
 }
 function deconnexion(){
         session_destroy();
-        viewAcceuil();
+        viewAccueil();
 
 }

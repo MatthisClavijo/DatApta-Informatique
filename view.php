@@ -2,7 +2,7 @@
 function viewinscription(){
     require "Page d'inscription/PageDInscription.php";
 }
-function viewAcceuil() {
+function viewAccueil() {
     require "Page d'acceuil/PageDAcceuil.php";
 
 }
@@ -12,6 +12,12 @@ function viewModif(){
 function viewProfil(){
     require"PageProfil/PageProfil.php";
 }
-function viewAcceuilConnexion(){
+function viewAccueilConnexion(){
     require "AcceuilConnexion/AcceuilConnexion.php";
+}
+function viewAccueilAdmin(){
+    require "AcceuilAdmin/AcceuilAdmin.php";
+}
+function viewgestionutilisateur(){
+    require "Page de gestion des utilisateurs/GestionUtilisateur.php";
 }
