@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
-<title>Acceuil</title>
+<title>Accueil</title>
 <head>
 
     <link rel="stylesheet" href="AcceuilAdmin/AcceuilAdmin.css">
@@ -23,7 +23,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Gestion</a>
                 <div class="dropdown-content">
-                    <a href="#">Gestion Utilisateur</a>
+                    <a href="gestion_u">Gestion Utilisateur</a>
                     <a href="#">Gestion FAQ</a>
                     <a href="#">Gestion Capteurs</a>
                 </div>
