@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Acceuil</title>
+<title>Accueil</title>
 <head>
     <link rel="stylesheet" href="Page d'acceuil/PageDAcceuil.css">
 
