@@ -20,8 +20,17 @@
                 </div>
             </li>
             <li><a href="profil">Mon profil</a></li>
-            <div >
-            </div>
+            <?php
+            if($_SESSION['type']=="admin"){
+                echo"  <li class=\"dropdown\">
+                <a href=\"javascript:void(0)\" class=\"dropbtn\">Gestion</a>
+                <div class=\"dropdown-content\">
+                    <a href=\"gestion_u\">Gestion Utilisateur</a>
+                    <a href=\"#\">Gestion FAQ</a>
+                    <a href=\"#\">Gestion Capteurs</a>
+                </div>";
+            }
+            ?>
         </ul>
     </head>
 
