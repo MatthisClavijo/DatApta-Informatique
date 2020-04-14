@@ -45,11 +45,28 @@ function testconnexion($email,$password){
         $_SESSION['prénom']=$data['prénom'];
         $_SESSION['Adresse mail']=$data['Adresse mail'];
         $_SESSION['date_de_naissance']=$data['date_de_naissance'];
-        viewAccueilConnexion();
+        $_SESSION['type']="client";
+       viewAccueilConnexion();
     }
     if ($existence!=1){
-        echo"Il y a eu une erreur dans la connexion. Veuillez réessayer.";
-        viewAcceuil();
+        $reqAdmin=$db->prepare("SELECT * FROM `administrateur` WHERE `Adresse mail`= ? AND `mot de passe` = ?");
+        $reqAdmin->execute(array($email,$password));
+        $existence2=$reqAdmin->rowCount();
+        if($existence2==1){
+            $data2=$reqAdmin->fetch();
+            $_SESSION['ID']=$data2['ID'];
+            $_SESSION['nom']=$data2['nom'];
+            $_SESSION['prénom']=$data2['prénom'];
+            $_SESSION['Adresse mail']=$data2['Adresse mail'];
+            $_SESSION['date_de_naissance']=$data2['date_de_naissance'];
+            $_SESSION['type']="admin";
+            viewAccueilAdmin();
+        }
+        if($existence2!=1){
+            echo "Il y a eu une erreur dans la connexion. Veuillez réessayer.";
+            viewAccueil();
+        }
+
     }
 }
 function modificationuser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance){

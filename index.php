@@ -19,11 +19,11 @@ if (isset($_GET["action"])) {
                 viewAccueil();
             }
             else{
-                if($_SESSION['nom'] == "Admin"){
-                    viewAccueilAdmin();
-                }
-                else{
+                if($_SESSION['type']=="client"){
                     viewAccueilConnexion();
+                }
+                if ($_SESSION['type']=="admin"){
+                    viewAccueilAdmin();
                 }
             }
             break;
