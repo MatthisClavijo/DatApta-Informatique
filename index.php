@@ -48,7 +48,8 @@ if (isset($_GET["action"])) {
             break;
         case "delete":
             deleteuser($action[1]);
-            viewgestionutilisateur();
+            header('Location: http://localhost/site%20app/gestion_u' ,true);
+            exit;
             break;
 
         case "gestion_u":
