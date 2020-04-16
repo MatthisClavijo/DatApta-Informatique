@@ -103,3 +103,8 @@ function InsertCapteur($nom,$unité){
     $req->execute(array($nom,$unité));
     $req->closeCursor();
 }
+function deletecapteur($ID){
+    $db=dbConnect();
+    $req=$db->prepare("DELETE FROM `capteur` WHERE (`ID`=:ID)");
+    $req->execute(array('ID'=>$ID));
+}

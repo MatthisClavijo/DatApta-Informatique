@@ -62,6 +62,11 @@ if (isset($_GET["action"])) {
             addcapteur();
             viewcapteur();
             break;
+        case "delete_capteur" :
+            deletecapteur($action[1]);
+            header('Location: http://localhost/site%20app/capteur ',true);
+            exit;
+            break;
         }
     }
 
