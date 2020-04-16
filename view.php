@@ -21,3 +21,6 @@ function viewAccueilAdmin(){
 function viewgestionutilisateur(){
     require "Page de gestion des utilisateurs/GestionUtilisateur.php";
 }
+function viewcapteur(){
+    require "Page gestion de capteur/GestionCapteur.php";
+}

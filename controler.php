@@ -24,10 +24,19 @@ function adduser( ){
                 $date = htmlspecialchars($_POST["date"]);
                 InsertUser($nom, $prenom, $mdp, $email, $date);
                 echo "Veuillez vous connecter maintenant ! ";
-                viewAcceuil();
+                viewAccueil();
             }
 
 }
+function addcapteur(){
+        if ( $_POST["Nom"] && $_POST["Unité"]){
+            $nom=htmlspecialchars($_POST["Nom"]);
+            $unité=htmlspecialchars($_POST["Unité"]);
+            InsertCapteur($nom,$unité);
+        }
+
+}
+
 function modifuser(){
         if ($_POST["nom"] && $_POST["email"] && $_POST["prénom"] && $_POST["password"] && $_POST["date"]) {
             $nom = htmlspecialchars($_POST["nom"]);

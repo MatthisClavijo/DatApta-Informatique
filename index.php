@@ -46,7 +46,7 @@ if (isset($_GET["action"])) {
         case "modif_user" :
             modifuser();
             break;
-        case "delete":
+        case "delete_user":
             deleteuser($action[1]);
             header('Location: http://localhost/site%20app/gestion_u' ,true);
             exit;
@@ -55,7 +55,13 @@ if (isset($_GET["action"])) {
         case "gestion_u":
             viewgestionutilisateur();
             break;
-
+        case "capteur" :
+            viewcapteur();
+            break;
+        case "add_capteur" :
+            addcapteur();
+            viewcapteur();
+            break;
         }
     }
 

@@ -90,3 +90,16 @@ function deleteuser($ID){
     $req->execute(array('ID'=>$ID));
 
 }
+function selectcapteur(){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT * FROM `capteur` ");
+    $req->execute();
+    $data=$req->fetchAll();
+    return $data;
+}
+function InsertCapteur($nom,$unité){
+    $db=dbConnect();
+    $req=$db->prepare("INSERT INTO `capteur` (`Nom`,`unité de mesure`) VALUES (?,?)");
+    $req->execute(array($nom,$unité));
+    $req->closeCursor();
+}
