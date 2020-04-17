@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Acceuil</title>
+<title>Profil</title>
 
 <head>
     <link rel="stylesheet" href="PageProfil/PageProfil.css">
@@ -27,7 +27,7 @@
                 <div class=\"dropdown-content\">
                     <a href=\"gestion_u\">Gestion Utilisateur</a>
                     <a href=\"#\">Gestion FAQ</a>
-                    <a href=\"#\">Gestion Capteurs</a>
+                    <a href=\"capteur\">Gestion Capteurs</a>
                 </div>";
             }
             ?>
@@ -40,7 +40,7 @@
         height = "588">
 </p>
 <form id="boxprofil">
-    <h3 id="title">Inscription</h3>
+    <h3 id="title">Profil</h3>
     <div id="ligne"></div>
     <p>
     <div id="name">
