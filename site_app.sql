@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 18 avr. 2020 à 10:51
+-- Généré le :  sam. 18 avr. 2020 à 14:20
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.5
 
@@ -61,13 +61,6 @@ CREATE TABLE IF NOT EXISTS `capteur` (
   `unité de mesure` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Déchargement des données de la table `capteur`
---
-
-INSERT INTO `capteur` (`Id`, `Nom`, `unité de mesure`) VALUES
-(1, 'Température', '°C');
 
 -- --------------------------------------------------------
 
@@ -142,10 +135,10 @@ CREATE TABLE IF NOT EXISTS `resultat` (
 DROP TABLE IF EXISTS `test`;
 CREATE TABLE IF NOT EXISTS `test` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `Nom` int(11) NOT NULL,
+  `Nom` varchar(256) COLLATE utf8_bin NOT NULL,
   `id capteurs` char(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
