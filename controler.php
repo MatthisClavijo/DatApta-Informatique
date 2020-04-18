@@ -36,6 +36,13 @@ function addcapteur(){
         }
 
 }
+function add_test(){
+    if ( $_POST["Nom"] && $_POST["Ids"]){
+        $nom=htmlspecialchars($_POST["Nom"]);
+        $idcapteur=htmlspecialchars($_POST["Ids"]);
+        InsertTest($nom,$idcapteur);
+    }
+}
 
 function modifuser(){
         if ($_POST["nom"] && $_POST["email"] && $_POST["prénom"] && $_POST["password"] && $_POST["date"]) {

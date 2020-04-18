@@ -110,3 +110,22 @@ function deletecapteur($ID){
     $req=$db->prepare("DELETE FROM `capteur` WHERE (`ID`=:ID)");
     $req->execute(array('ID'=>$ID));
 }
+function selecttest(){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT * FROM `test` ");
+    $req->execute();
+    $data=$req->fetchAll();
+    return $data;
+
+}
+function InsertTest($nom,$idcapteur){
+    $db=dbConnect();
+    $req=$db->prepare("INSERT INTO `test` (`Nom`,`id capteurs`) VALUES (:nom,:ids)");
+    $req->execute(array('nom'=>$nom,'ids'=>$idcapteur));
+    $req->closeCursor();
+}
+function deletetest($ID){
+    $db=dbConnect();
+    $req=$db->prepare("DELETE FROM `test` WHERE (`id`=:ID)");
+    $req->execute(array('ID'=>$ID));
+}

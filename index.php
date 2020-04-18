@@ -68,6 +68,18 @@ if (isset($_GET["action"])) {
             header('Location: http://localhost/site%20app/capteur ',true);
             exit;
             break;
+        case "test":
+            viewtest();
+            break;
+        case "add_test" :
+            add_test();
+            viewtest();
+            break;
+        case "delete_test" :
+            deletetest($action[1]);
+            header('Location: http://localhost/site%20app/test ',true);
+            exit;
+            break;
         }
     }
 

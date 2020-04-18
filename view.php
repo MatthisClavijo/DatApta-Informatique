@@ -24,3 +24,6 @@ function viewgestionutilisateur(){
 function viewcapteur(){
     require "Page gestion de capteur/GestionCapteur.php";
 }
+function viewtest(){
+    require "Page de gestion des tests/GestionTest.php";
+}
