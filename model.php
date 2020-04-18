@@ -46,6 +46,7 @@ function testconnexion($email,$password){
         $_SESSION['Adresse mail']=$data['Adresse mail'];
         $_SESSION['date_de_naissance']=$data['date_de_naissance'];
         $_SESSION['type']="client";
+        $_SESSION['isConnected']=true;
        viewAccueilConnexion();
     }
     if ($existence!=1){
@@ -60,6 +61,7 @@ function testconnexion($email,$password){
             $_SESSION['Adresse mail']=$data2['Adresse mail'];
             $_SESSION['date_de_naissance']=$data2['date_de_naissance'];
             $_SESSION['type']="admin";
+            $_SESSION['isConnected']=true;
             viewAccueilAdmin();
         }
         if($existence2!=1){

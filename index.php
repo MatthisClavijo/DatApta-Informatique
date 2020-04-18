@@ -35,12 +35,13 @@ if (isset($_GET["action"])) {
             break;
         case "profil" :
 
-            if(sizeof($_SESSION)==0){
-                echo "Il faut vous connecter pour voir votre profil";
-                viewAccueil();
+            if($_SESSION['isConnected']){
+                viewProfil();
             }
             else{
-                viewProfil();
+                echo "Il faut vous connecter pour voir votre profil";
+                viewAccueil();
+
             }
             break;
         case "modif_user" :
@@ -72,5 +73,6 @@ if (isset($_GET["action"])) {
 
 
     else {
+    $_SESSION['isConnected']=false;
     viewAccueil();
 }
