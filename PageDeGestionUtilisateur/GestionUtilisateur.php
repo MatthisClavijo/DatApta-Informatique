@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
-<title>Acceuil</title>
+<title>Gestion Utilisateurs</title>
 <head>
 
-    <link rel="stylesheet" href="Page de gestion des utilisateurs/GestionUtilisateur.css">
+    <link rel="stylesheet" href="PageDeGestionUtilisateur/GestionUtilisateur.css">
 
 
     <head>
@@ -25,7 +25,7 @@
                 <div class="dropdown-content">
                     <a href="gestion_u">Gestion Utilisateur</a>
                     <a href="#">Gestion FAQ</a>
-                    <a href="#">Gestion Capteurs</a>
+                    <a href="capteur">Gestion Capteurs</a>
                 </div>
             </li>
         </ul>
@@ -38,6 +38,8 @@
 </p>
 <div id="BoxUtilisateur">
     <?php
+    echo "<div id='titre1'>Client :</div> ";
+    echo "</br>";
     $utilisateur=selectuser();
     $nombre=count($utilisateur);
     for ($i=0;$i <$nombre;$i++){
@@ -46,7 +48,23 @@
         echo "  ";
         echo ($utilisateur[$i]['prénom']);
         echo "  ";
-        echo("<a href='delete/$ID' class='option'>Supprimer</a>");
+        echo("<a href='delete_user/$ID' class='option'>Supprimer</a>");
+        echo "  ";
+        echo ("<a href='up_user/$ID' class='option' id='up'>Donner droits d'administration</a>");
+        echo("</br>");
+        echo("</br>");
+    }
+    echo "<div id='titre1'>Administrateurs :</div> ";
+    echo "</br>";
+    $administrateur=selectadmin();
+    $nombre2=count($administrateur);
+    for ($i=0;$i <$nombre2;$i++){
+        $ID=$administrateur[$i]['ID'];
+        echo ($administrateur[$i]['nom']);
+        echo "  ";
+        echo ($administrateur[$i]['prénom']);
+        echo "  ";
+        echo ("<a href='down_user/$ID' class='option' id='down'>Enlever droits d'administration</a>");
         echo("</br>");
         echo("</br>");
     }
