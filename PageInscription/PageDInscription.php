@@ -2,7 +2,7 @@
 <html>
 <title>Inscription</title>
 <head>
-    <link rel="stylesheet" href="Page d'inscription/PageDInscription.css">
+    <link rel="stylesheet" href="PageInscription/PageDInscription.css">
     <head>
         </p>
         <ul>
