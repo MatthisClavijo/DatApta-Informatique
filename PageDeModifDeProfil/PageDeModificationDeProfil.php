@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="Page de modif de profil/PageDeModificationDeProfil.css">
+    <link rel="stylesheet" href="PageDeModifDeProfil/PageDeModificationDeProfil.css">
 
     <head>
         </p>
