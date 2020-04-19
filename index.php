@@ -15,12 +15,18 @@ if (isset($_GET["action"])) {
             viewModif();
             break;
         case "accueil" :
-                if($_SESSION['type']=="client"){
-                    viewAccueilConnexion();
+            if(sizeof($_SESSION)!=0) {
+                if ($_SESSION['isConnected'] == true) {
+
+
+                    if ($_SESSION['type'] == "client") {
+                        viewAccueilConnexion();
+                    }
+                    if ($_SESSION['type'] == "admin") {
+                        viewAccueilAdmin();
+                    }
                 }
-                if ($_SESSION['type']=="admin"){
-                    viewAccueilAdmin();
-                }
+            }
             else{
                 viewAccueil();
             }
@@ -32,9 +38,10 @@ if (isset($_GET["action"])) {
             deconnexion();
             break;
         case "profil" :
-
-            if($_SESSION['isConnected']){
-                viewProfil();
+            if (sizeof($_SESSION )!=0) {
+                if ($_SESSION['isConnected']) {
+                    viewProfil();
+                }
             }
             else{
                 echo "Il faut vous connecter pour voir votre profil";
