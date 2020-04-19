@@ -1,13 +1,13 @@
 <?php
 function viewinscription(){
-    require "Page d'inscription/PageDInscription.php";
+    require "PageInscription/PageDInscription.php";
 }
 function viewAccueil() {
-    require "Page d'acceuil/PageDAcceuil.php";
+    require "PageAcceuil/PageDAcceuil.php";
 
 }
 function viewModif(){
-    require "Page de modif de profil/PageDeModificationDeProfil.php";
+    require "PageDeModifDeProfil/PageDeModificationDeProfil.php";
 }
 function viewProfil(){
     require"PageProfil/PageProfil.php";
@@ -19,11 +19,11 @@ function viewAccueilAdmin(){
     require "AcceuilAdmin/AcceuilAdmin.php";
 }
 function viewgestionutilisateur(){
-    require "Page de gestion des utilisateurs/GestionUtilisateur.php";
+    require "PageDeGestionDesUtilisateurs/GestionUtilisateur.php";
 }
 function viewcapteur(){
-    require "Page gestion de capteur/GestionCapteur.php";
+    require "PageGestionDeCapteur/GestionCapteur.php";
 }
 function viewtest(){
-    require "Page de gestion des tests/GestionTest.php";
+    require "PageDeGestionDesTests/GestionTest.php";
 }
