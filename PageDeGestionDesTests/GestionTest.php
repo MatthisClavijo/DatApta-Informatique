@@ -3,7 +3,7 @@
 <title>Accueil</title>
 <head>
 
-    <link rel="stylesheet" href="Page de gestion des tests/Gestiontest.css">
+    <link rel="stylesheet" href="PageDeGestionDesTests/Gestiontest.css">
 
 
     <head>
@@ -51,6 +51,7 @@
         $ID=$test[$i]['id'];
         echo ($test[$i]['Nom']);
         echo "    ";
+        echo "Id des capteurs : ";
         echo ($test[$i]['id capteurs']);
         echo "  ";
         echo("<a href='delete_test/$ID' class='option'>Supprimer</a>");
