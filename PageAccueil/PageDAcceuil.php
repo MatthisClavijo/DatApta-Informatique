@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
 <title>Accueil</title>
-<head>
-    <link rel="stylesheet" href="Page d'acceuil/PageDAcceuil.css">
-
-
     <head>
-        </p>
+        <link rel="stylesheet" href="PageAccueil\PageDAcceuil.css">
         <ul>
             <img src = 'Images/Infinite_measures_logo.png'width = "170"height="145">
-            <li><a class = "active" href="#accueil">Accueil</a></li>
+            <li><a class = "active" href="accueil">Accueil</a></li>
             <li><a href="#statistiques">Statistiques</a></li>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Communauté</a>
