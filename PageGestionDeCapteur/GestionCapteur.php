@@ -3,7 +3,7 @@
 <title>Gestion Capteurs</title>
 <head>
 
-    <link rel="stylesheet" href="Page gestion de capteur/GestionCapteur.css">
+    <link rel="stylesheet" href="PageGestionDeCapteur/GestionCapteur.css">
 
 
     <head>
@@ -48,15 +48,20 @@
     $nombre=count($capteur);
     for ($i=0;$i <$nombre;$i++){
         $ID=$capteur[$i]['Id'];
+        echo ("ID : ");
+        echo (" ");
+        echo($ID);
+        echo"    ";
         echo ($capteur[$i]['Nom']);
         echo "  ";
         echo ($capteur[$i]['unité de mesure']);
         echo "  ";
-        echo("<a href='delete_capteur/$ID' class='option'>Supprimer</a>");
+        echo("<a href='delete_capteur/$ID' class='option' id='suppr'>Supprimer</a>");
         echo("</br>");
         echo("</br>");
     }
     ?>
+    <a href="test" class="option">Gestion des tests</a>
 
 </div>
 </body>
