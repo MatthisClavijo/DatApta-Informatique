@@ -1,9 +1,10 @@
+
 <?php
 function viewinscription(){
     require "PageInscription/PageDInscription.php";
 }
 function viewAccueil() {
-    require "PageAcceuil/PageDAcceuil.php";
+    require "PageAccueil/PageDAcceuil.php";
 
 }
 function viewModif(){
@@ -19,7 +20,7 @@ function viewAccueilAdmin(){
     require "AcceuilAdmin/AcceuilAdmin.php";
 }
 function viewgestionutilisateur(){
-    require "PageDeGestionDesUtilisateurs/GestionUtilisateur.php";
+    require "PageDeGestionUtilisateur/GestionUtilisateur.php";
 }
 function viewcapteur(){
     require "PageGestionDeCapteur/GestionCapteur.php";

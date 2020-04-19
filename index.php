@@ -15,16 +15,14 @@ if (isset($_GET["action"])) {
             viewModif();
             break;
         case "accueil" :
-            if(sizeof($_SESSION)==0){
-                viewAccueil();
-            }
-            else{
                 if($_SESSION['type']=="client"){
                     viewAccueilConnexion();
                 }
                 if ($_SESSION['type']=="admin"){
                     viewAccueilAdmin();
                 }
+            else{
+                viewAccueil();
             }
             break;
         case "connexion" :
@@ -49,7 +47,7 @@ if (isset($_GET["action"])) {
             break;
         case "delete_user":
             deleteuser($action[1]);
-            header('Location: http://localhost/site%20app/gestion_u' ,true);
+            header('Location: http://localhost/datapta-informatique/gestion_u' ,true);
             exit;
             break;
 
@@ -65,7 +63,7 @@ if (isset($_GET["action"])) {
             break;
         case "delete_capteur" :
             deletecapteur($action[1]);
-            header('Location: http://localhost/site%20app/capteur ',true);
+            header('Location: http://localhost/datapta-informatique/capteur ',true);
             exit;
             break;
         case "test":
@@ -77,9 +75,15 @@ if (isset($_GET["action"])) {
             break;
         case "delete_test" :
             deletetest($action[1]);
-            header('Location: http://localhost/site%20app/test ',true);
+            header('Location: http://localhost/datapta-informatique/test ',true);
             exit;
             break;
+        case "up_user" :
+            up_user($action[1]);
+            header('Location: http://localhost/datapta-informatique/gestion_u' ,true);
+            exit;
+            break;
+
         }
     }
 
