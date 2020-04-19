@@ -25,7 +25,7 @@
                 <div class="dropdown-content">
                     <a href="gestion_u">Gestion Utilisateur</a>
                     <a href="#">Gestion FAQ</a>
-                    <a href="#">Gestion Capteurs</a>
+                    <a href="capteur">Gestion Capteurs</a>
                 </div>
             </li>
             <div id="ProfilBox">
