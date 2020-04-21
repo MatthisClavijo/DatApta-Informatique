@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 18 avr. 2020 à 14:20
+-- Généré le :  mar. 21 avr. 2020 à 13:50
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.3.5
 
@@ -39,14 +39,15 @@ CREATE TABLE IF NOT EXISTS `administrateur` (
   `mot de passe` mediumtext COLLATE utf8_bin NOT NULL,
   `Messages` mediumtext COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `administrateur`
 --
 
 INSERT INTO `administrateur` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot de passe`, `Messages`) VALUES
-(1, '', 'Ferry', 'Julien', 'julienferry@orange.fr', '1999-02-15', 'admin#1', '');
+(1, '', 'Ferry', 'Julien', 'julienferry@orange.fr', '1999-02-15', 'admin#1', ''),
+(6, 'vide', 'Balthazar', 'Picsou', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', 'vide');
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,15 @@ CREATE TABLE IF NOT EXISTS `capteur` (
   `Nom` varchar(255) COLLATE utf8_bin NOT NULL,
   `unité de mesure` varchar(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `capteur`
+--
+
+INSERT INTO `capteur` (`Id`, `Nom`, `unité de mesure`) VALUES
+(3, 'Température', '°C'),
+(5, 'Micro', 'Hz');
 
 -- --------------------------------------------------------
 
@@ -79,16 +88,36 @@ CREATE TABLE IF NOT EXISTS `client` (
   `mot_de_passe` mediumtext COLLATE utf8_bin NOT NULL,
   `message` mediumtext COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Déchargement des données de la table `client`
 --
 
 INSERT INTO `client` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot_de_passe`, `message`) VALUES
-(19, 'vide', 'Admin', 'Test', 'datapta.officiel@gmail.com', '0001-01-01', 'youdied', 'vide'),
-(18, 'vide', 'Picsou', 'Balthazar', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', 'vide'),
-(16, 'vide', 'Ferry', 'Julien', 'julien.ferry@isep.fr', '1999-02-15', 'Salut', 'vide');
+(39, 'vide', 'Balthazar', 'Picsou', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', 'vide'),
+(38, 'vide', 'Ferry', 'Julien', 'julien.ferry@isep.fr', '1999-02-15', 'Salut', 'vide');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `faq`
+--
+
+DROP TABLE IF EXISTS `faq`;
+CREATE TABLE IF NOT EXISTS `faq` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Question` text COLLATE utf8_bin NOT NULL,
+  `Réponse` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `faq`
+--
+
+INSERT INTO `faq` (`ID`, `Question`, `Réponse`) VALUES
+(1, 'Qu\'es ce donc ?', 'Ceci est un test.');
 
 -- --------------------------------------------------------
 
@@ -138,7 +167,15 @@ CREATE TABLE IF NOT EXISTS `test` (
   `Nom` varchar(256) COLLATE utf8_bin NOT NULL,
   `id capteurs` char(255) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Déchargement des données de la table `test`
+--
+
+INSERT INTO `test` (`id`, `Nom`, `id capteurs`) VALUES
+(5, 'Test n°2', '1,2,3'),
+(4, 'Test n°1', '3');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
