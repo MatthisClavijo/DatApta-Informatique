@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Profil</title>
+<title>FAQ</title>
 
 <head>
     <link rel="stylesheet" href="FoireAuxQuestions/FAQ.css">
