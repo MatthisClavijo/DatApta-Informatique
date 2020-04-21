@@ -12,7 +12,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Communauté</a>
                 <div class="dropdown-content">
-                    <a href="#">FAQ</a>
+                    <a href="foire">FAQ</a>
                     <a href="#">Classement</a>
                 </div>
             </li>

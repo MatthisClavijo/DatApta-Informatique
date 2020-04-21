@@ -142,13 +142,13 @@ img {
 #Cpassword{
     display: inline-block;
     margin-left: 180px;
-
     float: right;
 }
 #cgu{
     display: inline-block;
-    font-size: 15px;
+    font-size: 11px;
     margin-right: 150px;
+
 }
 #submit{
     display: inline-block;
