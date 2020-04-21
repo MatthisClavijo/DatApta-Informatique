@@ -51,6 +51,8 @@
         echo("<a href='delete_user/$ID' class='option'>Supprimer</a>");
         echo "  ";
         echo ("<a href='up_user/$ID' class='option' id='up'>Donner droits d'administration</a>");
+        echo "  ";
+        echo("<a href='modif_admin' class='option' id='modif'>Modifier le profil</a>");
         echo("</br>");
         echo("</br>");
     }
