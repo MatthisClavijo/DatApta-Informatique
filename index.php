@@ -38,11 +38,9 @@ if (isset($_GET["action"])) {
             deconnexion();
             break;
         case "profil" :
-            if (sizeof($_SESSION )!=0) {
                 if ($_SESSION['isConnected']) {
                     viewProfil();
                 }
-            }
             else{
                 echo "Il faut vous connecter pour voir votre profil";
                 viewAccueil();
@@ -90,7 +88,11 @@ if (isset($_GET["action"])) {
             header('Location: http://localhost/datapta-informatique/gestion_u' ,true);
             exit;
             break;
-
+        case "down_user" :
+            down_user($action[1]);
+            header('Location: http://localhost/datapta-informatique/gestion_u' ,true);
+            exit;
+            break;
         }
     }
 

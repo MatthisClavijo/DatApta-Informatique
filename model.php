@@ -138,12 +138,10 @@ function selectadmin(){
 
 }
 function up_user($ID){
-    echo ($ID);
     $db=dbConnect();
     $req=$db->prepare("SELECT * FROM `client` WHERE (`ID`=:ID)");
     $req->execute(array('ID'=>$ID));
     $data=$req->fetchAll();
-    var_dump($data);
     $nom=$data[0][2];
     $prénom=$data[0][3];
     $email=$data[0][4];
@@ -157,4 +155,25 @@ function up_user($ID){
     $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prénom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'message'=>$message));
     $req2->closeCursor();
     deleteuser($ID);
+}
+function down_user($ID){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT * FROM `administrateur` WHERE (`ID`=:ID)");
+    $req->execute(array('ID'=>$ID));
+    $data=$req->fetchAll();
+    var_dump($data);
+    $nom=$data[0][2];
+    $prénom=$data[0][3];
+    $email=$data[0][4];
+    $date_de_naissance=$data[0][5];
+    $mdp=$data[0][6];
+    $req->closeCursor();
+    $id=NULL;
+    $photo='vide';
+    $message='vide';
+    $req2=$db->prepare("INSERT INTO `client` VALUES (:ID,:photo,:nom,:prenom,:email,:date_de_naissance,:mdp,:message)");
+    $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prénom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'message'=>$message));
+    $req2->closeCursor();
+    deleteuser($ID);
+
 }
