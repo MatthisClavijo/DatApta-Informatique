@@ -93,6 +93,21 @@ if (isset($_GET["action"])) {
             header('Location: http://localhost/datapta-informatique/gestion_u' ,true);
             exit;
             break;
+        case "foire" :
+            viewFAQ();
+            break;
+        case "gestion_faq" :
+            viewgestionfaq();
+            break;
+        case "add_QR" :
+            add_QR();
+            viewgestionfaq();
+            break;
+        case "delete_QR" :
+            delete_QR($action[1]);
+            header('Location: http://localhost/datapta-informatique/gestion_faq' ,true);
+            exit;
+            break;
         }
     }
 

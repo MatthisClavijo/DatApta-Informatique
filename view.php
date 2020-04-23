@@ -28,3 +28,9 @@ function viewcapteur(){
 function viewtest(){
     require "PageDeGestionDesTests/GestionTest.php";
 }
+function viewFAQ(){
+    require "FoireAuxQuestions/FAQ.php";
+}
+function viewgestionfaq(){
+    require "GestionFoireAuxQuestions/GestionFAQ.php";
+}

@@ -177,3 +177,23 @@ function down_user($ID){
     deleteuser($ID);
 
 }
+function selectFAQ(){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT * FROM `faq` ");
+    $req->execute();
+    $data=$req->fetchAll();
+    return $data;
+}
+function delete_QR($ID){
+    $db=dbConnect();
+    $req=$db->prepare("DELETE FROM `faq` WHERE (`id`=:ID)");
+    $req->execute(array('ID'=>$ID));
+
+}
+function InsertQR($question,$reponse){
+    echo "test";
+    $db=dbConnect();
+    $req=$db->prepare("INSERT INTO `faq` (`Question`,`Réponse`) VALUES (:question,:reponse) ");
+    $req->execute(array('question'=>$question,'reponse'=>$reponse));
+    $req->closeCursor();
+}

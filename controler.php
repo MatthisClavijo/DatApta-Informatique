@@ -75,3 +75,11 @@ function deconnexion(){
         viewAccueil();
 
 }
+function add_QR(){
+    if ( $_POST["Question"] && $_POST["Réponse"]){
+        $question=htmlspecialchars($_POST["Question"]);
+        $reponse=htmlspecialchars($_POST["Réponse"]);
+        InsertQR($question,$reponse);
+    }
+
+}
