@@ -29,7 +29,7 @@
                 <a href=\"javascript:void(0)\" class=\"dropbtn\">Gestion</a>
                 <div class=\"dropdown-content\">
                     <a href=\"gestion_u\">Gestion Utilisateur</a>
-                    <a href=\"#\">Gestion FAQ</a>
+                    <a href=\"gestion_faq\">Gestion FAQ</a>
                     <a href=\"capteur\">Gestion Capteurs</a>
                 </div>";
                 }
