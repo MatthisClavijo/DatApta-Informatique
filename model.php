@@ -191,9 +191,20 @@ function delete_QR($ID){
 
 }
 function InsertQR($question,$reponse){
-    echo "test";
     $db=dbConnect();
     $req=$db->prepare("INSERT INTO `faq` (`Question`,`Réponse`) VALUES (:question,:reponse) ");
     $req->execute(array('question'=>$question,'reponse'=>$reponse));
+    $req->closeCursor();
+}
+function EditQ($question,$ID){
+    $db=dbConnect();
+    $req=$db->prepare("UPDATE `faq` SET `Question` = :question WHERE `faq`.`ID` = :ID");
+    $req->execute(array('question'=>$question,'ID'=>$ID));
+    $req->closeCursor();
+}
+function EditR($reponse,$ID){
+    $db=dbConnect();
+    $req=$db->prepare("UPDATE `faq` SET `Réponse` = :reponse WHERE `faq`.`ID` = :ID");
+    $req->execute(array('reponse'=>$reponse,'ID'=>$ID));
     $req->closeCursor();
 }

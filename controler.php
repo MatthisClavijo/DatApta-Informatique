@@ -83,3 +83,15 @@ function add_QR(){
     }
 
 }
+function modif_Q($ID){
+        if( $_POST["Edit_Q"]){
+            $question=htmlspecialchars($_POST["Edit_Q"]);
+            EditQ($question,$ID);
+        }
+}
+function modif_R($ID){
+    if( $_POST["Edit_R"]){
+        $reponse=htmlspecialchars($_POST["Edit_R"]);
+        EditR($reponse,$ID);
+    }
+}

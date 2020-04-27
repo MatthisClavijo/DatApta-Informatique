@@ -108,6 +108,18 @@ if (isset($_GET["action"])) {
             header('Location: http://localhost/datapta-informatique/gestion_faq' ,true);
             exit;
             break;
+        case "edit_Q" :
+            modif_Q($action[1]);
+            header('Location: http://localhost/datapta-informatique/gestion_faq' ,true);
+            exit;
+            break;
+        case "edit_R" :
+            modif_R($action[1]);
+            header('Location: http://localhost/datapta-informatique/gestion_faq' ,true);
+            exit;
+            break;
+
+
         }
     }
 
