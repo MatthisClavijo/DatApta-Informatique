@@ -23,7 +23,7 @@ function adduser( ){
                 $mdp = htmlspecialchars($_POST["password"]);
                 $date = htmlspecialchars($_POST["date"]);
                 InsertUser($nom, $prenom, $mdp, $email, $date);
-                echo "Veuillez vous connecter maintenant ! ";
+                echo ("<script>alert(\"Veuillez vous connecter maintenant ! \")</script>");
                 viewAccueil();
             }
 
