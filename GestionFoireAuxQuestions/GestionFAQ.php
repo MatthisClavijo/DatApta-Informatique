@@ -59,12 +59,18 @@
         echo "<h3>Q : </h3>";
         echo ($faq[$i]['Question']);
         echo "</br> ";
-        echo ("<a href='edit_Q/$ID'class='option' id='edit'>Edit</a>");
+        echo("<form id='edit_Q' method='post' action='edit_Q/$ID'>
+            <input type='text' name='Edit_Q'>
+            <input type=\"submit\" value=\"Edit\" name=\"submit\">
+        </form>");
         echo"<h3>R : </h3>";
         echo ($faq[$i]['Réponse']);
         echo "  ";
         echo("</br>");
-        echo ("<a href='edit_R/$ID' class='option' id='edit'>Edit</a>");
+        echo ("<form id='edit_R' method='post' action='edit_R/$ID'>
+            <input type='text' name='Edit_R'>
+            <input type=\"submit\" value=\"Edit\" name=\"submit\">
+        </form>");
         echo ("</br>");
         echo("<a href='delete_QR/$ID' class='option' id='suppr'>Supprimer</a>");
         echo("</br>");
@@ -72,6 +78,7 @@
         echo("</br>");
     }
     ?>
+
 </div>
 </body>
 <?php
