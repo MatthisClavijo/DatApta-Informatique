@@ -1,6 +1,7 @@
 <?php
 
 require "model.php";
+require "encryption.php";
 
     try
     {
