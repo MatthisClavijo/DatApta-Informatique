@@ -14,21 +14,14 @@ function encryptionPassword($password){
     return $encryptedPasswordInfo;
 }
 
-function encryptionPasswordCheck($password, $salt, $iv, $encryptedPasswordBDD){
+function encryptionPasswordCheck($password, $salt, $iv){
     $iterations = 1000;
 
     $key = hash_pbkdf2("sha256", $password, $salt, $iterations, 20);
     
     $encryptedPassword = openssl_encrypt($password, 'aes-256-cbc', $key, 0, $iv);
 
-    if ($encryptedPassword == $encryptedPasswordBDD){
-        $bool = true;
-    }
-    else{
-        $bool = false;
-    }
-
-    return $bool;
+    return $encryptedPassword;
 }
 
 ?>

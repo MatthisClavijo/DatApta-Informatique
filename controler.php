@@ -21,9 +21,10 @@ function adduser( ){
                 $nom = htmlspecialchars($_POST["nom"]);
                 $email = htmlspecialchars($_POST["email"]);
                 $prenom = htmlspecialchars($_POST["prénom"]);
-                $mdp = htmlspecialchars($_POST["password"]);
+                list($mdp, $salt, $iv) = encryptionPassword($_POST["password"]);
+                $mdp = htmlspecialchars($mdp);
                 $date = htmlspecialchars($_POST["date"]);
-                InsertUser($nom, $prenom, $mdp, $email, $date);
+                InsertUser($nom, $prenom, $mdp, $email, $date, $salt, $iv);
                 echo ("<script>alert(\"Veuillez vous connecter maintenant ! \")</script>");
                 viewAccueil();
             }

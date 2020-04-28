@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 21 avr. 2020 à 13:50
--- Version du serveur :  5.7.26
--- Version de PHP :  7.3.5
+-- Host: localhost
+-- Generation Time: Apr 28, 2020 at 04:08 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,52 +18,50 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `site_app`
+-- Database: `site_app`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `administrateur`
+-- Table structure for table `administrateur`
 --
 
-DROP TABLE IF EXISTS `administrateur`;
-CREATE TABLE IF NOT EXISTS `administrateur` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `administrateur` (
+  `ID` int(11) NOT NULL,
   `photo` mediumtext COLLATE utf8_bin NOT NULL,
   `nom` varchar(255) COLLATE utf8_bin NOT NULL,
   `prénom` varchar(255) COLLATE utf8_bin NOT NULL,
   `Adresse mail` mediumtext COLLATE utf8_bin NOT NULL,
   `date_de_naissance` date NOT NULL,
   `mot de passe` mediumtext COLLATE utf8_bin NOT NULL,
-  `Messages` mediumtext COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `salt` mediumtext COLLATE utf8_bin NOT NULL,
+  `iv` mediumtext COLLATE utf8_bin NOT NULL,
+  `Messages` mediumtext COLLATE utf8_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `administrateur`
+-- Dumping data for table `administrateur`
 --
 
-INSERT INTO `administrateur` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot de passe`, `Messages`) VALUES
-(1, '', 'Ferry', 'Julien', 'julienferry@orange.fr', '1999-02-15', 'admin#1', ''),
-(6, 'vide', 'Balthazar', 'Picsou', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', 'vide');
+INSERT INTO `administrateur` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot de passe`, `salt`, `iv`, `Messages`) VALUES
+(1, '', 'Ferry', 'Julien', 'julienferry@orange.fr', '1999-02-15', 'admin#1', '', '', ''),
+(6, 'vide', 'Balthazar', 'Picsou', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', '', '', 'vide');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `capteur`
+-- Table structure for table `capteur`
 --
 
-DROP TABLE IF EXISTS `capteur`;
-CREATE TABLE IF NOT EXISTS `capteur` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `capteur` (
+  `Id` int(11) NOT NULL,
   `Nom` varchar(255) COLLATE utf8_bin NOT NULL,
-  `unité de mesure` varchar(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `unité de mesure` varchar(255) COLLATE utf8_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `capteur`
+-- Dumping data for table `capteur`
 --
 
 INSERT INTO `capteur` (`Id`, `Nom`, `unité de mesure`) VALUES
@@ -74,46 +71,45 @@ INSERT INTO `capteur` (`Id`, `Nom`, `unité de mesure`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `client`
+-- Table structure for table `client`
 --
 
-DROP TABLE IF EXISTS `client`;
-CREATE TABLE IF NOT EXISTS `client` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `client` (
+  `ID` int(11) NOT NULL,
   `photo` mediumtext COLLATE utf8_bin NOT NULL,
   `nom` varchar(255) COLLATE utf8_bin NOT NULL,
   `prénom` varchar(255) COLLATE utf8_bin NOT NULL,
   `Adresse mail` varchar(255) COLLATE utf8_bin NOT NULL,
   `date_de_naissance` date NOT NULL,
   `mot_de_passe` mediumtext COLLATE utf8_bin NOT NULL,
-  `message` mediumtext COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `salt` varbinary(255) NOT NULL,
+  `iv` varbinary(255) NOT NULL,
+  `message` mediumtext COLLATE utf8_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `client`
+-- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot_de_passe`, `message`) VALUES
-(39, 'vide', 'Balthazar', 'Picsou', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', 'vide'),
-(38, 'vide', 'Ferry', 'Julien', 'julien.ferry@isep.fr', '1999-02-15', 'Salut', 'vide');
+INSERT INTO `client` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot_de_passe`, `salt`, `iv`, `message`) VALUES
+(39, 'vide', 'Balthazar', 'Picsou', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', '', '', 'vide'),
+(38, 'vide', 'Ferry', 'Julien', 'julien.ferry@isep.fr', '1999-02-15', 'Salut', '', '', 'vide'),
+(47, 'vide', 'Clavijo', 'Matthis', 'matthis.clavijo@gmail.com', '2020-04-15', 'jt3BY5YM1KKWjwYY2gfGGw==', 0x325f2bfd0a6ad2ad91349e8be0cf497f, 0xa1599ad129b1309aa8dc988bca5e4a5c, 'vide');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `faq`
+-- Table structure for table `faq`
 --
 
-DROP TABLE IF EXISTS `faq`;
-CREATE TABLE IF NOT EXISTS `faq` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `faq` (
+  `ID` int(11) NOT NULL,
   `Question` text COLLATE utf8_bin NOT NULL,
-  `Réponse` text COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `Réponse` text COLLATE utf8_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `faq`
+-- Dumping data for table `faq`
 --
 
 INSERT INTO `faq` (`ID`, `Question`, `Réponse`) VALUES
@@ -122,60 +118,146 @@ INSERT INTO `faq` (`ID`, `Question`, `Réponse`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message`
+-- Table structure for table `message`
 --
 
-DROP TABLE IF EXISTS `message`;
-CREATE TABLE IF NOT EXISTS `message` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `message` (
+  `ID` int(11) NOT NULL,
   `Date` date NOT NULL,
-  `Heure` timestamp NOT NULL,
+  `Heure` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `Expéditeur` varchar(255) COLLATE utf8_bin NOT NULL,
   `Destinataire` varchar(255) COLLATE utf8_bin NOT NULL,
   `Objet` text COLLATE utf8_bin NOT NULL,
-  `Contenu` mediumtext COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`ID`)
+  `Contenu` mediumtext COLLATE utf8_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `resultat`
+-- Table structure for table `resultat`
 --
 
-DROP TABLE IF EXISTS `resultat`;
-CREATE TABLE IF NOT EXISTS `resultat` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `resultat` (
+  `ID` int(11) NOT NULL,
   `Id client` int(11) NOT NULL,
   `Date` date NOT NULL,
-  `heure` timestamp NOT NULL,
+  `heure` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `nom` varchar(255) COLLATE utf8_bin NOT NULL,
   `Capteurs` char(255) COLLATE utf8_bin NOT NULL,
-  `résultat` int(11) NOT NULL,
-  PRIMARY KEY (`ID`)
+  `résultat` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `test`
+-- Table structure for table `test`
 --
 
-DROP TABLE IF EXISTS `test`;
-CREATE TABLE IF NOT EXISTS `test` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `test` (
+  `id` int(11) NOT NULL,
   `Nom` varchar(256) COLLATE utf8_bin NOT NULL,
-  `id capteurs` char(255) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `id capteurs` char(255) COLLATE utf8_bin NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `test`
+-- Dumping data for table `test`
 --
 
 INSERT INTO `test` (`id`, `Nom`, `id capteurs`) VALUES
 (5, 'Test n°2', '1,2,3'),
 (4, 'Test n°1', '3');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `administrateur`
+--
+ALTER TABLE `administrateur`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `capteur`
+--
+ALTER TABLE `capteur`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `resultat`
+--
+ALTER TABLE `resultat`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `test`
+--
+ALTER TABLE `test`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `administrateur`
+--
+ALTER TABLE `administrateur`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `capteur`
+--
+ALTER TABLE `capteur`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `resultat`
+--
+ALTER TABLE `resultat`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `test`
+--
+ALTER TABLE `test`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

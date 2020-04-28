@@ -13,7 +13,7 @@ function dbConnect()
     }
 }
 
-function InsertUser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance)
+function InsertUser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance, $salt, $iv)
 {
 
     $photo='vide';
@@ -21,13 +21,15 @@ function InsertUser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance)
     $ID=NULL;
     $db = dbConnect();
 
-    $req = $db->prepare("INSERT INTO `client` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot_de_passe`, `message`) VALUES (:ID, :photo, :nom, :prenom, :email, :date_de_naissance, :mot_de_passe, :message);");
+    $req = $db->prepare("INSERT INTO `client` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot_de_passe`, `salt`, `iv`, `message`) VALUES (:ID, :photo, :nom, :prenom, :email, :date_de_naissance, :mot_de_passe, :salt, :iv, :message);");
     $req->execute(array('nom'=>$nom,
                        'prenom'=>$prenom,
                         'email'=>$email,
                         'date_de_naissance'=>$date_de_naissance,
                         'mot_de_passe'=>$mot_de_passe,
-                         'photo'=>$photo,
+                        'salt'=>$salt,
+                        'iv'=>$iv,
+                        'photo'=>$photo,
                         'message'=>$message,
                         'ID'=>$ID));
 
@@ -35,6 +37,10 @@ function InsertUser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance)
 }
 function testconnexion($email,$password){
     $db=dbConnect();
+    $reqEncrypt=$db->prepare("SELECT `salt`, `iv` FROM `client`  WHERE `Adresse mail`= ?");
+    $reqEncrypt->execute(array($email));
+    list($salt, $iv)=$reqEncrypt->fetch();
+    $password = encryptionPasswordCheck($password, $salt, $iv);
     $req=$db->prepare("SELECT * FROM `client`  WHERE `Adresse mail`= ? AND `mot_de_passe` = ?");
     $req->execute(array($email,$password));
     $existence=$req->rowCount();
