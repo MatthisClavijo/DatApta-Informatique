@@ -32,9 +32,9 @@
             <?php if(!isset($_SESSION['isConnected']) || !$_SESSION['isConnected']) { ?>
                 <a href="inscription" class="registration">Sign up</a>
                 <a class="login" onclick="openForm()">Sign in</a>
-            <?php } else  ?>
+            <?php } else { ?>
                 <a href="accueil.php" onclick="unsetSession()" class="logout">Log out</a>
-
+<?php  }?>
         </div>
     </nav>
 
