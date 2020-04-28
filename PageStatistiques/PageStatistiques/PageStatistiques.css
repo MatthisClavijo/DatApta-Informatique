@@ -1,0 +1,55 @@
+body {
+    font-family: Trebuchet MS, Arial, serif;
+    font-size: 1em;
+    color: black;
+    margin-top: 135px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background: url("background.jpg") fixed no-repeat top left;
+}
+
+#lateralDiv {
+    background-color: rgba(240, 240, 240, 0.70);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 260px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+#userInfos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+#userInfos img {
+    width: 104px;
+    height: 104px;
+    border-radius: 87px;
+}
+
+#startTest {
+    display: flex;
+    justify-content: center;
+}
+
+#startTest a {
+    background-color: #3C3E40;
+    color: white;
+    border-radius: 13px;
+    padding: 5px 8px;
+}
+
+#mainContent {
+    background-color: rgba(240, 240, 240, 0.70);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 1165px;
+    margin: auto;
+}
