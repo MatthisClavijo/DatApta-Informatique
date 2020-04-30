@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 28, 2020 at 04:08 PM
+-- Generation Time: Apr 30, 2020 at 12:44 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -34,19 +34,18 @@ CREATE TABLE `administrateur` (
   `prénom` varchar(255) COLLATE utf8_bin NOT NULL,
   `Adresse mail` mediumtext COLLATE utf8_bin NOT NULL,
   `date_de_naissance` date NOT NULL,
-  `mot de passe` mediumtext COLLATE utf8_bin NOT NULL,
-  `salt` mediumtext COLLATE utf8_bin NOT NULL,
-  `iv` mediumtext COLLATE utf8_bin NOT NULL,
-  `Messages` mediumtext COLLATE utf8_bin NOT NULL
+  `mot_de_passe` mediumtext COLLATE utf8_bin NOT NULL,
+  `salt` varbinary(255) NOT NULL,
+  `iv` varbinary(255) NOT NULL,
+  `message` mediumtext COLLATE utf8_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `administrateur`
 --
 
-INSERT INTO `administrateur` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot de passe`, `salt`, `iv`, `Messages`) VALUES
-(1, '', 'Ferry', 'Julien', 'julienferry@orange.fr', '1999-02-15', 'admin#1', '', '', ''),
-(6, 'vide', 'Balthazar', 'Picsou', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', '', '', 'vide');
+INSERT INTO `administrateur` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot_de_passe`, `salt`, `iv`, `message`) VALUES
+(7, 'vide', 'Clavijo', 'Matthis', 'matthis.clavijo@gmail.com', '1999-06-17', '0+PUewVLOsW19BSxweMVcA==', 0xe94b306ac4eeca24307501d6f6946835, 0x531b4997f3c12c553ad8134fbcf9b8fc, 'vide');
 
 -- --------------------------------------------------------
 
@@ -92,9 +91,7 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot_de_passe`, `salt`, `iv`, `message`) VALUES
-(39, 'vide', 'Balthazar', 'Picsou', 'mcDuck@gmail.com', '1952-12-21', 'jaimelargent', '', '', 'vide'),
-(38, 'vide', 'Ferry', 'Julien', 'julien.ferry@isep.fr', '1999-02-15', 'Salut', '', '', 'vide'),
-(47, 'vide', 'Clavijo', 'Matthis', 'matthis.clavijo@gmail.com', '2020-04-15', 'jt3BY5YM1KKWjwYY2gfGGw==', 0x325f2bfd0a6ad2ad91349e8be0cf497f, 0xa1599ad129b1309aa8dc988bca5e4a5c, 'vide');
+(50, 'vide', 'Clavijo', 'Matthis', 'matthis.clavijo@gmail.com', '1999-06-17', '0+PUewVLOsW19BSxweMVcA==', 0xe94b306ac4eeca24307501d6f6946835, 0x531b4997f3c12c553ad8134fbcf9b8fc, 'vide');
 
 -- --------------------------------------------------------
 
@@ -221,7 +218,7 @@ ALTER TABLE `test`
 -- AUTO_INCREMENT for table `administrateur`
 --
 ALTER TABLE `administrateur`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `capteur`
@@ -233,7 +230,7 @@ ALTER TABLE `capteur`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `faq`

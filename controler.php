@@ -52,8 +52,10 @@ function modifuser(){
             $email = htmlspecialchars($_POST["email"]);
             $prenom = htmlspecialchars($_POST["prénom"]);
             $mdp = htmlspecialchars($_POST["password"]);
+            list($mdp, $salt, $iv) = encryptionPassword($_POST["password"]);
+            $mdp = htmlspecialchars($mdp);
             $date = htmlspecialchars($_POST["date"]);
-            modificationuser($nom,$prenom,$mdp,$email,$date);
+            modificationuser($nom,$prenom,$mdp, $salt, $iv, $email,$date);
             $_SESSION['nom']=$nom;
             $_SESSION['prénom']=$prenom;
             $_SESSION['mot_de_passe']=$mdp;
@@ -61,6 +63,26 @@ function modifuser(){
             $_SESSION['date_de_naissance']=$date;
             viewProfil();
         }
+
+
+}
+function modifadmin(){
+    if ($_POST["nom"] && $_POST["email"] && $_POST["prénom"] && $_POST["password"] && $_POST["date"]) {
+        $nom = htmlspecialchars($_POST["nom"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $prenom = htmlspecialchars($_POST["prénom"]);
+        $mdp = htmlspecialchars($_POST["password"]);
+        list($mdp, $salt, $iv) = encryptionPassword($_POST["password"]);
+        $mdp = htmlspecialchars($mdp);
+        $date = htmlspecialchars($_POST["date"]);
+        modificationadmin($nom,$prenom,$mdp, $salt, $iv, $email,$date);
+        $_SESSION['nom']=$nom;
+        $_SESSION['prénom']=$prenom;
+        $_SESSION['mot_de_passe']=$mdp;
+        $_SESSION['Adresse mail']=$email;
+        $_SESSION['date_de_naissance']=$date;
+        viewProfil();
+    }
 
 
 }

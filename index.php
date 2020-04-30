@@ -29,6 +29,7 @@ if (isset($_GET["action"])) {
             }
             else{
                 viewAccueil();
+                $_SESSION['isConnected'] = false;
             }
             break;
         case "connexion" :
@@ -47,8 +48,13 @@ if (isset($_GET["action"])) {
 
             }
             break;
-        case "modif_user" :
-            modifuser();
+        case "modif_profil" :
+            if($_SESSION['type']=="client"){
+                modifuser();
+            }
+            else if($_SESSION['type']=="admin"){
+                modifadmin();
+            }
             break;
         case "delete_user":
             deleteuser($action[1]);

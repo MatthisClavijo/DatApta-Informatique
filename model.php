@@ -37,10 +37,18 @@ function InsertUser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance, $sal
 }
 function testconnexion($email,$password){
     $db=dbConnect();
-    $reqEncrypt=$db->prepare("SELECT `salt`, `iv` FROM `client`  WHERE `Adresse mail`= ?");
-    $reqEncrypt->execute(array($email));
-    list($salt, $iv)=$reqEncrypt->fetch();
-    $password = encryptionPasswordCheck($password, $salt, $iv);
+    
+    $reqClientEmailCheck=$db->prepare("SELECT * FROM `client`  WHERE `Adresse mail`= ?");
+    $reqClientEmailCheck->execute(array($email));
+    $clientEmailExist=$reqClientEmailCheck->rowCount();
+
+    if($clientEmailExist==1){
+        $reqEncrypt=$db->prepare("SELECT `salt`, `iv` FROM `client`  WHERE `Adresse mail`= ?");
+        $reqEncrypt->execute(array($email));
+        list($salt, $iv)=$reqEncrypt->fetch();
+        $password = encryptionPasswordCheck($password, $salt, $iv);
+    }
+    
     $req=$db->prepare("SELECT * FROM `client`  WHERE `Adresse mail`= ? AND `mot_de_passe` = ?");
     $req->execute(array($email,$password));
     $existence=$req->rowCount();
@@ -56,7 +64,22 @@ function testconnexion($email,$password){
        viewAccueilConnexion();
     }
     if ($existence!=1){
-        $reqAdmin=$db->prepare("SELECT * FROM `administrateur` WHERE `Adresse mail`= ? AND `mot de passe` = ?");
+
+        $reqAdminEmailCheck=$db->prepare("SELECT * FROM `administrateur`  WHERE `Adresse mail`= ?");
+        $reqAdminEmailCheck->execute(array($email));
+        $adminEmailExist=$reqAdminEmailCheck->rowCount();
+
+        if($adminEmailExist==1){
+            $reqEncrypt=$db->prepare("SELECT `salt`, `iv` FROM `administrateur`  WHERE `Adresse mail`= ?");
+            $reqEncrypt->execute(array($email));
+            list($salt, $iv)=$reqEncrypt->fetch();
+            $password = encryptionPasswordCheck($password, $salt, $iv);
+        }
+        else{
+            echo "Il y a eu une erreur dans la connexion. Veuillez réessayer.";
+        }
+
+        $reqAdmin=$db->prepare("SELECT * FROM `administrateur` WHERE `Adresse mail`= ? AND `mot_de_passe` = ?");
         $reqAdmin->execute(array($email,$password));
         $existence2=$reqAdmin->rowCount();
         if($existence2==1){
@@ -77,11 +100,19 @@ function testconnexion($email,$password){
 
     }
 }
-function modificationuser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance){
+function modificationuser($nom, $prenom, $mot_de_passe, $salt, $iv, $email, $date_de_naissance){
     $ID=$_SESSION['ID'];
     $db=dbConnect();
-    $req=$db->prepare("UPDATE `client` SET `nom` = :nom, `prénom` = :prenom, `Adresse mail` = :email, `date_de_naissance` = :date_de_naissance, `mot_de_passe` = :mot_de_passe WHERE `client`.`ID` = :ID ");
-    $req->execute(array('nom'=> $nom, 'prenom'=> $prenom, 'email'=>$email, 'mot_de_passe'=> $mot_de_passe, 'ID'=> $ID,'date_de_naissance'=>$date_de_naissance));
+    $req=$db->prepare("UPDATE `client` SET `nom` = :nom, `prénom` = :prenom, `Adresse mail` = :email, `date_de_naissance` = :date_de_naissance, `mot_de_passe` = :mot_de_passe, `salt` = :salt, `iv` = :iv WHERE `client`.`ID` = :ID ");
+    $req->execute(array('nom'=> $nom, 'prenom'=> $prenom, 'email'=>$email, 'mot_de_passe'=> $mot_de_passe, 'salt'=> $salt, 'iv'=> $iv, 'ID'=> $ID,'date_de_naissance'=>$date_de_naissance));
+    $req->closeCursor();
+
+}
+function modificationadmin($nom, $prenom, $mot_de_passe, $salt, $iv, $email, $date_de_naissance){
+    $ID=$_SESSION['ID'];
+    $db=dbConnect();
+    $req=$db->prepare("UPDATE `administrateur` SET `nom` = :nom, `prénom` = :prenom, `Adresse mail` = :email, `date_de_naissance` = :date_de_naissance, `mot_de_passe` = :mot_de_passe, `salt` = :salt, `iv` = :iv WHERE `administrateur`.`ID` = :ID ");
+    $req->execute(array('nom'=> $nom, 'prenom'=> $prenom, 'email'=>$email, 'mot_de_passe'=> $mot_de_passe, 'salt'=> $salt, 'iv'=> $iv, 'ID'=> $ID,'date_de_naissance'=>$date_de_naissance));
     $req->closeCursor();
 
 }
@@ -95,6 +126,12 @@ function selectuser(){
 function deleteuser($ID){
     $db=dbConnect();
     $req=$db->prepare("DELETE FROM `client` WHERE (`ID`=:ID)");
+    $req->execute(array('ID'=>$ID));
+
+}
+function deleteadmin($ID){
+    $db=dbConnect();
+    $req=$db->prepare("DELETE FROM `administrateur` WHERE (`ID`=:ID)");
     $req->execute(array('ID'=>$ID));
 
 }
@@ -153,12 +190,14 @@ function up_user($ID){
     $email=$data[0][4];
     $date_de_naissance=$data[0][5];
     $mdp=$data[0][6];
+    $salt=$data[0][7];
+    $iv=$data[0][8];
     $req->closeCursor();
     $id=NULL;
     $photo='vide';
     $message='vide';
-    $req2=$db->prepare("INSERT INTO `administrateur` VALUES (:ID,:photo,:nom,:prenom,:email,:date_de_naissance,:mdp,:message)");
-    $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prénom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'message'=>$message));
+    $req2=$db->prepare("INSERT INTO `administrateur` VALUES (:ID,:photo,:nom,:prenom,:email,:date_de_naissance,:mdp,:salt,:iv,:message)");
+    $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prénom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'salt'=>$salt,'iv'=>$iv,'message'=>$message));
     $req2->closeCursor();
     deleteuser($ID);
 }
@@ -173,14 +212,16 @@ function down_user($ID){
     $email=$data[0][4];
     $date_de_naissance=$data[0][5];
     $mdp=$data[0][6];
+    $salt=$data[0][7];
+    $iv=$data[0][8];
     $req->closeCursor();
     $id=NULL;
     $photo='vide';
     $message='vide';
-    $req2=$db->prepare("INSERT INTO `client` VALUES (:ID,:photo,:nom,:prenom,:email,:date_de_naissance,:mdp,:message)");
-    $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prénom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'message'=>$message));
+    $req2=$db->prepare("INSERT INTO `client` VALUES (:ID,:photo,:nom,:prenom,:email,:date_de_naissance,:mdp,:salt,:iv,:message)");
+    $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prénom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'salt'=>$salt,'iv'=>$iv,'message'=>$message));
     $req2->closeCursor();
-    deleteuser($ID);
+    deleteadmin($ID);
 
 }
 function selectFAQ(){
