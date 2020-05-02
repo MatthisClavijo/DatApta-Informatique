@@ -39,9 +39,9 @@ if (isset($_GET["action"])) {
             deconnexion();
             break;
         case "profil" :
-                if ($_SESSION['isConnected']) {
-                    viewProfil();
-                }
+            if ($_SESSION['isConnected']) {
+                viewProfil();
+            }
             else{
                 echo "Il faut vous connecter pour voir votre profil";
                 viewAccueil();
@@ -124,13 +124,15 @@ if (isset($_GET["action"])) {
             header('Location: http://localhost/datapta-informatique/gestion_faq' ,true);
             exit;
             break;
-
-
-        }
+        case "statistiques" :
+            viewStatistique();
+        case "cgu" :
+            viewCGU();
     }
+}
 
 
-    else {
+else {
     $_SESSION['isConnected']=false;
     viewAccueil();
 }

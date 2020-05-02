@@ -34,3 +34,9 @@ function viewFAQ(){
 function viewgestionfaq(){
     require "GestionFoireAuxQuestions/GestionFAQ.php";
 }
+function viewStatistique(){
+    require "PageStatistiques/PageStatistiques.php";
+}
+function viewCGU(){
+    require "ConditionsDUtilisation/CGU.php";
+}
