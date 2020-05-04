@@ -17,6 +17,7 @@
                 <div class="dropdown-content">
                     <a href="foire">FAQ</a>
                     <a href="#">Classement</a>
+                    <a href="recherche">Recherche Utilisateur</a>
                 </div>
             </li>
             <li><a href="profil">Mon profil</a></li>
