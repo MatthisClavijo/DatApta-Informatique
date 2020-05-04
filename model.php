@@ -23,21 +23,20 @@ function InsertUser($nom, $prenom, $mot_de_passe,$email,$date_de_naissance, $sal
 
     $req = $db->prepare("INSERT INTO `client` (`ID`, `photo`, `nom`, `prénom`, `Adresse mail`, `date_de_naissance`, `mot_de_passe`, `salt`, `iv`, `message`) VALUES (:ID, :photo, :nom, :prenom, :email, :date_de_naissance, :mot_de_passe, :salt, :iv, :message);");
     $req->execute(array('nom'=>$nom,
-                       'prenom'=>$prenom,
-                        'email'=>$email,
-                        'date_de_naissance'=>$date_de_naissance,
-                        'mot_de_passe'=>$mot_de_passe,
-                        'salt'=>$salt,
-                        'iv'=>$iv,
-                        'photo'=>$photo,
-                        'message'=>$message,
-                        'ID'=>$ID));
+        'prenom'=>$prenom,
+        'email'=>$email,
+        'date_de_naissance'=>$date_de_naissance,
+        'mot_de_passe'=>$mot_de_passe,
+        'salt'=>$salt,
+        'iv'=>$iv,
+        'photo'=>$photo,
+        'message'=>$message,
+        'ID'=>$ID));
 
     $req->closeCursor();
 }
 function testconnexion($email,$password){
     $db=dbConnect();
-    
     $reqClientEmailCheck=$db->prepare("SELECT * FROM `client`  WHERE `Adresse mail`= ?");
     $reqClientEmailCheck->execute(array($email));
     $clientEmailExist=$reqClientEmailCheck->rowCount();
@@ -48,7 +47,7 @@ function testconnexion($email,$password){
         list($salt, $iv)=$reqEncrypt->fetch();
         $password = encryptionPasswordCheck($password, $salt, $iv);
     }
-    
+
     $req=$db->prepare("SELECT * FROM `client`  WHERE `Adresse mail`= ? AND `mot_de_passe` = ?");
     $req->execute(array($email,$password));
     $existence=$req->rowCount();
@@ -61,7 +60,7 @@ function testconnexion($email,$password){
         $_SESSION['date_de_naissance']=$data['date_de_naissance'];
         $_SESSION['type']="client";
         $_SESSION['isConnected']=true;
-       viewAccueilConnexion();
+        viewAccueilConnexion();
     }
     if ($existence!=1){
 
@@ -75,9 +74,7 @@ function testconnexion($email,$password){
             list($salt, $iv)=$reqEncrypt->fetch();
             $password = encryptionPasswordCheck($password, $salt, $iv);
         }
-        else{
-            echo "Il y a eu une erreur dans la connexion. Veuillez réessayer.";
-        }
+        
 
         $reqAdmin=$db->prepare("SELECT * FROM `administrateur` WHERE `Adresse mail`= ? AND `mot_de_passe` = ?");
         $reqAdmin->execute(array($email,$password));
@@ -94,7 +91,7 @@ function testconnexion($email,$password){
             viewAccueilAdmin();
         }
         if($existence2!=1){
-            echo "Il y a eu une erreur dans la connexion. Veuillez réessayer.";
+            echo ("<script>alert(\"Il y a eu une erreur dans la connexion. Veuillez réessayer.\")</script>");
             viewAccueil();
         }
 
