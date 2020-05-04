@@ -14,6 +14,7 @@
                 <div class="dropdown-content">
                     <a href="foire">FAQ</a>
                     <a href="#">Classement</a>
+                    <a href="recherche">Recherche Utilisateur</a>
                 </div>
             </li>
             <li><a href="profil">Mon profil</a></li>
@@ -29,7 +30,7 @@
             width = 100%
             height = "588">
     </p>
-    <form id="boxmodification" method="post" action="modif_profil">
+    <form id="boxmodification" method="post" action="modif_user">
         <h3 id="title">Modification du profil</h3>
         <div id="ligne"></div>
         <p>
