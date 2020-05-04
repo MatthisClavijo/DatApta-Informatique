@@ -26,6 +26,9 @@ if (isset($_GET["action"])) {
                         viewAccueilAdmin();
                     }
                 }
+                if ($_SESSION['isConnected']==false){
+                    viewAccueil();
+                }
             }
             else{
                 viewAccueil();
@@ -134,5 +137,6 @@ if (isset($_GET["action"])) {
 
 else {
     $_SESSION['isConnected']=false;
+    $_SESSION['type']="vide";
     viewAccueil();
 }
