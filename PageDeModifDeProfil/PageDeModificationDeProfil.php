@@ -30,7 +30,7 @@
             width = 100%
             height = "588">
     </p>
-    <form id="boxmodification" method="post" action="modif_user">
+    <form id="boxmodification" method="post" action="modif_profil">
         <h3 id="title">Modification du profil</h3>
         <div id="ligne"></div>
         <p>
