@@ -131,6 +131,14 @@ if (isset($_GET["action"])) {
             viewStatistique();
         case "cgu" :
             viewCGU();
+            break;
+        case "recherche" :
+            viewRecherche();
+            break;
+        case "recherche_users":
+           $_SESSION['search']=recherche_users();
+           viewRecherche();
+            break;
     }
 }
 
@@ -138,5 +146,6 @@ if (isset($_GET["action"])) {
 else {
     $_SESSION['isConnected']=false;
     $_SESSION['type']="vide";
+    $_SESSION['search']="vide";
     viewAccueil();
 }
