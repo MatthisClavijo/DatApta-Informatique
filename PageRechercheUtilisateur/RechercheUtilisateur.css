@@ -104,3 +104,12 @@ img {
 #recherche{
     border-radius: 5px;
 }
+.message{
+    text-decoration:none;
+    color: darkblue;
+}
+#bouton{
+    border-radius: 5px;
+    background-color: #D4AE4C;
+
+}

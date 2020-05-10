@@ -41,33 +41,58 @@
         height = "588">
 </p>
 <div id="BoxUtilisateur">
-    Recherche : <input type="text" placeholder="Recherche" id="recherche">
+    <form method="post" action="recherche_users">
+    <input type="text" placeholder="Entrez un nom" id="recherche" name="recherche">
+        <input type="radio" name="type" value="client">Client
+        <input type="radio" name="type" value="admin">Administrateur
+        <input type="submit" value="Recherche" name="submit" id="bouton">
+    </form>
 </br>
+
     <?php
-    echo "<div id='titre1'>Client :</div> ";
-    echo "</br>";
-    $utilisateur=selectuser();
-    $nombre=count($utilisateur);
-    for ($i=0;$i <$nombre;$i++){
-        $ID=$utilisateur[$i]['ID'];
-        echo ($utilisateur[$i]['nom']);
-        echo "  ";
-        echo ($utilisateur[$i]['prénom']);
-        echo("</br>");
-        echo("</br>");
+    if ($_SESSION['search']=="vide") {
+        echo "<div id='titre1'>Client :</div> ";
+        echo "</br>";
+        $utilisateur = selectuser();
+        $nombre = count($utilisateur);
+        for ($i = 0; $i < $nombre; $i++) {
+            $ID = $utilisateur[$i]['ID'];
+            echo($utilisateur[$i]['nom']);
+            echo "  ";
+            echo($utilisateur[$i]['prénom']);
+            echo "  ";
+            echo("<a href='#' class='message'>Envoyer un message</a>");
+            echo("</br>");
+            echo("</br>");
+        }
+        echo "<div id='titre1'>Administrateurs :</div> ";
+        echo "</br>";
+        $administrateur = selectadmin();
+        $nombre2 = count($administrateur);
+        for ($i = 0; $i < $nombre2; $i++) {
+            $ID = $administrateur[$i]['ID'];
+            echo($administrateur[$i]['nom']);
+            echo "  ";
+            echo($administrateur[$i]['prénom']);
+            echo "  ";
+            echo("<a href='#' class='message'>Envoyer un message</a>");
+            echo("</br>");
+            echo("</br>");
+
+        }
+
     }
-    echo "<div id='titre1'>Administrateurs :</div> ";
-    echo "</br>";
-    $administrateur=selectadmin();
-    $nombre2=count($administrateur);
-    for ($i=0;$i <$nombre2;$i++){
-        $ID=$administrateur[$i]['ID'];
-        echo ($administrateur[$i]['nom']);
+    if($_SESSION['search'] !="vide"){
+        echo ($_SESSION['search'][0]);
+        echo ("  ");
+        echo ($_SESSION['search'][1]);
         echo "  ";
-        echo ($administrateur[$i]['prénom']);
+        echo("<a href='#' class='message'>Envoyer un message</a>");
         echo("</br>");
         echo("</br>");
+        $_SESSION['search']="vide";
     }
+
     ?>
 
 </div>
