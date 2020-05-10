@@ -95,7 +95,15 @@ function connexion(){
     }
 }
 function deconnexion(){
-    session_destroy();
+    $_SESSION['ID']="";
+    $_SESSION['nom']="";
+    $_SESSION['prénom']="";
+    $_SESSION['Adresse mail']="";
+    $_SESSION['date_de_naissance']="";
+    $_SESSION['type']="";
+    $_SESSION['isConnected']=false;
+    $_SESSION['type']="vide";
+    $_SESSION['search']="vide";
     viewAccueil();
 
 }
@@ -118,4 +126,12 @@ function modif_R($ID){
         $reponse=htmlspecialchars($_POST["Edit_R"]);
         EditR($reponse,$ID);
     }
+}
+function recherche_users(){
+        if($_POST["recherche"] && $_POST["type"]){
+            $recherche=htmlspecialchars($_POST["recherche"]);
+            $type=htmlspecialchars($_POST["type"]);
+            $result=search($recherche,$type);
+            return($result);
+        }
 }
