@@ -40,3 +40,6 @@ function viewStatistique(){
 function viewCGU(){
     require "ConditionsDUtilisation/CGU.php";
 }
+function viewRecherche(){
+     require "PageRechercheUtilisateur/RechercheUtilisateur.php";
+}
