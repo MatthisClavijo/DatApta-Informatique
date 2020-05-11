@@ -129,6 +129,7 @@ if (isset($_GET["action"])) {
             break;
         case "statistiques" :
             viewStatistique();
+            break;
         case "cgu" :
             viewCGU();
             break;
