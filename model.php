@@ -74,7 +74,7 @@ function testconnexion($email,$password){
             list($salt, $iv)=$reqEncrypt->fetch();
             $password = encryptionPasswordCheck($password, $salt, $iv);
         }
-        
+
 
         $reqAdmin=$db->prepare("SELECT * FROM `administrateur` WHERE `Adresse mail`= ? AND `mot_de_passe` = ?");
         $reqAdmin->execute(array($email,$password));
@@ -252,3 +252,38 @@ function EditR($reponse,$ID){
     $req->execute(array('reponse'=>$reponse,'ID'=>$ID));
     $req->closeCursor();
 }
+function search($user,$type){
+    $db=dbConnect();
+    if($type=='client'){
+        $reqclient=$db->prepare("SELECT `nom`,`prénom`,`ID` FROM `client` WHERE `nom`=:nom");
+        $reqclient->execute(array('nom'=>$user));
+        $data1=$reqclient->fetchAll();
+        if(sizeof($data1)==0){
+            echo ("<script>alert(\"Ce client n'existe pas ! \")</script>");
+            return("vide");
+        }
+        else{
+
+            $result1=array($data1[0][0],$data1[0][1],$data1[0][2]);
+            return($result1);
+        }
+
+    }
+    if ($type=='admin'){
+        $reqadmin=$db->prepare("SELECT `nom`,`prénom`,`ID` FROM `administrateur` WHERE `nom`=:nom");
+        $reqadmin->execute(array('nom'=>$user));
+        $data2=$reqadmin->fetchAll();
+        if(sizeof($data2)==0){
+            echo ("<script>alert(\"Cet administrateur n'existe pas ! \")</script>");
+            return ("vide");
+        }
+        else{
+            $result2=array($data2[0][0],$data2[0][1],$data2[0][2]);
+            return($result2);
+        }
+
+
+    }
+
+}
+
