@@ -203,7 +203,6 @@ function down_user($ID){
     $req=$db->prepare("SELECT * FROM `administrateur` WHERE (`ID`=:ID)");
     $req->execute(array('ID'=>$ID));
     $data=$req->fetchAll();
-    var_dump($data);
     $nom=$data[0][2];
     $prénom=$data[0][3];
     $email=$data[0][4];
@@ -286,4 +285,36 @@ function search($user,$type){
     }
 
 }
+function visumessage($destinataire,$expéditeur)
+{
+    $db = dbConnect();
+    $req = $db->prepare("SELECT * FROM `message` WHERE `Destinataire`=:destinataire AND `Expéditeur`=:expediteur ORDER BY `Date_et_heure`");
+    $req->execute(array("destinataire" => $destinataire, "expéditeur" => $expéditeur));
+    $data = $req->fetchAll();
+    return (array($data[0][0], $data[0][1], $data[0][2], $data[0][3], $data[0][4]));
+}
+function InsertMessage($date_et_heure,$expediteur,$destinataire,$contenu)
+{
+    $db = dbConnect();
+    $req = $db->prepare("INSERT INTO `message` (`Date_et_heure`,`Expéditeur`,`Destinataire`,`Contenu`) VALUES (:date_et_heure,:expediteur,:destinataire,:contenu)");
+    $req->execute(array('date_et_heure' => $date_et_heure, 'expediteur' => $expediteur, 'destinataire' => $destinataire, 'contenu' => $contenu));
+    $req->closeCursor();
 
+}
+function modifmessage($contenu,$Id){
+    $db=dbConnect();
+    $req=$db->prepare("UPDATE `message` SET `Contenu`=:contenu WHERE `ID`=:ID");
+    $req->execute(array('contenu'=>$contenu,'ID'=>$Id));
+    $req->closeCursor();
+
+}
+function getallconv($nom){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT `Destinataire` FROM `message` WHERE `Expéditeur`=:nom");
+    $req->execute(array('nom'=>$nom));
+    $data=$req->fetchAll();
+    $req2=$db->prepare("SELECT `Expéditeur` FROM `message` WHERE `Destinatair`=:nom ");
+    $req2->execute(array('nom'=>$nom));
+    $data2=$req2->fetchAll();
+    return(array($data[0],$data2[0]));
+}
