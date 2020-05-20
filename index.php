@@ -140,6 +140,11 @@ if (isset($_GET["action"])) {
            $_SESSION['search']=recherche_users();
            viewRecherche();
             break;
+        case "mess" :
+            viewMessage();
+            break;
+        case "conv" :
+            break;
     }
 }
 

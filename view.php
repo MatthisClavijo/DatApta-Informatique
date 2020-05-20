@@ -43,3 +43,6 @@ function viewCGU(){
 function viewRecherche(){
      require "PageRechercheUtilisateur/RechercheUtilisateur.php";
 }
+function viewMessage(){
+    require "Messagerie/Messagerie.php";
+}

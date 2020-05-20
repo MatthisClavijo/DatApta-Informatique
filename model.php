@@ -288,10 +288,10 @@ function search($user,$type){
 function visumessage($destinataire,$expéditeur)
 {
     $db = dbConnect();
-    $req = $db->prepare("SELECT * FROM `message` WHERE `Destinataire`=:destinataire AND `Expéditeur`=:expediteur ORDER BY `Date_et_heure`");
+    $req = $db->prepare("SELECT `Contenu` FROM `message` WHERE `Destinataire`=:destinataire AND `Expéditeur`=:expediteur ORDER BY `Date_et_heure`");
     $req->execute(array("destinataire" => $destinataire, "expéditeur" => $expéditeur));
     $data = $req->fetchAll();
-    return (array($data[0][0], $data[0][1], $data[0][2], $data[0][3], $data[0][4]));
+    return ($data[0]);
 }
 function InsertMessage($date_et_heure,$expediteur,$destinataire,$contenu)
 {
@@ -310,11 +310,11 @@ function modifmessage($contenu,$Id){
 }
 function getallconv($nom){
     $db=dbConnect();
-    $req=$db->prepare("SELECT `Destinataire` FROM `message` WHERE `Expéditeur`=:nom");
+    $req=$db->prepare("SELECT DISTINCT `Destinataire` FROM `message` WHERE `Expéditeur`=:nom");
     $req->execute(array('nom'=>$nom));
     $data=$req->fetchAll();
-    $req2=$db->prepare("SELECT `Expéditeur` FROM `message` WHERE `Destinatair`=:nom ");
+    $req2=$db->prepare("SELECT DISTINCT `Expéditeur` FROM `message` WHERE `Destinataire`=:nom ");
     $req2->execute(array('nom'=>$nom));
     $data2=$req2->fetchAll();
-    return(array($data[0],$data2[0]));
+    return(array($data,$data2));
 }
