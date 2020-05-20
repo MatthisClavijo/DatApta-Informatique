@@ -15,6 +15,7 @@
                     <a href="foire">FAQ</a>
                     <a href="#">Classement</a>
                     <a href="recherche">Recherche Utilisateur</a>
+                    <a href="mess">Messagerie</a>
                 </div>
             </li>
             <li><a href="profil">Mon profil</a></li>
