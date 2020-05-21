@@ -3,16 +3,26 @@
 <title>Conversation</title>
 
 <head>
-    <link rel="stylesheet" href="Conversation/Conversation.css">
+    <link rel="stylesheet" href="Conversation.css">
 
 </head>
 <body>
 <?php
 $messages=visumessage($_SESSION["destinataire"],$_SESSION["expéditeur"]);
-for($i=0;$i<sizeof($messages);$i++){
-    echo ($messages[$i]["Contenu"]);
-    echo("</br>");
-    echo ("</br>");
+for($i=0;$i<sizeof($messages);$i++) {
+    if ($messages[$i][1] == $_SESSION["nom"]) {
+        $mess=$messages[$i]["Contenu"];
+        echo("<p class='gauche'>$mess</p>");
+        echo("</br>");
+        echo("</br>");
+
+    }
+    elseif($messages[$i][2] == $_SESSION["nom"]){
+        $mess=$messages[$i]["Contenu"];
+        echo("<p class='droite'>$mess</p>");
+        echo("</br>");
+        echo("</br>");
+    }
 }
 ?>
 
