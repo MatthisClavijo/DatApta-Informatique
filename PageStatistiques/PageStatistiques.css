@@ -7,15 +7,17 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    background: url("background.jpg") fixed no-repeat top left;
+    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
 }
 
+/* ------ Lateral div ------ */
 #lateralDiv {
     background-color: rgba(240, 240, 240, 0.70);
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     width: 260px;
+    min-width: 260px;
     padding: 20px;
     margin: 10px;
     border-radius: 20px;
@@ -23,15 +25,21 @@ body {
 
 #userInfos {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 #userInfos img {
-    width: 104px;
-    height: 104px;
+    width: 6vw;
+    height: 12vh;
     border-radius: 87px;
+}
+
+#lastData {
+    width: 240px;
+    max-height: 335px;
+    overflow: auto;
 }
 
 #startTest {
@@ -44,8 +52,10 @@ body {
     color: white;
     border-radius: 13px;
     padding: 5px 8px;
+    margin-top: 20px;
 }
 
+/* ------ Main content ------ */
 #mainContent {
     background-color: rgba(240, 240, 240, 0.70);
     padding: 20px;

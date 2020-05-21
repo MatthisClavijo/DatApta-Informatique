@@ -1,0 +1,84 @@
+footer {
+    background-color: #f0f0f0;
+    font-family: Trebuchet MS, Arial, serif;
+    font-size: 1em;
+    color: black;
+    display: block;
+    width: 100vw;
+    margin-bottom: -8px;
+}
+
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: stretch;
+    align-content: space-around;
+    width: 100vw;
+}
+
+#content div {
+    flex: 1;
+    min-width: 320px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h2 {
+    font-size: 1.6em;
+    font-weight: normal;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* ------ Contact ------ */
+.email, .telephone {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+.email img, .telephone img {
+    float: left;
+    width: 70px;
+}
+
+.email img {
+    height: 50px;
+}
+
+.telephone img {
+    height: 60px;
+}
+
+/* ------- Legal mentions ------ */
+.legal {
+    text-align: center;
+}
+
+/* ------ Social networks ------ */
+.socialNetworks {
+    text-align: center;
+}
+
+#facebook, #twitter, #instagram, #linkedin {
+    height: 80px;
+    width: 82px;
+    padding: 5px 18px;
+}
+
+/* ------ Copyright ------ */
+#copyright {
+    font-size: 0.7em;
+    text-align: right;
+    margin-right: 12px;
+}
+
+#copyright p {
+    padding: 0;
+}

@@ -14,8 +14,9 @@
         <div class="stats"><a href="statistiques" >Statistiques</a></div>
         <div class="commu"><a href="javascript:void(0)" class="dropbtn" >Communauté</a>
             <div class="sousMenuCommu">
-                <div><a href="">FAQ</a></div>
+                <div><a href="foire">FAQ</a></div>
                 <div><a href="">Classement</a></div>
+                <div><a href="recherche">Chercher utilisateur</a></div>
             </div>
         </div>
         <?php if(isset($_SESSION['type']) && $_SESSION['type'] == "admin") { ?>
@@ -33,8 +34,8 @@
                 <a href="inscription" class="registration">Sign up</a>
                 <a class="login" onclick="openForm()">Sign in</a>
             <?php } else { ?>
-                <a href="accueil.php" onclick="unsetSession()" class="logout">Log out</a>
-<?php  }?>
+                <a href="deconnexion" class="logout">Log out</a>
+            <?php } ?>
         </div>
     </nav>
 

@@ -1,153 +1,17 @@
-body{
-    font-family: Trebuchet MS;
-    font-size:20px;
-}
-ul {
-    list-style-type: none;
-    margin-top: 0;
-    padding: 0;
-    overflow: hidden;
-
-    top : 0;
-    background-color: white;
-}
-
-li {
-    float: left;
-    margin-top: 70px;
-    margin-left: 85px;
-}
-
-li a, .dropbtn {
-    display: inline-block;
+body {
+    font-family: Trebuchet MS, Arial, serif;
+    font-size: 1em;
     color: black;
-    text-align: center;
-    padding: 14px 30px;
-    text-decoration: none;
+    margin-top: 135px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
 }
 
-li a:hover{
-    border-bottom: 6px solid #D4AE4C;
-}
-
-li.dropdown {
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    z-index: 4;
-    margin-left: 20px;
-    margin-top: 0px;
-    border-radius: 5px;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    border-radius: 5px;
-}
-
-.dropdown-content a:hover {background-color: #D4AE4C;}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.active {
-    border-bottom:6px solid #D4AE4C;
-    color: black;
-}
-
-p{
-    text-align: center;
-    margin-bottom: 0;
-}
-
-img {
-    float : left;
-    margin-right: 50px;
-    margin-top: 0;
-}
-
-#inscription  {
-    display: inline-block;
-    color : black;
-    background-color: #D4AE4C;
-    padding: 7px;
-    margin-left: 45px;
-    text-decoration: none;
-    margin-top: 20px;
-    border-radius: 5px;
-}
-
-#connexion{
-    display: inline-block;
-    color : white;
-    text-decoration: none;
-    padding: 7px;
-    margin-left: 50px;
-    background-color: #3C3E40;
-    border-radius: 5px;
-}
-
-.open-button {
-    background-color: #555;
-    color: white;
-    padding: 7px;
-    border: none;
-}
-
-.form-popup {
-    display: none;
-    position: fixed;
-    left: 45%;
-    bottom: 30%;
-    border: 3px solid #f1f1f1;
-    font-family: Trebuchet MS;
-    border-radius: 5px;
-
-}
-
-.form-container {
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-}
-
-.form-container input[type=text], .form-container input[type=password] {
-    width: 90%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-}
-
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-.form-container .btn {
-    background-color: #D4AE4C;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
-}
-
-.form-container .cancel {
-    background-color: #555;
-}
-
-.form-container .btn:hover, .open-button:hover {
-    opacity: 1;
+p {
+    background-color: rgba(240, 240, 240, 0.6);
+    padding: 20px;
+    border-radius: 20px;
 }

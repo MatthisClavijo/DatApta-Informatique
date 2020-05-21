@@ -1,7 +1,7 @@
 header {
     font-family: Trebuchet MS, Arial, serif;
+    font-size: 1.3em;
     color: black;
-    font-size: 1em;
     position: fixed;
     left: 0;
     top: 0;
@@ -10,23 +10,22 @@ header {
 
 nav {
     background-color: #f0f0f0;
-    font-size: 1.8em;
+    font-size: 1.3em;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px 15px;
+    padding: 10px;
     width: 100%;
     height: 15%;
 }
 
 nav img {
-    padding: 0 10px;
     margin: 5px 0;
 }
 
 nav div {
-    padding: 0 10px;
+    padding: 0 15px;
     margin: 5px 0;
 }
 
@@ -59,13 +58,16 @@ a {
     background-color: #e6963a;
     border-radius: 0 0 10px 10px;
     padding: 8px 17px;
-    margin:3px 0 0 -10px;
+    margin:3px 0 0 -15px;
     z-index: 2;
+    max-width: 170px;
+    font-size: 0.85em;
 }
 
 .sousMenuCommu div, .sousMenuGestion div {
     padding: 5px 15px;
     border-radius: 10px;
+    max-width: 170px;
 }
 
 .commu:hover .sousMenuCommu, .gestion:hover .sousMenuGestion{
@@ -78,10 +80,13 @@ a {
     box-shadow: 3px 3px 3px rgba(111, 113, 115, 0.75);
 }
 
+.sousMenuCommu div a {
+    max-width: 170px;
+}
+
 /* ------ Connection part ------ */
 .connectionSection {
     align-items: center;
-    padding-right: 20px;
 }
 
 .connectionSection a {
@@ -132,13 +137,19 @@ a {
     border: none;
     border-radius: 15px;
     padding: 0 40px 30px 40px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: center;
 }
 
 #loginForm h1 {
-    font-size: 2.5em;
+    font-size: 2.3em;
     text-align: center;
+}
+
+#loginForm p {
+    padding: 8px 10px;
+    border-radius: 15px;
+    background-color: transparent;
 }
 
 #userName, #password {
