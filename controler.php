@@ -133,5 +133,12 @@ function recherche_users(){
             $type=htmlspecialchars($_POST["type"]);
             $result=search($recherche,$type);
             return($result);
+
         }
+}
+function envoyerMessage($destinataire,$expéditeur){
+    if ($_POST["contenu"]){
+        $contenu=htmlspecialchars($_POST["contenu"]);
+        InsertMessage(date(),$expéditeur,$destinataire,$contenu);
+    }
 }

@@ -46,3 +46,6 @@ function viewRecherche(){
 function viewMessage(){
     require "Messagerie/Messagerie.php";
 }
+function viewConversation(){
+    require "Conversation/Conversation.php";
+}

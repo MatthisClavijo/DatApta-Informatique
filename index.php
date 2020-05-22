@@ -144,12 +144,21 @@ if (isset($_GET["action"])) {
             viewMessage();
             break;
         case "conv" :
+            $_SESSION["destinataire"]=$action[1];
+            $_SESSION["expéditeur"]=$action[2];
+            viewConversation();
+            break;
+        case "send" :
+            echo ("test");
+            envoyerMessage($_SESSION["destinataire"],$_SESSION["nom"]);
             break;
     }
 }
 
 
 else {
+    $_SESSION["destinataire"]="vide";
+    $_SESSION["expéditeur"]="vide";
     $_SESSION['isConnected']=false;
     $_SESSION['type']="vide";
     $_SESSION['search']="vide";
