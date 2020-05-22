@@ -1,106 +1,70 @@
 body{
-    font-family: Trebuchet MS;
-    font-size:20px;
-}
-ul {
-    list-style-type: none;
-    margin-top: 0;
-    padding: 0;
-    overflow: hidden;
-
-    top : 0;
-    background-color: white;
-}
-
-li {
-    float: left;
-    margin-top: 70px;
-    margin-left: 85px;
-}
-
-li a, .dropbtn {
-    display: inline-block;
+    font-family: Trebuchet MS, Arial, serif;
+    font-size: 1em;
     color: black;
+    margin-top: 135px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: start;
+    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.contentBlock {
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 20px;
+    background-color: rgba(238, 231, 228, 0.6);
+}
+
+/* ------ Add block ------ */
+
+#addBlock {
+    padding-bottom: 20px;
+    margin-top: 130px;
+}
+
+#titleOfAdd {
     text-align: center;
-    padding: 14px 30px;
+}
+
+#add {
+    background-color: #141458;
+    border: solid 2px #141458;
+    font-size: 1em;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+#add:hover {
+    background-color: #f0f0f0;
+    color: #141458;
+    box-shadow: none;
+}
+
+/* ------ Test blocks ------ */
+
+#listOfTests {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 60vw;
+}
+
+.test {
+    width: 20vw;
+}
+
+.delete{
     text-decoration: none;
-}
-
-li a:hover{
-    border-bottom: 6px solid #D4AE4C;
-}
-
-li.dropdown {
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    z-index: 4;
-    margin-left: 20px;
-    margin-top: 0px;
-    border-radius: 5px;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    border-radius: 5px;
-}
-
-.dropdown-content a:hover {background-color: #D4AE4C;}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.active {
-    border-bottom:6px solid #D4AE4C;
-    color: black;
-}
-
-p{
-    text-align: center;
-    margin-bottom: 0;
-}
-
-img {
-    float : left;
-    margin-right: 50px;
-    margin-top: 0;
-}
-
-
-#ProfilBox{
-    border: #3C3E40 solid;
-    border-radius: 5px;
-    text-align: center;
-    padding-bottom: 25px;
-    margin-left: 75%;
-}
-#deconnexion{
-    text-decoration: none;
-    color: #3C3E40;
-}
-#BoxTest{
-    position: absolute;
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    border: 1px solid #D4AE4C;
-    margin-left: 40%;
-    margin-top: 150px;
-}
-#Ajouter{
-    text-decoration: none;
-    color: #3C3E40;
-}
-.option{
-    text-decoration: none;
-    color: #3C3E40;
+    color: #c20909;
 }
