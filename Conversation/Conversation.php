@@ -24,7 +24,18 @@ for($i=0;$i<sizeof($messages);$i++) {
         echo("</br>");
     }
 }
+
 ?>
+<form id="formevoie" method="post" action="send">
+    <div>
+        <input type="text"  name="contenu" >
+    </div>
+    <div id="submit">
+        <input type="submit" value="Envoyer" name="envoie">
+    </div>
+
+</form>
+
 
 
 
