@@ -1,73 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <link rel="stylesheet" href="PageDeModifDeProfil/PageDeModificationDeProfil.css">
+    <meta charset="utf-8">
+    <title>Modifier mon profil</title>
+    <link rel="stylesheet" type="text/css" href="PageDeModifDeProfil\PageDeModificationDeProfil.css">
+    <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
+</head>
 
-    <head>
-        </p>
-        <ul>
-            <img src = 'Images/Infinite_measures_logo.png'width = "170"height="145">
-            <li><a class = "active" href="accueil">Accueil</a></li>
-            <li><a href="statistiques">Statistiques</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Communauté</a>
-                <div class="dropdown-content">
-                    <a href="foire">FAQ</a>
-                    <a href="#">Classement</a>
-                    <a href="recherche">Recherche Utilisateur</a>
-                    <a href="mess">Messagerie</a>
-                </div>
-            </li>
-            <li><a href="profil">Mon profil</a></li>
-            <div >
-
-            </div>
-        </ul>
-    </head>
+<?php require "header\header.php" ?>
 
 <body>
-<div>
-    <p><img src = 'Images/aircraft-01-1254871.jpg'
-            width = 100%
-            height = "588">
-    </p>
-    <form id="boxmodification" method="post" action="modif_profil">
-        <h3 id="title">Modification du profil</h3>
-        <div id="ligne"></div>
-        <p>
-        <div id="name">
-            <input type="text" name="nom" placeholder="Nom">
-        </div>
-        <div id="email">
-            <input type="email" name="email" placeholder="Email">
-        </div>
-        </p>
-        <p>
-        <div id="prénom">
-            <input type="text" name="prénom" placeholder="Prénom">
-        </div>
-        <div id="password">
-            <input type="password" name="password" placeholder="Mot de passe">
-        </div>
-        </p>
-        <p>
-        <div id="date">
-            Date de Naissance : </br> <input type="date" name="date">
-        </div>
-        <div id="Cpassword">
-            <input type="password" name="Cpassword" placeholder="Confirmation du mot de passe" >
-        </div>
-        </p>
-        <p>
-
-        <div id="submit">
-            <input type="submit" value="Modifier" name="submit">
-        </div>
-        </p>
+<div class="contentBlock" id="modifBlock">
+    <h3>Modification du profil</h3>
+    <form method="post" action="modif_profil">
+        <fieldset id="privateInfos">
+            <p><label for="name">Nom : </label><input type="text" name="nom" placeholder="Nom" id="name"></p>
+            <p><label for="firstname">Prénom : </label><input type="text" name="prénom" placeholder="Prénom"
+                                                              id="firstname"></p>
+            <p><label for="birthday">Date de naissance : </label><input type="date" name="date" id="birthday"></p>
+        </fieldset>
+        <fieldset id="idInfos">
+            <p><label for="email">Email : </label><input type="email" name="email" placeholder="email" id="email"></p>
+            <p><label for="password">Mot de passe : </label><input type="password" name="password"
+                                                                   placeholder="Mot de passe" id="password"></p>
+            <p><label for="confirmPassword">Confirmer le mot de passe : </label><input type="password" name="Cpassword"
+                                                                   placeholder="Mot de passe" id="confirmPassword"></p>
+        </fieldset>
+        <fieldset id="actions">
+            <input type="submit" value="Modifier" name="submit" id="modifBtn">
+            <a href="profil" id="cancelModifBtn">Annuler</a>
+        </fieldset>
     </form>
 </div>
 </body>
-<?php
-require "footer/footer.php";
-?>
+
+<?php require "footer/footer.php"; ?>
 </html>
