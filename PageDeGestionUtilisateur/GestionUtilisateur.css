@@ -1,103 +1,69 @@
 body{
-    font-family: Trebuchet MS;
-    font-size:20px;
-}
-ul {
-    list-style-type: none;
-    margin-top: 0;
-    padding: 0;
-    overflow: hidden;
-
-    top : 0;
-    background-color: white;
-}
-
-li {
-    float: left;
-    margin-top: 70px;
-    margin-left: 85px;
-}
-
-li a, .dropbtn {
-    display: inline-block;
+    font-family: Trebuchet MS, Arial, serif;
+    font-size: 1em;
     color: black;
-    text-align: center;
-    padding: 14px 30px;
-    text-decoration: none;
+    margin-top: 135px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: start;
+    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
 }
 
-li a:hover{
-    border-bottom: 6px solid #D4AE4C;
+.contentBlock {
+    background-color: rgba(238, 231, 228, 0.6);
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+    width: 40vw;
 }
 
-li.dropdown {
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    z-index: 4;
-    margin-left: 20px;
-    margin-top: 0px;
-    border-radius: 5px;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    border-radius: 5px;
-}
-
-.dropdown-content a:hover {background-color: #D4AE4C;}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.active {
-    border-bottom:6px solid #D4AE4C;
-    color: black;
-}
-
-p{
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
     text-align: center;
     margin-bottom: 0;
 }
 
-img {
-    float : left;
-    margin-right: 50px;
-    margin-top: 0;
-    position: relative;
-}
-#BoxUtilisateur{
-    position: absolute;
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    border: 1px solid #D4AE4C;
-    margin-left: 40%;
-    margin-top: 150px;
-}
 .option{
     text-decoration: none;
     color: darkred;
 }
-#up{
-    color: darkblue;
-}
-#titre1{
-    text-decoration: underline;
 
+.admin, .user {
+    padding: 10px;
+    border-bottom: solid black 1px;
 }
-#down{
+
+/* ------ Admin block ------ */
+
+#adminBlock {
+    margin-top: 130px;
+}
+
+.downgrade{
     color: crimson;
 }
-#modif{
+
+/* ------ User block ------ */
+
+.user {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user div {
+    width: 15vw;
+}
+
+.upgrade {
+    color: darkblue;
+}
+
+.modif{
     color: darkgreen;
 }
