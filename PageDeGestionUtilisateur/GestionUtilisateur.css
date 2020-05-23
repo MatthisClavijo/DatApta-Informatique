@@ -33,7 +33,7 @@ h3 {
 
 .admin, .user {
     padding: 10px;
-    border-bottom: solid black 1px;
+    border-bottom: solid #383838 1px;
 }
 
 /* ------ Admin block ------ */
