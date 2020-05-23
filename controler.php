@@ -139,6 +139,7 @@ function recherche_users(){
 function envoyerMessage($destinataire,$expéditeur){
     if ($_POST["contenu"]){
         $contenu=htmlspecialchars($_POST["contenu"]);
-        InsertMessage(date(),$expéditeur,$destinataire,$contenu);
+        InsertMessage(date('d-m-y h:i:s'),$expéditeur,$destinataire,$contenu);
+
     }
 }

@@ -146,11 +146,17 @@ if (isset($_GET["action"])) {
         case "conv" :
             $_SESSION["destinataire"]=$action[1];
             $_SESSION["expéditeur"]=$action[2];
-            viewConversation();
-            break;
-        case "send" :
-            echo ("test");
-            envoyerMessage($_SESSION["destinataire"],$_SESSION["nom"]);
+            if ($action[2] != "send"){
+                viewConversation();
+            }
+            if ($action[2]=="send"){
+                $user2=$_SESSION["destinataire"];
+                $user=$_SESSION['nom'];
+                envoyerMessage($_SESSION["destinataire"],$_SESSION["nom"]);
+                header("Location: http://localhost/datapta-informatique/conv/$user2/$user");
+                exit;
+            }
+
             break;
     }
 }
