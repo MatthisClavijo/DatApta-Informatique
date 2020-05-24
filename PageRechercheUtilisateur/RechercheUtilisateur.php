@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
-<title>Gestion Utilisateurs</title>
+<title>Recherche Utilisateurs</title>
 <head>
 
     <link rel="stylesheet" href="PageRechercheUtilisateur/RechercheUtilisateur.css">
