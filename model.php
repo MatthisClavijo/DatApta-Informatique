@@ -288,13 +288,12 @@ function search($user,$type){
 function visumessage($destinataire,$expéditeur)
 {
     $db = dbConnect();
-    $req = $db->prepare("SELECT `Contenu` FROM `message` WHERE `Destinataire`=:destinataire AND `Expéditeur`=:expediteur ORDER BY `Date_et_heure`");
-    $req->execute(array("destinataire" => $destinataire, "expéditeur" => $expéditeur));
+    $req = $db->prepare("SELECT `Contenu`,`Destinataire`,`Expéditeur` FROM `message` WHERE `Destinataire`=? AND `Expéditeur`=? OR `Destinataire`=? AND `Expéditeur`=?  ORDER BY `Date_et_heure` ");
+    $req->execute(array( $destinataire, $expéditeur,$expéditeur,$destinataire));
     $data = $req->fetchAll();
-    return ($data[0]);
+    return ($data);
 }
-function InsertMessage($date_et_heure,$expediteur,$destinataire,$contenu)
-{
+function InsertMessage($date_et_heure,$expediteur,$destinataire,$contenu){
     $db = dbConnect();
     $req = $db->prepare("INSERT INTO `message` (`Date_et_heure`,`Expéditeur`,`Destinataire`,`Contenu`) VALUES (:date_et_heure,:expediteur,:destinataire,:contenu)");
     $req->execute(array('date_et_heure' => $date_et_heure, 'expediteur' => $expediteur, 'destinataire' => $destinataire, 'contenu' => $contenu));

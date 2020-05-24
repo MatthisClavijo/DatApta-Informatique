@@ -7,9 +7,6 @@ function viewAccueil() {
     require "PageAccueil/PageDAcceuil.php";
 
 }
-function viewAccueilEN() {
-    require "PageAccueil/PageDAccueilEN.php";
-}
 function viewModif(){
     require "PageDeModifDeProfil/PageDeModificationDeProfil.php";
 }
@@ -48,4 +45,7 @@ function viewRecherche(){
 }
 function viewMessage(){
     require "Messagerie/Messagerie.php";
+}
+function viewConversation(){
+    require "Conversation/Conversation.php";
 }

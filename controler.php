@@ -17,7 +17,19 @@ catch(Exception $e)
 
 function adduser( ){
 
-    if ($_POST["nom"] && $_POST["email"] && $_POST["prénom"] && $_POST["password"] && $_POST["date"]) {
+    if (!($_POST["password"] == $_POST["Cpassword"])){
+        echo ("<script>alert(\"Vos mots de passe ne correspondent pas ! \")</script>");
+        viewInscription();
+    }
+    else if (!isset($_POST["cgu"])){
+        echo ("<script>alert(\"Vous n'avez pas accepté les conditions générales d'utilisation ! \")</script>");
+        viewInscription();
+    }
+    else if (!($_POST["nom"] && $_POST["email"] && $_POST["prénom"] && $_POST["password"] && $_POST["date"])){
+        echo ("<script>alert(\"Veuillez renseigner tous les champs du formulaire ! \")</script>");
+        viewInscription();
+    }
+    else if ($_POST["nom"] && $_POST["email"] && $_POST["prénom"] && $_POST["password"] && $_POST["date"]) {
         $nom = htmlspecialchars($_POST["nom"]);
         $email = htmlspecialchars($_POST["email"]);
         $prenom = htmlspecialchars($_POST["prénom"]);
@@ -27,6 +39,10 @@ function adduser( ){
         InsertUser($nom, $prenom, $mdp, $email, $date, $salt, $iv);
         echo ("<script>alert(\"Veuillez vous connecter maintenant ! \")</script>");
         viewAccueil();
+    }
+    else{
+        echo ("<script>alert(\"Une erreur est survenu lors de votre inscription, veuillez réessayer plus tard \nSi le problème persiste veuillez nous contacter \")</script>");
+        viewInscription();
     }
 
 }
@@ -128,10 +144,18 @@ function modif_R($ID){
     }
 }
 function recherche_users(){
-        if($_POST["recherche"] && $_POST["type"]){
-            $recherche=htmlspecialchars($_POST["recherche"]);
-            $type=htmlspecialchars($_POST["type"]);
-            $result=search($recherche,$type);
-            return($result);
-        }
+    if($_POST["recherche"] && $_POST["type"]){
+        $recherche=htmlspecialchars($_POST["recherche"]);
+        $type=htmlspecialchars($_POST["type"]);
+        $result=search($recherche,$type);
+        return($result);
+
+    }
+}
+function envoyerMessage($destinataire,$expéditeur){
+    if ($_POST["contenu"]){
+        $contenu=htmlspecialchars($_POST["contenu"]);
+        InsertMessage(date('d-m-y h:i:s'),$expéditeur,$destinataire,$contenu);
+
+    }
 }

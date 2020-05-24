@@ -35,29 +35,6 @@ if (isset($_GET["action"])) {
                 $_SESSION['isConnected'] = false;
             }
             break;
-
-        case "home" :
-            if(sizeof($_SESSION)!=0) {
-                if ($_SESSION['isConnected'] == true) {
-
-
-                    if ($_SESSION['type'] == "client") {
-                        viewAccueilConnexion();
-                    }
-                    if ($_SESSION['type'] == "admin") {
-                        viewAccueilAdmin();
-                    }
-                }
-                if ($_SESSION['isConnected']==false){
-                    viewAccueilEN();
-                }
-            }
-            else{
-                viewAccueilEN();
-                $_SESSION['isConnected'] = false;
-            }
-            break;
-
         case "connexion" :
             connexion();
             break;
@@ -167,15 +144,29 @@ if (isset($_GET["action"])) {
             viewMessage();
             break;
         case "conv" :
+            $_SESSION["destinataire"]=$action[1];
+            $_SESSION["expéditeur"]=$action[2];
+            if ($action[2] != "send"){
+                viewConversation();
+            }
+            if ($action[2]=="send"){
+                $user2=$_SESSION["destinataire"];
+                $user=$_SESSION['nom'];
+                envoyerMessage($_SESSION["destinataire"],$_SESSION["nom"]);
+                header("Location: http://localhost/datapta-informatique/conv/$user2/$user");
+                exit;
+            }
+
             break;
     }
 }
 
 
 else {
+    $_SESSION["destinataire"]="vide";
+    $_SESSION["expéditeur"]="vide";
     $_SESSION['isConnected']=false;
     $_SESSION['type']="vide";
     $_SESSION['search']="vide";
     viewAccueil();
-    viewAccueilEN();
 }
