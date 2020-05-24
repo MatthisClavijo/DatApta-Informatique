@@ -52,17 +52,19 @@
 
     <?php
     if ($_SESSION['search']=="vide") {
+        $user=$_SESSION['nom'];
         echo "<div id='titre1'>Client :</div> ";
         echo "</br>";
         $utilisateur = selectuser();
         $nombre = count($utilisateur);
         for ($i = 0; $i < $nombre; $i++) {
             $ID = $utilisateur[$i]['ID'];
+            $user2=$utilisateur[$i]['nom'];
             echo($utilisateur[$i]['nom']);
             echo "  ";
             echo($utilisateur[$i]['prénom']);
             echo "  ";
-            echo("<a href='#' class='message'>Envoyer un message</a>");
+            echo("<a href='conv/$user2/$user' class='message'>Envoyer un message</a>");
             echo("</br>");
             echo("</br>");
         }
@@ -72,11 +74,12 @@
         $nombre2 = count($administrateur);
         for ($i = 0; $i < $nombre2; $i++) {
             $ID = $administrateur[$i]['ID'];
+            $user2=$administrateur[$i]['nom'];
             echo($administrateur[$i]['nom']);
             echo "  ";
             echo($administrateur[$i]['prénom']);
             echo "  ";
-            echo("<a href='#' class='message'>Envoyer un message</a>");
+            echo("<a href='conv/$user/$user2' class='message'>Envoyer un message</a>");
             echo("</br>");
             echo("</br>");
 
