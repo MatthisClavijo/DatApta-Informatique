@@ -175,3 +175,14 @@ input[type="password"] {
     z-index: 1;
     box-shadow: 3px 3px 3px #1e2628;
 }
+
+#flag {
+    width: 50px;
+    height: 30px;
+}
+
+#flag:hover {
+    z-index: 1;
+    box-shadow: 3px 3px 3px rgba(111, 113, 115, 0.75);
+}
+

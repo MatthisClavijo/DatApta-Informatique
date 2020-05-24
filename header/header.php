@@ -37,6 +37,11 @@
                 <a href="deconnexion" class="logout">Log out</a>
             <?php } ?>
         </div>
+
+        <div class="languageSection">
+            <a href="english"></a><img src="Images/Union_jack.jpg" alt="logo-anglais" id="flag">
+        </div>
+
     </nav>
 
     <!-- ------ Login Form part ------ -->
@@ -64,3 +69,4 @@
     <?php } ?>
 </header>
 </html>
+}

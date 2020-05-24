@@ -35,6 +35,29 @@ if (isset($_GET["action"])) {
                 $_SESSION['isConnected'] = false;
             }
             break;
+
+        case "home" :
+            if(sizeof($_SESSION)!=0) {
+                if ($_SESSION['isConnected'] == true) {
+
+
+                    if ($_SESSION['type'] == "client") {
+                        viewAccueilConnexion();
+                    }
+                    if ($_SESSION['type'] == "admin") {
+                        viewAccueilAdmin();
+                    }
+                }
+                if ($_SESSION['isConnected']==false){
+                    viewAccueilEN();
+                }
+            }
+            else{
+                viewAccueilEN();
+                $_SESSION['isConnected'] = false;
+            }
+            break;
+
         case "connexion" :
             connexion();
             break;
@@ -154,4 +177,5 @@ else {
     $_SESSION['type']="vide";
     $_SESSION['search']="vide";
     viewAccueil();
+    viewAccueilEN();
 }
