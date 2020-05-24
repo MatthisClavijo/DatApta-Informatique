@@ -11,6 +11,15 @@
     .droite{
         margin-left: 350px;
     }
+    #boxConv{
+        position: absolute;
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        border: 1px solid #D4AE4C;
+
+
+    }
 </style>
 <div id="boxConv">
 <?php
