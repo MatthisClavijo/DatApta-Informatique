@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <title>Conversation</title>
+<link rel="stylesheet" href="Conversation/Conversation.css">
 
-<head>
-    <link rel="stylesheet" href="Conversation.css">
-
-</head>
 <body>
+<style>
+    .gauche{
+        float: left;
+    }
+    .droite{
+        margin-left: 350px;
+    }
+</style>
+<div id="boxConv">
 <?php
 $messages=visumessage($_SESSION["destinataire"],$_SESSION["expéditeur"]);
 for($i=0;$i<sizeof($messages);$i++) {
@@ -29,19 +35,16 @@ for($i=0;$i<sizeof($messages);$i++) {
 <form id="formevoie" method="post" action="send">
     <div>
         <input type="text"  name="contenu" >
-    </div>
-    <div id="submit">
         <input type="submit" value="Envoyer" name="envoie">
     </div>
 
 </form>
-
+</div>
 
 
 
 
 </body>
-
 
 
 
