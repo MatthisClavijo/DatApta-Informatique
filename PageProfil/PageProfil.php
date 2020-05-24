@@ -1,82 +1,32 @@
 <!DOCTYPE html>
-<html>
-<title>Profil</title>
-
+<html lang="fr">
 <head>
-    <link rel="stylesheet" href="PageProfil/PageProfil.css">
+    <meta charset="utf-8">
+    <title>Mon profil</title>
+    <link rel="stylesheet" type="text/css" href="PageProfil\PageProfil.css">
+    <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
+</head>
 
-
-    <head>
-        </p>
-        <ul>
-            <img src = 'Images/Infinite_measures_logo.png'width = "170"height="145">
-            <li><a class = "active" href="accueil">Accueil</a></li>
-            <li><a href="statistiques">Statistiques</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Communauté</a>
-                <div class="dropdown-content">
-                    <a href="foire">FAQ</a>
-                    <a href="#">Classement</a>
-                    <a href="recherche">Recherche Utilisateur</a>
-                    <a href="mess">Messagerie</a>
-                </div>
-            </li>
-            <li><a href="profil">Mon profil</a></li>
-            <?php
-            if($_SESSION['type']=="admin"){
-                echo"  <li class=\"dropdown\">
-                <a href=\"javascript:void(0)\" class=\"dropbtn\">Gestion</a>
-                <div class=\"dropdown-content\">
-                    <a href=\"gestion_u\">Gestion Utilisateur</a>
-                    <a href=\"gestion_faq\">Gestion FAQ</a>
-                    <a href=\"capteur\">Gestion Capteurs</a>
-                </div>";
-            }
-            ?>
-        </ul>
-    </head>
+<?php require "header\header.php" ?>
 
 <body>
-<p><img src = 'Images/aircraft-01-1254871.jpg'
-        width = 100%
-        height = "588">
-</p>
-<form id="boxprofil">
-    <h3 id="title">Profil</h3>
-    <div id="ligne"></div>
-    <p>
-    <div id="name">
-        Nom : <?php
-        echo ($_SESSION['nom']);
-        ?>
-    </div>
-    <div id="email">
-        Adresse Mail:  <?php
-        echo ($_SESSION['Adresse mail']);
-        ?>
-    </div>
-    </p>
-    <p>
-    <div id="prénom">
-        Prénom :  <?php
-        echo ($_SESSION['prénom']);
-        ?>
-    </div>
-
-    <div id="date">
-        Date de Naissance : <?php
-        echo ($_SESSION['date_de_naissance']);
-        ?>
-    </div>
-
-    </p>
-    <p>
-        <a id="modif" href="modifprofil">Modifier le profil</a>
-    </p>
-</form>
+<div class="contentBlock" id="profileBlock">
+    <h3 id="profileTitle">Profil</h3>
+    <?php
+    echo ("<div id='privateInfos'>");
+        echo ("<h4>Informations personnelles : </h4>");
+        echo ("<p>Nom complet : ".$_SESSION['prénom']." ".$_SESSION['nom']."</p>");
+        echo ("<p>Date de naissance : ".$_SESSION['date_de_naissance']."</p>");
+    echo ("</div>");
+    echo ("<div id='idInfos'>");
+        echo ("<h4>Informations de connexion : </h4>");
+        echo ("<p>Adresse email : ".$_SESSION['Adresse mail']."</p>");
+    echo ("</div>");
+    ?>
+    <p><a href="modifprofil" id="linkModifProfile">Modifier mon profil</a></p>
+</div>
 </body>
-<?php
-require "footer/footer.php";
-?>
+
+<?php require "footer/footer.php"; ?>
 </html>
 
