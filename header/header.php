@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Header</title>
-    <link rel="stylesheet" type="text/css" href="header/styleHeader.css">
+    <link rel="stylesheet" type="text/css" href="header\styleHeader.css">
 </head>
 
 <header>
     <nav>
-        <img src="Images/Infinite_measures_logo.png" alt="Logo d'Infinite Measures" id="logo">
+        <img src="Images\Infinite_measures_logo.png" alt="Logo d'Infinite Measures" id="logo">
         <div class="accueil"><a href="accueil" >Accueil</a></div>
         <div class="profil"><a href="profil" >Profil</a></div>
         <div class="stats"><a href="statistiques" >Statistiques</a></div>
@@ -17,6 +17,7 @@
                 <div><a href="foire">FAQ</a></div>
                 <div><a href="">Classement</a></div>
                 <div><a href="recherche">Chercher utilisateur</a></div>
+                <div><a href="mess">Messagerie</a></div>
             </div>
         </div>
         <?php if(isset($_SESSION['type']) && $_SESSION['type'] == "admin") { ?>
