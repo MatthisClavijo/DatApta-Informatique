@@ -91,7 +91,7 @@
         echo ("  ");
         echo ($_SESSION['search'][1]);
         echo "  ";
-        echo("<a href='#' class='message'>Envoyer un message</a>");
+        echo("<a href='conv/$user/$user2' class='message'>Envoyer un message</a>");
         echo("</br>");
         echo("</br>");
         $_SESSION['search']="vide";
