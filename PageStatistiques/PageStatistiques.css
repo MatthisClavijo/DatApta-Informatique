@@ -19,7 +19,7 @@ body {
     width: 260px;
     min-width: 260px;
     padding: 20px;
-    margin: 10px;
+    margin: 30px;
     border-radius: 20px;
 }
 
@@ -60,6 +60,6 @@ body {
     background-color: rgba(240, 240, 240, 0.70);
     padding: 20px;
     border-radius: 20px;
-    max-width: 1165px;
+    max-width: 70vw;
     margin: auto;
 }
