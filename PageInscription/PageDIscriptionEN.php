@@ -7,13 +7,13 @@
     <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
 </head>
 
-<?php require "headerEN\header.php" ?>
+<?php require "header\headerEN" ?>
 
 <body>
 
 <div class="contentBlock" id="signUpBlock">
     <h3>Profile modification</h3>
-    <form method="post" action="modif_profil">
+    <form method="post" action="add_user">
         <fieldset id="privateInfos">
             <p><label for="name">Name: </label><input type="text" name="nom" placeholder="Name" id="name"></p>
             <p><label for="firstname">First name: </label><input type="text" name="prénom" placeholder="First name"
@@ -40,5 +40,5 @@
 
 </body>
 
-<?php require "footerEN/footer.php"; ?>
+<?php require "footer/footerEN"; ?>
 </html>

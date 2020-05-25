@@ -13,7 +13,7 @@
 
 <div class="contentBlock" id="signUpBlock">
     <h3>Modification du profil</h3>
-    <form method="post" action="modif_profil">
+    <form method="post" action="add_user">
         <fieldset id="privateInfos">
             <p><label for="name">Nom : </label><input type="text" name="nom" placeholder="Nom" id="name"></p>
             <p><label for="firstname">Prénom : </label><input type="text" name="prénom" placeholder="Prénom"
