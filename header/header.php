@@ -40,7 +40,7 @@
         </div>
 
         <div class="languageSection">
-            <a href="english"></a><img src="Images/Union_jack.jpg" alt="logo-anglais" id="flag">
+            <a href="english"></a><img src="Images\Union_jack.jpg" alt="logo-anglais" id="flag">
         </div>
 
     </nav>
@@ -70,4 +70,3 @@
     <?php } ?>
 </header>
 </html>
-}
