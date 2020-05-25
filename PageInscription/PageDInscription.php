@@ -12,7 +12,7 @@
 <body>
 
 <div class="contentBlock" id="signUpBlock">
-    <h3>Modification du profil</h3>
+    <h3>Inscription</h3>
     <form method="post" action="add_user">
         <fieldset id="privateInfos">
             <p><label for="name">Nom : </label><input type="text" name="nom" placeholder="Nom" id="name"></p>
