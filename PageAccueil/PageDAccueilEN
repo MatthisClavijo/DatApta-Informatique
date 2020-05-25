@@ -7,7 +7,7 @@
     <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
 </head>
 
-<?php require "header\headerEN.php" ?>
+<?php require "header\headerEN" ?>
 
 <body>
 
@@ -29,6 +29,6 @@
 
 </body>
 
-<?php require "footer/footerEN.php" ?>
+<?php require "footer/footerEN" ?>
 
 </html>
