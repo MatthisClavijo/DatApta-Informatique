@@ -144,13 +144,13 @@ function modif_R($ID){
     }
 }
 function recherche_users(){
-        if($_POST["recherche"] && $_POST["type"]){
-            $recherche=htmlspecialchars($_POST["recherche"]);
-            $type=htmlspecialchars($_POST["type"]);
-            $result=search($recherche,$type);
-            return($result);
+    if($_POST["recherche"] && $_POST["type"]){
+        $recherche=htmlspecialchars($_POST["recherche"]);
+        $type=htmlspecialchars($_POST["type"]);
+        $result=search($recherche,$type);
+        return($result);
 
-        }
+    }
 }
 function envoyerMessage($destinataire,$expéditeur){
     if ($_POST["contenu"]){
@@ -158,4 +158,30 @@ function envoyerMessage($destinataire,$expéditeur){
         InsertMessage(date('d-m-y h:i:s'),$expéditeur,$destinataire,$contenu);
 
     }
+}
+function sendTicket(){
+    if ($_POST["Explication"]) {
+        if (isset($_POST["email"])) {
+            if ($_POST['email'] !=""){
+
+
+            $name = htmlspecialchars($_POST["email"]);
+            $ex = htmlspecialchars($_POST["Explication"]);
+                InsertTicket(date('d-m-y h:i:s'),$name,$ex);
+            }
+            else{
+                echo ("<script>alert('Veuillez rentrer une adresse mail')</script>");
+            }
+
+        } else {
+
+            $name = htmlspecialchars($_SESSION['nom']);
+            $ex = htmlspecialchars($_POST["Explication"]);
+            InsertTicket(date('d-m-y h:i:s'),$name,$ex);
+        }
+
+    }
+
+
+
 }

@@ -158,6 +158,12 @@ if (isset($_GET["action"])) {
             }
 
             break;
+        case "help" :
+            viewTicket();
+            break;
+        case "sendTicket" :
+            sendTicket();
+            viewAccueil();
     }
 }
 

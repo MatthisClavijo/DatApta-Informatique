@@ -317,3 +317,10 @@ function getallconv($nom){
     $data2=$req2->fetchAll();
     return(array($data,$data2));
 }
+function InsertTicket($date_et_heure,$nom,$explication){
+    $db = dbConnect();
+    $req = $db->prepare("INSERT INTO `message` (`Date_et_heure`,`Expéditeur`,`Destinataire`,`Contenu`) VALUES (:date_et_heure,:expediteur,:destinataire,:contenu)");
+    $req->execute(array('date_et_heure' => $date_et_heure, 'expediteur' => $nom, 'destinataire' => "Administrateur", 'contenu' => $explication));
+    $req->closeCursor();
+    echo ("<script>alert('Votre ticket a bien été envoyé ! ')</script>");
+}

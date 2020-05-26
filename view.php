@@ -49,3 +49,6 @@ function viewMessage(){
 function viewConversation(){
     require "Conversation/Conversation.php";
 }
+function viewTicket(){
+    require "PageTicket/Ticket.php";
+}
