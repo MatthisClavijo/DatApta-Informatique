@@ -21,7 +21,9 @@
         </div>
         <div class="legal">
             <h2>Mentions légales</h2>
-            <a href="">Conditions générales d'utilisation</a>
+            <a href="cgu">Conditions générales d'utilisation</a>
+            <a href="help" id="help">Faire remonter un problème</a>
+
         </div>
         <div class="socialNetworks">
             <a href="https://www.facebook.com/InfiniteMeasuresFr/"><img src="Images\facebook-3-logo-png-transparent.png" alt="Facebook" id="facebook"></a>
