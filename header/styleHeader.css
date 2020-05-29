@@ -106,6 +106,7 @@ a {
     background-color: #333537;
     border: solid #333537 3px;
     color: white;
+    cursor: pointer;
 }
 
 .registration:hover, .login:hover {
