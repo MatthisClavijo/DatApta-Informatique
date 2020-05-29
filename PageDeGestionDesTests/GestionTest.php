@@ -2,7 +2,7 @@
 <html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
-    <title>Accueil</title>
+    <title>Gestion des tests</title>
     <link rel="stylesheet" type="text/css" href="PageDeGestionDesTests\GestionTest.css">
     <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
 </head>

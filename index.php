@@ -156,7 +156,6 @@ if (isset($_GET["action"])) {
                 header("Location: http://localhost/datapta-informatique/conv/$user2/$user");
                 exit;
             }
-
             break;
         case "help" :
             viewTicket();

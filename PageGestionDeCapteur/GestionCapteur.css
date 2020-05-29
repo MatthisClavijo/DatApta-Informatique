@@ -1,97 +1,80 @@
 body{
-    font-family: Trebuchet MS;
-    font-size:20px;
-}
-ul {
-    list-style-type: none;
-    margin-top: 0;
-    padding: 0;
-    overflow: hidden;
-
-    top : 0;
-    background-color: white;
-}
-
-li {
-    float: left;
-    margin-top: 70px;
-    margin-left: 85px;
-}
-
-li a, .dropbtn {
-    display: inline-block;
+    font-family: Trebuchet MS, Arial, serif;
+    font-size: 1em;
     color: black;
-    text-align: center;
-    padding: 14px 30px;
-    text-decoration: none;
+    margin-top: 135px;
+    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: start;
 }
 
-li a:hover{
-    border-bottom: 6px solid #D4AE4C;
+.contentBlock {
+    background-color: rgba(238, 231, 228, 0.6);
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 20px 0;
+    width: 60vw;
 }
 
-li.dropdown {
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    z-index: 4;
-    margin-left: 20px;
-    margin-top: 0px;
-    border-radius: 5px;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    border-radius: 5px;
-}
-
-.dropdown-content a:hover {background-color: #D4AE4C;}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.active {
-    border-bottom:6px solid #D4AE4C;
-    color: black;
-}
-
-p{
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
     text-align: center;
     margin-bottom: 0;
 }
 
-img {
-    float : left;
-    margin-right: 50px;
-    margin-top: 0;
-    position: relative;
+/* ------ AddSensor block ------ */
+
+#addSensorBlock {
+    margin-top: 110px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
 }
-#BoxCapteur{
-    position: absolute;
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    border: 1px solid #D4AE4C;
-    margin-left: 40%;
-    margin-top: 150px;
+
+#addSensorBtn {
+    font-size: 1em;
+    margin-left: 80px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e6963a;
+    color: black;
+    cursor: pointer;
 }
-#Ajouter{
+
+#linkGestionTest {
     text-decoration: none;
-    color: #3C3E40;
+    color: #111145;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: solid #383838 1px;
+    width: 15vw;
+    text-align: center;
+    font-weight: bold;
 }
-.option{
+
+/* ------ List of sensors block ------ */
+
+#listOfSensorsBlock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sensor {
+    width: 18vw;
+    margin-bottom: 30px;
+}
+
+.deleteSensor {
     text-decoration: none;
-    color: #3C3E40;
-}
-#suppr{
     color: darkred;
 }

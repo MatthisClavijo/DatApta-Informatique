@@ -1,58 +1,34 @@
 <!DOCTYPE html>
-<html>
-<title>Accueil</title>
-    <head>
-        <link rel="stylesheet" href="PageAccueil\PageDAcceuil.css">
-        <ul>
-            <img src = 'Images/Infinite_measures_logo.png'width = "170"height="145">
-            <li><a class = "active" href="accueil">Accueil</a></li>
-            <li><a href="statistiques">Statistiques</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Communauté</a>
-                <div class="dropdown-content">
-                    <a href="foire">FAQ</a>
-                    <a href="#">Classement</a>
-                    <a href="recherche">Recherche Utilisateur</a>
-                </div>
-            </li>
-            <li><a href="profil">Mon profil</a></li>
-            <div >
-                <a href="inscription" id="inscription" >Sign up</a>
-                <a class="open-button" onclick="openForm()" id="connexion">Sign in</a>
-            </div>
-        </ul>
-    </head>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="PageAccueil\PageDAcceuil.css">
+    <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
+</head>
+
+<?php require "header\header.php" ?>
 
 <body>
-<p><img src = 'Images/aircraft-01-1254871.jpg'
-        width = 100%
-        height = "588">
-</p>
-<div class="form-popup" id="myForm">
-    <form action="connexion" class="form-container" method="post">
-        <h1>Login</h1>
 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis sodales feugiat. Curabitur finibus nec ligula a volutpat. Nullam ut purus metus. Vivamus condimentum, dolor quis maximus suscipit, magna dolor scelerisque lectus, at congue dolor felis at nisi. Suspendisse ac turpis rhoncus, sodales nisl vel, laoreet nisl. Maecenas nec varius justo. Suspendisse luctus augue ut libero sagittis, sit amet efficitur erat fermentum.
 
-        <label for="psw"><b>Mot de passe</b></label>
-        <input type="password" placeholder="Enter mot de passe" name="psw" required>
+    Aenean quis tempor neque. Integer a pretium nunc, in volutpat purus. Donec justo massa, accumsan eget elit vitae, viverra sodales libero. Maecenas a vulputate mi. In lobortis gravida placerat. Aenean commodo porttitor varius. Proin suscipit dui vitae cursus convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam a arcu vel tortor suscipit lobortis.
 
-        <button type="submit" class="btn" >Login</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Fermer</button>
-    </form>
-</div>
-<script>
-    function openForm() {
-        document.getElementById("myForm").style.display = "block";
-    }
+    Sed viverra ipsum sapien, in tempus felis gravida maximus. Phasellus sit amet ligula accumsan, posuere sapien vitae, imperdiet nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ut sagittis nunc. Nam vel purus magna. Sed vitae nibh vitae ex interdum mattis id at dui. Integer efficitur sit amet metus vel finibus. Fusce in placerat leo.
 
-    function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-    }
-</script>
+    Morbi feugiat, elit ac pretium auctor, mauris ex scelerisque mi, accumsan dictum nulla eros eget nisi. Aliquam erat volutpat. Phasellus in eleifend magna. Sed et arcu ac enim sagittis ultricies nec non risus. Donec consectetur a velit nec dignissim. Sed vel orci aliquet, porttitor eros sed, aliquam nisl. Nulla placerat commodo accumsan. Sed nisi nisi, viverra eu luctus et, commodo tempor neque. Donec a porttitor ligula. Cras at justo eu risus hendrerit molestie non et felis. Nullam condimentum augue et venenatis malesuada. Nunc porta enim eu felis rhoncus facilisis.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis sodales feugiat. Curabitur finibus nec ligula a volutpat. Nullam ut purus metus. Vivamus condimentum, dolor quis maximus suscipit, magna dolor scelerisque lectus, at congue dolor felis at nisi. Suspendisse ac turpis rhoncus, sodales nisl vel, laoreet nisl. Maecenas nec varius justo. Suspendisse luctus augue ut libero sagittis, sit amet efficitur erat fermentum.
+
+    Aenean quis tempor neque. Integer a pretium nunc, in volutpat purus. Donec justo massa, accumsan eget elit vitae, viverra sodales libero. Maecenas a vulputate mi. In lobortis gravida placerat. Aenean commodo porttitor varius. Proin suscipit dui vitae cursus convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam a arcu vel tortor suscipit lobortis.
+
+    Sed viverra ipsum sapien, in tempus felis gravida maximus. Phasellus sit amet ligula accumsan, posuere sapien vitae, imperdiet nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ut sagittis nunc. Nam vel purus magna. Sed vitae nibh vitae ex interdum mattis id at dui. Integer efficitur sit amet metus vel finibus. Fusce in placerat leo.
+
+    Morbi feugiat, elit ac pretium auctor, mauris ex scelerisque mi, accumsan dictum nulla eros eget nisi. Aliquam erat volutpat. Phasellus in eleifend magna. Sed et arcu ac enim sagittis ultricies nec non risus. Donec consectetur a velit nec dignissim. Sed vel orci aliquet, porttitor eros sed, aliquam nisl. Nulla placerat commodo accumsan. Sed nisi nisi, viverra eu luctus et, commodo tempor neque. Donec a porttitor ligula. Cras at justo eu risus hendrerit molestie non et felis. Nullam condimentum augue et venenatis malesuada. Nunc porta enim eu felis rhoncus facilisis.</p>
+
 </body>
-<?php
-require "footer/footer.php";
-?>
+
+<?php require "footer/footer.php" ?>
+
 </html>

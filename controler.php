@@ -179,9 +179,5 @@ function sendTicket(){
             $ex = htmlspecialchars($_POST["Explication"]);
             InsertTicket(date('d-m-y h:i:s'),$name,$ex);
         }
-
     }
-
-
-
 }

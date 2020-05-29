@@ -1,73 +1,45 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<title>Gestion Capteurs</title>
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
+    <meta charset="utf-8">
+    <title>Gestion des capteurs</title>
+    <link rel="stylesheet" type="text/css" href="PageGestionDeCapteur\GestionCapteur.css">
+    <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
+</head>
 
-    <link rel="stylesheet" href="PageGestionDeCapteur/GestionCapteur.css">
-
-
-    <head>
-        </p>
-        <ul>
-            <img src = 'Images/Infinite_measures_logo.png'width = "170"height="145">
-            <li><a class = "active" href="accueil">Accueil</a></li>
-            <li><a href="statistiques">Statistiques</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Communauté</a>
-                <div class="dropdown-content">
-                    <a href="foire">FAQ</a>
-                    <a href="#">Classement</a>
-                    <a href="recherche">Recherche Utilisateur</a>
-                    <a href="mess">Messagerie</a>
-                </div>
-            </li>
-            <li><a href="profil">Mon profil</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Gestion</a>
-                <div class="dropdown-content">
-                    <a href="gestion_u">Gestion Utilisateur</a>
-                    <a href="gestion_faq">Gestion FAQ</a>
-                    <a href="capteur">Gestion Capteurs</a>
-                </div>
-            </li>
-        </ul>
-    </head>
+<?php require "header\header.php" ?>
 
 <body>
-<p><img src = 'Images/aircraft-01-1254871.jpg'
-        width = 100%
-        height = "588">
-</p>
-<div id="BoxCapteur">
-    <form id="Ajouter" method="post" action="add_capteur">
-        <p>Ajouter :  Nom :<input type="text" name="Nom" > Unité : <input type="text" name="Unité">
-            <input type="submit" value="Ajouter" name="submit">
-        </p>
-    </br>
-    </form>
-    <?php
-    $capteur=selectcapteur();
-    $nombre=count($capteur);
-    for ($i=0;$i <$nombre;$i++){
-        $ID=$capteur[$i]['Id'];
-        echo ("ID : ");
-        echo (" ");
-        echo($ID);
-        echo"    ";
-        echo ($capteur[$i]['Nom']);
-        echo "  ";
-        echo ($capteur[$i]['unité de mesure']);
-        echo "  ";
-        echo("<a href='delete_capteur/$ID' class='option' id='suppr'>Supprimer</a>");
-        echo("</br>");
-        echo("</br>");
-    }
-    ?>
-    <a href="test" class="option">Gestion des tests</a>
 
+<div class="contentBlock" id="addSensorBlock">
+    <form method="post" action="add_capteur">
+        <h3>Ajouter : </h3>
+        <p><label for="sensorName">Nom : </label><input type="text" name="Nom" id="sensorName"></p>
+        <p><label for="units">Unité : </label><input type="text" name="Unité" id="units"></p>
+        <input type="submit" value="Ajouter" name="submit" id="addSensorBtn">
+    </form>
+    <a href="test" id="linkGestionTest">Gestion des tests</a>
 </div>
+
+<div class="contentBlock">
+    <h3>Capteurs : </h3>
+    <div id="listOfSensorsBlock">
+        <?php
+        $capteur=selectcapteur();
+        $nombre=count($capteur);
+        for ($i=0;$i <$nombre;$i++){
+            $ID=$capteur[$i]['Id'];
+            echo ("<div class='sensor'>");
+            echo ("<p>"."ID : ".$ID." ".$capteur[$i]['Nom']."</p>");
+            echo ("<p>"."Unité : ".$capteur[$i]['unité de mesure']."</p>");
+            echo ("<a href='delete_capteur/$ID' class='deleteSensor'>Supprimer</a>");
+            echo("</div>");
+        }
+        ?>
+    </div>
+</div>
+
 </body>
-<?php
-require "footer/footer.php"
-?>
+
+<?php require "footer/footer.php" ?>
 </html>

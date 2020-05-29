@@ -1,149 +1,95 @@
 body{
-    font-family: Trebuchet MS;
-    font-size:20px;
-}
-ul {
-    list-style-type: none;
-    margin-top:  0;
-    padding: 0;
-    overflow: hidden;
-
-    top : 0;
-    background-color: white;
-}
-
-li {
-    float: left;
-    margin-top: 70px;
-    margin-left: 85px;
-}
-
-li a, .dropbtn {
-    display: inline-block;
+    font-family: Trebuchet MS, Arial, serif;
+    font-size: 1em;
     color: black;
+    margin-top: 135px;
+    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
     text-align: center;
-    padding: 14px 30px;
-    text-decoration: none;
 }
 
-li a:hover{
-    border-bottom: 6px solid #D4AE4C;
+.contentBlock {
+    background-color: rgba(238, 231, 228, 0.6);
+    padding: 10px 20px;
+    border-radius: 20px;
 }
 
-li.dropdown {
-    display: inline-block;
+#modifBlock {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 65px;
+    margin-bottom: 53px;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    z-index: 4;
-    margin-left: 20px;
-    margin-top: 0px;
-    border-radius: 5px;
+#modifBlock form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 60vw;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    border-radius: 5px;
+#modifBlock form fieldset {
+    border: none;
+    width: 28vw;
 }
 
-.dropdown-content a:hover {background-color: #D4AE4C;}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+#modifBlock form fieldset p input {
+    height: 12px;
+    padding: 5px 0 5px 3px;
+    margin-top: 3px;
+    border: none;
 }
 
-.active {
-    border-bottom:6px solid #D4AE4C;
-    color: black;
+/* ------ Private infos ------ */
+
+#birthday {
+    width: 124px;
 }
 
-p{
+/* ------ Id infos ------ */
+
+input[type="password"] {
+    font-family: Verdana, sans-serif;
+}
+
+/* ------ Actions button ------ */
+
+#actions {
     text-align: center;
-    margin-bottom: 0;
 }
 
-img {
-    float : left;
-    margin-right: 50px;
-    margin-top: 0;
-    position: relative;
+#modifBtn, #cancelModifBtn {
+    width: 80px;
+    padding: 10px 10px;
+    margin: 5px 10px;
+    border-radius: 7px;
+    font-size: 1em;
 }
 
-
-
-#boxmodification{
-    position: absolute;
-    background-color: white;
-    border-radius: 10px;
-    padding: 30px;
-    margin-left: 500px;
-    margin-top: 125px;
-    border: 1px solid #D4AE4C
-}
-#title{
-    margin-left: 30%;
-    margin-bottom:10px;
-
-}
-#ligne{
-    border-bottom: 6px solid #D4AE4C;
-    width: 60%;
-    margin-left: 20%;
-    margin-bottom: 30px;
-}
-#name{
-    display: inline-block;
-    margin-right: 50px;
-    margin-left: 25px;
-}
-#email{
-    display: inline-block;
-    margin-left: 130px;
-    float: right;
-
-}
-#prénom{
-    display: inline-block;
-    margin-left: 25px;
-}
-#password{
-    display: inline-block;
-    margin-left: 180px;
-    float: right;
-}
-#date{
-    display: inline-block;
-    margin-left: 25px;
-    font-size: 15px;
-    float: left;
-}
-#Cpassword{
-    display: inline-block;
-    margin-left: 228px;
-    float: right;
-}
-#cgu{
-    display: inline-block;
-    font-size: 10px;
-    margin-right: 150px;
-}
-#submit{
-    display: inline-block;
-    margin-left:45%;
-
-}
-#submit input{
+#modifBtn {
     background-color: #D4AE4C;
-    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
-#date input{
-    width: 100%;
-    height: 100%;
+
+#cancelModifBtn {
+    background-color: #6f7173;
+}
+
+#modifBtn:hover, #cancelModifBtn:hover {
+    z-index: 1;
+    box-shadow: 2px 2px 5px #2c3639;
 }
