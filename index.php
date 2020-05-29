@@ -158,6 +158,33 @@ if (isset($_GET["action"])) {
             }
 
             break;
+        case "help" :
+            viewTicket();
+            break;
+        case "sendTicket" :
+            sendTicket();
+            viewAccueil();
+            break;
+        case "Ticket" :
+            viewVisuTicket();
+            break;
+        case "detail" :
+            if($action[2]=="retour"){
+                header("Location: http://localhost/datapta-informatique/Ticket");
+                exit;
+            }
+            else {
+                $_GET['name'] = $action[1];
+                $_GET['date'] = $action[2];
+                viewContenuTicket();
+            }
+            break;
+        case "supprTicket" :
+            DeleteTicket($action[1],$action[2]);
+            header("Location: http://localhost/datapta-informatique/Ticket");
+            exit;
+            break;
+
     }
 }
 

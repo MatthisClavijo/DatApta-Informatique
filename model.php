@@ -317,3 +317,30 @@ function getallconv($nom){
     $data2=$req2->fetchAll();
     return(array($data,$data2));
 }
+function InsertTicket($date_et_heure,$nom,$explication){
+    $db = dbConnect();
+    $req = $db->prepare("INSERT INTO `message` (`Date_et_heure`,`Expéditeur`,`Destinataire`,`Contenu`) VALUES (:date_et_heure,:expediteur,:destinataire,:contenu)");
+    $req->execute(array('date_et_heure' => $date_et_heure, 'expediteur' => $nom, 'destinataire' => "Administrateur", 'contenu' => $explication));
+    $req->closeCursor();
+    echo ("<script>alert('Votre ticket a bien été envoyé ! ')</script>");
+}
+function GetTicket(){
+    $admin="Administrateur";
+    $db=dbConnect();
+    $req=$db->prepare("SELECT `Expéditeur`,`Contenu`,`Date_et_heure` FROM `message` WHERE `Destinataire`=? ORDER BY `Date_et_heure` ");
+    $req->execute(array($admin));
+    $data=$req->fetchAll();
+    return($data);
+}
+function GetDetailTicket($name,$date){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT `Date_et_heure`,`Contenu` FROM `message` WHERE `Date_et_heure`=? AND `Expéditeur`=?  ");
+    $req->execute(array($date,$name));
+    $data=$req->fetchAll();
+    return($data);
+}
+function DeleteTicket($name,$date){
+    $db=dbConnect();
+    $req=$db->prepare("DELETE  FROM `message` WHERE `Date_et_heure`=? AND `Expéditeur`=?  ");
+    $req->execute(array($date,$name));
+}

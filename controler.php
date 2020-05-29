@@ -159,3 +159,29 @@ function envoyerMessage($destinataire,$expéditeur){
 
     }
 }
+function sendTicket(){
+    if ($_POST["Explication"]) {
+        if (isset($_POST["email"])) {
+            if ($_POST['email'] !=""){
+
+
+            $name = htmlspecialchars($_POST["email"]);
+            $ex = htmlspecialchars($_POST["Explication"]);
+                InsertTicket(date('d-m-y h:i:s'),$name,$ex);
+            }
+            else{
+                echo ("<script>alert('Veuillez rentrer une adresse mail')</script>");
+            }
+
+        } else {
+
+            $name = htmlspecialchars($_SESSION['nom']);
+            $ex = htmlspecialchars($_POST["Explication"]);
+            InsertTicket(date('d-m-y h:i:s'),$name,$ex);
+        }
+
+    }
+
+
+
+}

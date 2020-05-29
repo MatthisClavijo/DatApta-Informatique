@@ -49,3 +49,12 @@ function viewMessage(){
 function viewConversation(){
     require "Conversation/Conversation.php";
 }
+function viewTicket(){
+    require "PageTicket/Ticket.php";
+}
+function viewVisuTicket(){
+    require "VisuTicket/VisuTicket.php";
+}
+function viewContenuTicket(){
+    require "ContenuTicket/ContenuTicket.php";
+}
