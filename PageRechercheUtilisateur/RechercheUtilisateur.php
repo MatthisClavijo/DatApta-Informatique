@@ -24,12 +24,14 @@
 <div id="listOfRegistered">
     <?php
     if ($_SESSION['search'] == "vide") {
+        $user=$_SESSION['nom'];
         echo ("<div class='contentBlock' id='usersBlock'>");
             echo ("<h3>Utilisateurs</h3>");
             $utilisateur = selectuser();
             $nombre = count($utilisateur);
             for ($i = 0; $i < $nombre; $i++) {
                 $ID = $utilisateur[$i]['ID'];
+                $user2=$utilisateur[$i]['nom'];
                 echo ("<p>".$utilisateur[$i]['prénom']." ".$utilisateur[$i]['nom']."    ".
                     "<a href='conv/$user2/$user' class='message'>Envoyer un message</a></p>");
             }
@@ -41,6 +43,7 @@
             $nombre2 = count($administrateur);
             for ($i = 0; $i < $nombre2; $i++) {
                 $ID = $administrateur[$i]['ID'];
+                $user2=$utilisateur[$i]['nom'];
                 echo("<p>".$administrateur[$i]['prénom']." ".$administrateur[$i]['nom']."    ".
                     "<a href='conv/$user/$user2' class='message'>Envoyer un message</a></p>");
             }
