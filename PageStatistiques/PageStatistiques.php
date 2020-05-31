@@ -20,7 +20,17 @@
             </p>
         </div>
         <div id="lastData">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis massa ac urna tempor sollicitudin. Pellentesque vulputate risus et nisi ultricies rutrum. Maecenas feugiat id elit sollicitudin sagittis. Ut imperdiet malesuada ligula, eu fringilla leo bibendum quis. Donec viverra lacus vitae neque pellentesque, quis pellentesque felis vehicula. Sed ut pulvinar erat, quis sollicitudin risus. Pellentesque eleifend pellentesque velit a scelerisque.</p>
+            <p><?php
+                $data = SelectResult($_SESSION['ID']);
+                $data2=SelectUnit($data[sizeof($data)-1][4]);
+                echo ($data[sizeof($data)-1][2]);
+                echo ("</br>");
+                echo ($data[sizeof($data)-1][4]);
+                echo ("</br>");
+                echo ($data[sizeof($data)-1][5]);
+                echo ("  ");
+                echo ($data2[0][0]);
+                ?></p>
         </div>
         <div id="startTest">
             <a href="">Lancer un test</a>
@@ -30,9 +40,17 @@
     <div id="mainContent">
         <p>
             <?php
-            $data = SelectResult($_SESSION['ID']);
+
+
             for ($i=0; $i<sizeof($data);$i++) {
                 $data2=SelectUnit($data[$i][4]);
+                if($i==0 ){
+                    echo ($data[$i][2]);
+                }
+                elseif ($data[$i][2]!=$data[$i-1][2]){
+                    echo ($data[$i][2]);
+                }
+                echo ("</br>");
                 echo($data[$i][4]);
                 echo(" : ");
                 echo($data[$i][5]);

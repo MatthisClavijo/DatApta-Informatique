@@ -7,7 +7,7 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
-    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
+    background: url("../Images/background.jpg") fixed no-repeat 100% 15vh;
 }
 
 /* ------ Lateral div ------ */
@@ -38,7 +38,7 @@ body {
 
 #lastData {
     width: 240px;
-    max-height: 335px;
+    height: 320px;
     overflow: auto;
 }
 
