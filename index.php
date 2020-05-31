@@ -138,6 +138,10 @@ if (isset($_GET["action"])) {
                 header("Location: http://localhost/datapta-informatique-refonte/conv/$user2/$user");
                 exit;
             }
+            if ($action[2]=="retour"){
+                header("Location: http://localhost/datapta-informatique-refonte/mess");
+                exit;
+            }
 
             break;
 
