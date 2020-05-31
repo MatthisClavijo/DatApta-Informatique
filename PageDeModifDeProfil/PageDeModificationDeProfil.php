@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Modifier mon profil</title>
-    <link rel="stylesheet" type="text/css" href="PageDeModifDeProfil\PageDeModificationDeProfil.css">
-    <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
+    <link rel="stylesheet" type="text/css" href="PageDeModifDeProfil/PageDeModificationDeProfil.css">
+    <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "header\header.php" ?>
+<?php require "header/header.php" ?>
 
 <body>
 <div class="contentBlock" id="modifBlock">

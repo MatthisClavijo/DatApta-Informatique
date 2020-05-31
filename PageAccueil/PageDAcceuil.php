@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Accueil</title>
-    <link rel="stylesheet" type="text/css" href="PageAccueil\PageDAcceuil.css">
-    <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
+    <link rel="stylesheet" type="text/css" href="PageAccueil/PageDAcceuil.css">
+    <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "header\header.php" ?>
+<?php require "header/header.php" ?>
 
 <body>
 

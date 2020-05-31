@@ -11,10 +11,7 @@
         <img src="Images/Infinite_measures_logo.png" alt="Logo d'Infinite Measures" id="logo">
         <div class="accueil"><a href="accueil" >Accueil</a></div>
         <div class="profil"><a href="profil" >Profil</a></div>
-        <?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected']){
-            echo "<div class=\"stats\"><a href=\"statistiques\" >Statistiques</a></div>";
-        }?>
-
+        <div class="stats"><a href="statistiques" >Statistiques</a></div>
         <div class="commu"><a href="javascript:void(0)" class="dropbtn" >Communauté</a>
             <div class="sousMenuCommu">
                 <div><a href="foire">FAQ</a></div>

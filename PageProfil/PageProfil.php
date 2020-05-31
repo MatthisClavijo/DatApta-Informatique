@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Mon profil</title>
-    <link rel="stylesheet" type="text/css" href="PageProfil\PageProfil.css">
-    <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
+    <link rel="stylesheet" type="text/css" href="PageProfil/PageProfil.css">
+    <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "header\header.php" ?>
+<?php require "header/eader.php" ?>
 
 <body>
 <div class="contentBlock" id="profileBlock">

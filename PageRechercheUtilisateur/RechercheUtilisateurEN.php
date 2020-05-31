@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>User search</title>
-    <link rel="stylesheet" type="text/css" href="PageRechercheUtilisateur\RechercheUtilisateur.css">
-    <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
+    <link rel="stylesheet" type="text/css" href="PageRechercheUtilisateur/RechercheUtilisateur.css">
+    <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "headerEN\header.php" ?>
+<?php require "headerEN/header.php" ?>
 
 <body>
 <div class="contentBlock" id="searchBlock">

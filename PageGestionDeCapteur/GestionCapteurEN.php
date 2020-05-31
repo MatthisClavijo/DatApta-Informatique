@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Sensors management</title>
-    <link rel="stylesheet" type="text/css" href="PageGestionDeCapteur\GestionCapteur.css">
-    <link rel="icon" type="image" href="Images\Infinite_measures_1.gif">
+    <link rel="stylesheet" type="text/css" href="PageGestionDeCapteur/GestionCapteur.css">
+    <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "headerEN\header.php" ?>
+<?php require "headerEN/header.php" ?>
 
 <body>
 
