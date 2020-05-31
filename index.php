@@ -43,7 +43,7 @@ if (isset($_GET["action"])) {
             break;
         case "delete_user":
             deleteuser($action[1]);
-            header('Location: http://localhost/datapta-informatique/gestion_u' ,true);
+            header('Location: http://localhost/datapta-informatique-refonte/gestion_u' ,true);
             exit;
             break;
 
@@ -59,7 +59,7 @@ if (isset($_GET["action"])) {
             break;
         case "delete_capteur" :
             deletecapteur($action[1]);
-            header('Location: http://localhost/datapta-informatique/capteur ',true);
+            header('Location: http://localhost/datapta-informatique-refonte/capteur ',true);
             exit;
             break;
         case "test":
@@ -71,17 +71,17 @@ if (isset($_GET["action"])) {
             break;
         case "delete_test" :
             deletetest($action[1]);
-            header('Location: http://localhost/datapta-informatique/test ',true);
+            header('Location: http://localhost/datapta-informatique-refonte/test ',true);
             exit;
             break;
         case "up_user" :
             up_user($action[1]);
-            header('Location: http://localhost/datapta-informatique/gestion_u' ,true);
+            header('Location: http://localhost/datapta-informatique-refonte/gestion_u' ,true);
             exit;
             break;
         case "down_user" :
             down_user($action[1]);
-            header('Location: http://localhost/datapta-informatique/gestion_u' ,true);
+            header('Location: http://localhost/datapta-informatique-refonte/gestion_u' ,true);
             exit;
             break;
         case "foire" :
@@ -96,17 +96,17 @@ if (isset($_GET["action"])) {
             break;
         case "delete_QR" :
             delete_QR($action[1]);
-            header('Location: http://localhost/datapta-informatique/gestion_faq' ,true);
+            header('Location: http://localhost/datapta-informatique-refonte/gestion_faq' ,true);
             exit;
             break;
         case "edit_Q" :
             modif_Q($action[1]);
-            header('Location: http://localhost/datapta-informatique/gestion_faq' ,true);
+            header('Location: http://localhost/datapta-informatique-refonte/gestion_faq' ,true);
             exit;
             break;
         case "edit_R" :
             modif_R($action[1]);
-            header('Location: http://localhost/datapta-informatique/gestion_faq' ,true);
+            header('Location: http://localhost/datapta-informatique-refonte/gestion_faq' ,true);
             exit;
             break;
         case "statistiques" :
@@ -135,7 +135,7 @@ if (isset($_GET["action"])) {
                 $user2=$_SESSION["destinataire"];
                 $user=$_SESSION['nom'];
                 envoyerMessage($_SESSION["destinataire"],$_SESSION["nom"]);
-                header("Location: http://localhost/datapta-informatique/conv/$user2/$user");
+                header("Location: http://localhost/datapta-informatique-refonte/conv/$user2/$user");
                 exit;
             }
 
@@ -153,7 +153,7 @@ if (isset($_GET["action"])) {
             break;
         case "detail" :
             if($action[2]=="retour"){
-                header("Location: http://localhost/datapta-informatique/Ticket");
+                header("Location: http://localhost/datapta-informatique-refonte/Ticket");
                 exit;
             }
             else {
@@ -164,7 +164,7 @@ if (isset($_GET["action"])) {
             break;
         case "supprTicket" :
             DeleteTicket($action[1],$action[2]);
-            header("Location: http://localhost/datapta-informatique/Ticket");
+            header("Location: http://localhost/datapta-informatique-refonte/Ticket");
             exit;
             break;
 
