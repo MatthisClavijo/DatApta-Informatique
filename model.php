@@ -60,7 +60,7 @@ function testconnexion($email,$password){
         $_SESSION['date_de_naissance']=$data['date_de_naissance'];
         $_SESSION['type']="client";
         $_SESSION['isConnected']=true;
-        viewAccueilConnexion();
+        viewAccueil();
     }
     if ($existence!=1){
 
@@ -88,7 +88,7 @@ function testconnexion($email,$password){
             $_SESSION['date_de_naissance']=$data2['date_de_naissance'];
             $_SESSION['type']="admin";
             $_SESSION['isConnected']=true;
-            viewAccueilAdmin();
+            viewAccueil();
         }
         if($existence2!=1){
             echo ("<script>alert(\"Il y a eu une erreur dans la connexion. Veuillez réessayer.\")</script>");
@@ -309,10 +309,10 @@ function modifmessage($contenu,$Id){
 }
 function getallconv($nom){
     $db=dbConnect();
-    $req=$db->prepare("SELECT DISTINCT `Destinataire` FROM `message` WHERE `Expéditeur`=:nom");
-    $req->execute(array('nom'=>$nom));
+    $req=$db->prepare("SELECT DISTINCT `Destinataire` FROM `message` WHERE `Expéditeur`=:nom AND `Destinataire`!=:admin ");
+    $req->execute(array('nom'=>$nom,'admin'=>"Administrateur"));
     $data=$req->fetchAll();
-    $req2=$db->prepare("SELECT DISTINCT `Expéditeur` FROM `message` WHERE `Destinataire`=:nom ");
+    $req2=$db->prepare("SELECT DISTINCT `Expéditeur` FROM `message` WHERE `Destinataire`=:nom  ");
     $req2->execute(array('nom'=>$nom));
     $data2=$req2->fetchAll();
     return(array($data,$data2));
@@ -324,3 +324,38 @@ function InsertTicket($date_et_heure,$nom,$explication){
     $req->closeCursor();
     echo ("<script>alert('Votre ticket a bien été envoyé ! ')</script>");
 }
+function GetTicket(){
+    $admin="Administrateur";
+    $db=dbConnect();
+    $req=$db->prepare("SELECT `Expéditeur`,`Contenu`,`Date_et_heure` FROM `message` WHERE `Destinataire`=? ORDER BY `Date_et_heure` ");
+    $req->execute(array($admin));
+    $data=$req->fetchAll();
+    return($data);
+}
+function GetDetailTicket($name,$date){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT `Date_et_heure`,`Contenu` FROM `message` WHERE `Date_et_heure`=? AND `Expéditeur`=?  ");
+    $req->execute(array($date,$name));
+    $data=$req->fetchAll();
+    return($data);
+}
+function DeleteTicket($name,$date){
+    $db=dbConnect();
+    $req=$db->prepare("DELETE  FROM `message` WHERE `Date_et_heure`=? AND `Expéditeur`=?  ");
+    $req->execute(array($date,$name));
+}
+function SelectResult($ID){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT * FROM `resultat` WHERE `Id client`=:ID ORDER BY `Date_et_heure` ");
+    $req->execute(array("ID"=>$ID));
+    $data=$req->fetchAll();
+    return($data);
+}
+function SelectUnit($nom){
+    $db=dbConnect();
+    $req=$db->prepare("SELECT `unité de mesure`  FROM `capteur` WHERE `Nom`=:nom");
+    $req->execute(array("nom"=>$nom));
+    $data=$req->fetchAll();
+    return($data);
+}
+

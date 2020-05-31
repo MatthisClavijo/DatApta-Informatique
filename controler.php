@@ -165,8 +165,8 @@ function sendTicket(){
             if ($_POST['email'] !=""){
 
 
-            $name = htmlspecialchars($_POST["email"]);
-            $ex = htmlspecialchars($_POST["Explication"]);
+                $name = htmlspecialchars($_POST["email"]);
+                $ex = htmlspecialchars($_POST["Explication"]);
                 InsertTicket(date('d-m-y h:i:s'),$name,$ex);
             }
             else{
@@ -179,5 +179,9 @@ function sendTicket(){
             $ex = htmlspecialchars($_POST["Explication"]);
             InsertTicket(date('d-m-y h:i:s'),$name,$ex);
         }
+
     }
+
+
+
 }

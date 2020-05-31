@@ -15,25 +15,7 @@ if (isset($_GET["action"])) {
             viewModif();
             break;
         case "accueil" :
-            if(sizeof($_SESSION)!=0) {
-                if ($_SESSION['isConnected'] == true) {
-
-
-                    if ($_SESSION['type'] == "client") {
-                        viewAccueilConnexion();
-                    }
-                    if ($_SESSION['type'] == "admin") {
-                        viewAccueilAdmin();
-                    }
-                }
-                if ($_SESSION['isConnected']==false){
-                    viewAccueil();
-                }
-            }
-            else{
-                viewAccueil();
-                $_SESSION['isConnected'] = false;
-            }
+            viewAccueil();
             break;
         case "connexion" :
             connexion();
@@ -156,13 +138,36 @@ if (isset($_GET["action"])) {
                 header("Location: http://localhost/datapta-informatique/conv/$user2/$user");
                 exit;
             }
+
             break;
+
         case "help" :
             viewTicket();
             break;
         case "sendTicket" :
             sendTicket();
             viewAccueil();
+            break;
+        case "Ticket" :
+            viewVisuTicket();
+            break;
+        case "detail" :
+            if($action[2]=="retour"){
+                header("Location: http://localhost/datapta-informatique/Ticket");
+                exit;
+            }
+            else {
+                $_GET['name'] = $action[1];
+                $_GET['date'] = $action[2];
+                viewContenuTicket();
+            }
+            break;
+        case "supprTicket" :
+            DeleteTicket($action[1],$action[2]);
+            header("Location: http://localhost/datapta-informatique/Ticket");
+            exit;
+            break;
+
     }
 }
 
