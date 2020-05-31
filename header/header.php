@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Header</title>
-    <link rel="stylesheet" type="text/css" href="header\styleHeader.css">
+    <link rel="stylesheet" type="text/css" href="header/styleHeader.css">
 </head>
 
 <header>
     <nav>
-        <img src="Images\Infinite_measures_logo.png" alt="Logo d'Infinite Measures" id="logo">
+        <img src="Images/Infinite_measures_logo.png" alt="Logo d'Infinite Measures" id="logo">
         <div class="accueil"><a href="accueil" >Accueil</a></div>
         <div class="profil"><a href="profil" >Profil</a></div>
         <div class="stats"><a href="statistiques" >Statistiques</a></div>
@@ -16,8 +16,15 @@
             <div class="sousMenuCommu">
                 <div><a href="foire">FAQ</a></div>
                 <div><a href="">Classement</a></div>
-                <div><a href="recherche">Chercher utilisateur</a></div>
-                <div><a href="mess">Messagerie</a></div>
+                <?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected']) {
+                    echo("<div><a href=\"recherche\">Chercher utilisateur</a></div>
+                <div><a href='mess'>Messagerie</a></div>");
+
+                }
+                    ?>
+
+
+
             </div>
         </div>
         <?php if(isset($_SESSION['type']) && $_SESSION['type'] == "admin") { ?>
@@ -27,6 +34,7 @@
                     <div><a href="capteur">Capteurs</a></div>
                     <div><a href="gestion_faq">FAQ</a></div>
                     <div><a href="gestion_u">Utilisateurs</a></div>
+                    <div><a href="Ticket">Voir Ticket</a></div>
                 </div>
             </div>
         <?php } ?>
@@ -40,7 +48,7 @@
         </div>
 
         <div class="languageSection">
-            <a href="english"></a><img src="Images\Union_jack.jpg" alt="logo-anglais" id="flag">
+            <a href="english"></a><img src="Images/Union_jack.jpg" alt="logo-anglais" id="flag">
         </div>
 
     </nav>
