@@ -21,15 +21,23 @@
         </div>
         <div id="lastData">
             <p><?php
-                $data = SelectResult($_SESSION['ID']);
-                $data2=SelectUnit($data[sizeof($data)-1][4]);
-                echo ($data[sizeof($data)-1][2]);
-                echo ("</br>");
-                echo ($data[sizeof($data)-1][4]);
-                echo ("</br>");
-                echo ($data[sizeof($data)-1][5]);
-                echo ("  ");
-                echo ($data2[0][0]);
+                if ($_SESSION['type']!="admin") {
+                    $data = SelectResult($_SESSION['ID']);
+                    if (sizeof($data )!=0){
+                        $data2 = SelectUnit($data[sizeof($data) - 1][4]);
+                        echo($data[sizeof($data) - 1][2]);
+                        echo("</br>");
+                        echo($data[sizeof($data) - 1][4]);
+                        echo("</br>");
+                        echo($data[sizeof($data) - 1][5]);
+                        echo("  ");
+                        echo($data2[0][0]);
+                    }
+                    else{
+                        echo "Vous n'avez fait aucun test ! ";
+                    }
+
+                }
                 ?></p>
         </div>
         <div id="startTest">
@@ -40,24 +48,28 @@
     <div id="mainContent">
         <p>
             <?php
-
-
-            for ($i=0; $i<sizeof($data);$i++) {
-                $data2=SelectUnit($data[$i][4]);
-                if($i==0 ){
-                    echo ($data[$i][2]);
+            if ($_SESSION['type']!="admin") {
+            if (sizeof($data )!=0) {
+                for ($i = 0; $i < sizeof($data); $i++) {
+                    $data2 = SelectUnit($data[$i][4]);
+                    if ($i == 0) {
+                        echo($data[$i][2]);
+                    } elseif ($data[$i][2] != $data[$i - 1][2]) {
+                        echo($data[$i][2]);
+                    }
+                    echo("</br>");
+                    echo($data[$i][4]);
+                    echo(" : ");
+                    echo($data[$i][5]);
+                    echo("  ");
+                    echo($data2[0][0]);
+                    echo("</br>");
+                    echo("</br>");
                 }
-                elseif ($data[$i][2]!=$data[$i-1][2]){
-                    echo ($data[$i][2]);
-                }
-                echo ("</br>");
-                echo($data[$i][4]);
-                echo(" : ");
-                echo($data[$i][5]);
-                echo ("  ");
-                echo ($data2[0][0]);
-                echo ("</br>");
-                echo ("</br>");
+            }
+            else{
+                echo "Vous n'avez aucun résultat ! ";
+            }
             }
             ?>
 
