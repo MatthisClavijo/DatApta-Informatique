@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-<title>Profil</title>
+<title>Messagerie</title>
 
 <head>
     <link rel="stylesheet" href="Messagerie/Messagerie.css">
