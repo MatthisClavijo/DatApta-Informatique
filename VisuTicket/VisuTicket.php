@@ -6,6 +6,7 @@
 
 
   <?php require "header/header.php"?>
+<body>
     <p id="BoxTicket">
     <?php
     $data=GetTicket();
