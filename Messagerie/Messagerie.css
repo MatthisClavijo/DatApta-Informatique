@@ -18,6 +18,8 @@ p {
 
 
 #MessageBox{
+    background-color: white;
+    border: 1px solid #D4AE4C;
    margin-top: 150px;
     margin-bottom: 150px;
 }
