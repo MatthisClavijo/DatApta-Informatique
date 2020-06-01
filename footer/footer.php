@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="footer\styleFooter.css">
 </head>
 
-<footer>
+<footer id="f">
     <div id="content">
         <div class="contact">
             <h2>Nous contacter</h2>
@@ -22,6 +22,7 @@
         <div class="legal">
             <h2>Mentions légales</h2>
             <a href="cgu">Conditions générales d'utilisation</a>
+        </br>
             <a href="help" id="help">Faire remonter un problème</a>
 
         </div>
