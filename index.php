@@ -110,7 +110,13 @@ if (isset($_GET["action"])) {
             exit;
             break;
         case "statistiques" :
-            viewStatistique();
+            if ($_SESSION['isConnected']) {
+                viewStatistique();
+            }
+            else{
+                echo ("<script>alert(\"Il faut vous connecter pour consulter vos statistiques\")</script>");
+                viewAccueil();
+            }
             break;
         case "cgu" :
             viewCGU();
