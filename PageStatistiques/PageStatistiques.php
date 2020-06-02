@@ -21,7 +21,7 @@
         </div>
         <div id="lastData">
             <p><?php
-                if ($_SESSION['type']!="admin") {
+
                     $data = SelectResult($_SESSION['ID']);
                     if (sizeof($data )!=0){
                         $data2 = SelectUnit($data[sizeof($data) - 1][4]);
@@ -37,7 +37,7 @@
                         echo "Vous n'avez fait aucun test ! ";
                     }
 
-                }
+                
                 ?></p>
         </div>
         <div id="startTest">
@@ -48,7 +48,7 @@
     <div id="mainContent">
         <p>
             <?php
-            if ($_SESSION['type']!="admin") {
+
             if (sizeof($data )!=0) {
                 for ($i = 0; $i < sizeof($data); $i++) {
                     $data2 = SelectUnit($data[$i][4]);
@@ -70,7 +70,7 @@
             else{
                 echo "Vous n'avez aucun résultat ! ";
             }
-            }
+
             ?>
 
         </p>
