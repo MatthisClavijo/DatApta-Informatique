@@ -5,7 +5,7 @@ require "encryption.php";
 
 try
 {
-    $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '-DatApta-');
+    $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '');
     return $db;
 }
 
@@ -181,12 +181,12 @@ function sendTicket(){
         }
 
     }
-function language(){
-        if ($_POST["language"]){
-            $langue=htmlspecialchars($_POST["language"]);
-            $_SESSION["langue"]=$langue;
-        }
+
+
 }
-
-
+function language(){
+    if ($_POST["language"]){
+        $langue=htmlspecialchars($_POST["language"]);
+        $_SESSION["langue"]=$langue;
+    }
 }
