@@ -45,7 +45,7 @@
                 $ID = $administrateur[$i]['ID'];
                 $user2=$administrateur[$i]['nom'];
                 echo("<p>".$administrateur[$i]['prénom']." ".$administrateur[$i]['nom']."    ".
-                    "<a href='conv/$user/$user2' class='message'>Envoyer un message</a></p>");
+                    "<a href='conv/$user2/$user' class='message'>Envoyer un message</a></p>");
             }
         echo ("</div>");
     }
