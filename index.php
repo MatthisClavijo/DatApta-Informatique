@@ -43,7 +43,7 @@ if (isset($_GET["action"])) {
             break;
         case "delete_user":
             deleteuser($action[1]);
-            header('Location: http://localhost/datapta-informatique-refonte/gestion_u' ,true);
+            header('Location: http://infinite-measures.com:16555/gestion_u' ,true);
             exit;
             break;
 
@@ -59,7 +59,7 @@ if (isset($_GET["action"])) {
             break;
         case "delete_capteur" :
             deletecapteur($action[1]);
-            header('Location: http://localhost/datapta-informatique-refonte/capteur ',true);
+            header('Location: http://infinite-measures.com:16555/capteur ',true);
             exit;
             break;
         case "test":
@@ -71,17 +71,17 @@ if (isset($_GET["action"])) {
             break;
         case "delete_test" :
             deletetest($action[1]);
-            header('Location: http://localhost/datapta-informatique-refonte/test ',true);
+            header('Location: http://infinite-measures.com:16555/test ',true);
             exit;
             break;
         case "up_user" :
             up_user($action[1]);
-            header('Location: http://localhost/datapta-informatique-refonte/gestion_u' ,true);
+            header('Location: http://infinite-measures.com:16555/gestion_u' ,true);
             exit;
             break;
         case "down_user" :
             down_user($action[1]);
-            header('Location: http://localhost/datapta-informatique-refonte/gestion_u' ,true);
+            header('Location: http://infinite-measures.com:16555/gestion_u' ,true);
             exit;
             break;
         case "foire" :
@@ -96,17 +96,17 @@ if (isset($_GET["action"])) {
             break;
         case "delete_QR" :
             delete_QR($action[1]);
-            header('Location: http://localhost/datapta-informatique-refonte/gestion_faq' ,true);
+            header('Location: http://infinite-measures.com:16555/gestion_faq' ,true);
             exit;
             break;
         case "edit_Q" :
             modif_Q($action[1]);
-            header('Location: http://localhost/datapta-informatique-refonte/gestion_faq' ,true);
+            header('Location: http://infinite-measures.com:16555/gestion_faq' ,true);
             exit;
             break;
         case "edit_R" :
             modif_R($action[1]);
-            header('Location: http://localhost/datapta-informatique-refonte/gestion_faq' ,true);
+            header('Location: http://infinite-measures.com:16555/gestion_faq' ,true);
             exit;
             break;
         case "statistiques" :
@@ -119,15 +119,15 @@ if (isset($_GET["action"])) {
             viewRecherche();
             break;
         case "recherche_users":
-           $_SESSION['search']=recherche_users();
-           viewRecherche();
+            $_SESSION['search']=recherche_users();
+            viewRecherche();
             break;
         case "mess" :
             viewMessage();
             break;
         case "conv" :
-            $_SESSION["destinataire"]=$action[1];
-            $_SESSION["expéditeur"]=$action[2];
+            $_SESSION["destinataire"]=$action[2];
+            $_SESSION["expéditeur"]=$action[1];
             if ($action[2] != "send"){
                 viewConversation();
             }
@@ -135,11 +135,11 @@ if (isset($_GET["action"])) {
                 $user2=$_SESSION["destinataire"];
                 $user=$_SESSION['nom'];
                 envoyerMessage($_SESSION["destinataire"],$_SESSION["nom"]);
-                header("Location: http://localhost/datapta-informatique-refonte/conv/$user2/$user");
+                header("Location: http://infinite-measures.com:16555/conv/$user/$user2");
                 exit;
             }
             if ($action[2]=="retour"){
-                header("Location: http://localhost/datapta-informatique-refonte/mess");
+                header("Location: http://infinite-measures.com:16555/mess");
                 exit;
             }
 
@@ -157,7 +157,7 @@ if (isset($_GET["action"])) {
             break;
         case "detail" :
             if($action[2]=="retour"){
-                header("Location: http://localhost/datapta-informatique-refonte/Ticket");
+                header("Location: http://infinite-measures.com:16555/Ticket");
                 exit;
             }
             else {
@@ -168,7 +168,7 @@ if (isset($_GET["action"])) {
             break;
         case "supprTicket" :
             DeleteTicket($action[1],$action[2]);
-            header("Location: http://localhost/datapta-informatique-refonte/Ticket");
+            header("Location: http://infinite-measures.com:16555/Ticket");
             exit;
             break;
 
