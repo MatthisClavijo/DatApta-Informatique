@@ -36,8 +36,9 @@
     <div id="bottomBlock">
         <form action="english" method="post" id="languageForm">
             <select name="language" onchange="submitForm()">
-                <option value="french">Français</option>
                 <option value="english">English</option>
+                <option value="french">Français</option>
+
             </select>
         </form>
         <p id="copyright">© DatApta - All right reserved</p>
