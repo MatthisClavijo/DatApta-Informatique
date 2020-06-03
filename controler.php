@@ -5,7 +5,7 @@ require "encryption.php";
 
 try
 {
-    $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '-DatApta-');
+    $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '');
     return $db;
 }
 
@@ -41,7 +41,7 @@ function adduser( ){
         viewAccueil();
     }
     else{
-        echo ("<script>alert(\"Une erreur est survenu lors de votre inscription, veuillez réessayer plus tard \nSi le problème persiste veuillez nous contacter \")</script>");
+        echo ("<script>alert(\"Une erreur est survenu lors de votre inscription, veuillez réessayer plus tard. Si le problème persiste veuillez nous contacter \")</script>");
         viewInscription();
     }
 
@@ -49,8 +49,8 @@ function adduser( ){
 function addcapteur(){
     if ( $_POST["Nom"] && $_POST["Unité"]){
         $nom=htmlspecialchars($_POST["Nom"]);
-        $unité=htmlspecialchars($_POST["Unité"]);
-        InsertCapteur($nom,$unité);
+        $unite=htmlspecialchars($_POST["Unité"]);
+        InsertCapteur($nom,$unite);
     }
 
 }
@@ -149,13 +149,12 @@ function recherche_users(){
         $type=htmlspecialchars($_POST["type"]);
         $result=search($recherche,$type);
         return($result);
-
     }
 }
-function envoyerMessage($destinataire,$expéditeur){
+function envoyerMessage($destinataire,$expediteur){
     if ($_POST["contenu"]){
         $contenu=htmlspecialchars($_POST["contenu"]);
-        InsertMessage(date('d-m-y h:i:s'),$expéditeur,$destinataire,$contenu);
+        InsertMessage(date('d-m-y h:i:s'),$expediteur,$destinataire,$contenu);
 
     }
 }

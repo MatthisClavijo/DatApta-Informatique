@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>FAQ</title>
-    <link rel="stylesheet" type="text/css" href="FoireAuxQuestions/AQ.css">
+    <link rel="stylesheet" type="text/css" href="FoireAuxQuestions/FAQ.css">
     <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 

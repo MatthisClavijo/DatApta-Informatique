@@ -7,7 +7,7 @@
     <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "header/eader.php" ?>
+<?php require "header/header.php" ?>
 
 <body>
 <div class="contentBlock" id="profileBlock">

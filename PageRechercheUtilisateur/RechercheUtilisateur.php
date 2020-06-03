@@ -43,7 +43,7 @@
             $nombre2 = count($administrateur);
             for ($i = 0; $i < $nombre2; $i++) {
                 $ID = $administrateur[$i]['ID'];
-                $user2=$utilisateur[$i]['nom'];
+                $user2=$administrateur[$i]['nom'];
                 echo("<p>".$administrateur[$i]['prénom']." ".$administrateur[$i]['nom']."    ".
                     "<a href='conv/$user/$user2' class='message'>Envoyer un message</a></p>");
             }

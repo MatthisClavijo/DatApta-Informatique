@@ -62,6 +62,11 @@ a {
     text-align: center;
 }
 
+.legal p {
+    margin: auto;
+    padding: 15px;
+}
+
 /* ------ Social networks ------ */
 .socialNetworks {
     text-align: center;

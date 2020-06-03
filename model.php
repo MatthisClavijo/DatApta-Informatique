@@ -3,7 +3,7 @@ function dbConnect()
 {
     try
     {
-        $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '-DatApta-');
+        $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '');
         return $db;
     }
 
@@ -139,10 +139,10 @@ function selectcapteur(){
     $data=$req->fetchAll();
     return $data;
 }
-function InsertCapteur($nom,$unité){
+function InsertCapteur($nom,$unite){
     $db=dbConnect();
     $req=$db->prepare("INSERT INTO `capteur` (`Nom`,`unité de mesure`) VALUES (?,?)");
-    $req->execute(array($nom,$unité));
+    $req->execute(array($nom,$unite));
     $req->closeCursor();
 }
 function deletecapteur($ID){
@@ -183,7 +183,7 @@ function up_user($ID){
     $req->execute(array('ID'=>$ID));
     $data=$req->fetchAll();
     $nom=$data[0][2];
-    $prénom=$data[0][3];
+    $prenom=$data[0][3];
     $email=$data[0][4];
     $date_de_naissance=$data[0][5];
     $mdp=$data[0][6];
@@ -194,7 +194,7 @@ function up_user($ID){
     $photo='vide';
     $message='vide';
     $req2=$db->prepare("INSERT INTO `administrateur` VALUES (:ID,:photo,:nom,:prenom,:email,:date_de_naissance,:mdp,:salt,:iv,:message)");
-    $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prénom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'salt'=>$salt,'iv'=>$iv,'message'=>$message));
+    $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prenom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'salt'=>$salt,'iv'=>$iv,'message'=>$message));
     $req2->closeCursor();
     deleteuser($ID);
 }
@@ -204,7 +204,7 @@ function down_user($ID){
     $req->execute(array('ID'=>$ID));
     $data=$req->fetchAll();
     $nom=$data[0][2];
-    $prénom=$data[0][3];
+    $prenom=$data[0][3];
     $email=$data[0][4];
     $date_de_naissance=$data[0][5];
     $mdp=$data[0][6];
@@ -215,7 +215,7 @@ function down_user($ID){
     $photo='vide';
     $message='vide';
     $req2=$db->prepare("INSERT INTO `client` VALUES (:ID,:photo,:nom,:prenom,:email,:date_de_naissance,:mdp,:salt,:iv,:message)");
-    $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prénom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'salt'=>$salt,'iv'=>$iv,'message'=>$message));
+    $req2->execute(array('ID'=>$id,'photo'=>$photo,'nom'=>$nom,'prenom'=>$prenom,'email'=>$email,'date_de_naissance'=>$date_de_naissance,'mdp'=>$mdp,'salt'=>$salt,'iv'=>$iv,'message'=>$message));
     $req2->closeCursor();
     deleteadmin($ID);
 
@@ -285,11 +285,11 @@ function search($user,$type){
     }
 
 }
-function visumessage($destinataire,$expéditeur)
+function visumessage($destinataire,$expediteur)
 {
     $db = dbConnect();
     $req = $db->prepare("SELECT `Contenu`,`Destinataire`,`Expéditeur` FROM `message` WHERE `Destinataire`=? AND `Expéditeur`=? OR `Destinataire`=? AND `Expéditeur`=?  ORDER BY `Date_et_heure` ");
-    $req->execute(array( $destinataire, $expéditeur,$expéditeur,$destinataire));
+    $req->execute(array( $destinataire, $expediteur,$expediteur,$destinataire));
     $data = $req->fetchAll();
     return ($data);
 }

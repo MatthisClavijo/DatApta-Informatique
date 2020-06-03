@@ -39,7 +39,8 @@ h3 {
 /* ------ Admin block ------ */
 
 #adminBlock {
-    margin-top: 130px;
+    margin-top: 15vh;
+    margin-bottom: 15vh;
 }
 
 .downgrade{
