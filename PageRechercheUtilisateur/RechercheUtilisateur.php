@@ -45,12 +45,15 @@
                 $ID = $administrateur[$i]['ID'];
                 $user2=$administrateur[$i]['nom'];
                 echo("<p>".$administrateur[$i]['prénom']." ".$administrateur[$i]['nom']."    ".
-                    "<a href='conv/$user/$user2' class='message'>Envoyer un message</a></p>");
+                    "<a href='conv/$user2/$user' class='message'>Envoyer un message</a></p>");
             }
         echo ("</div>");
     }
-    
+
     if ($_SESSION['search'] != "vide") {
+        echo ("<p class='contentBlock'>");
+        $user=$_SESSION['nom'];
+        $user2=$_SESSION['search'][0];
         echo($_SESSION['search'][0]);
         echo("  ");
         echo($_SESSION['search'][1]);
@@ -60,6 +63,7 @@
         echo("</br>");
         $_SESSION['search'] = "vide";
     }
+    echo ("</p>");
     ?>
 </div>
 </body>

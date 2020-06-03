@@ -5,7 +5,7 @@ require "encryption.php";
 
 try
 {
-    $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '');
+    $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '-DatApta-');
     return $db;
 }
 
@@ -49,8 +49,8 @@ function adduser( ){
 function addcapteur(){
     if ( $_POST["Nom"] && $_POST["Unité"]){
         $nom=htmlspecialchars($_POST["Nom"]);
-        $unite=htmlspecialchars($_POST["Unité"]);
-        InsertCapteur($nom,$unite);
+        $unité=htmlspecialchars($_POST["Unité"]);
+        InsertCapteur($nom,$unité);
     }
 
 }
@@ -149,12 +149,13 @@ function recherche_users(){
         $type=htmlspecialchars($_POST["type"]);
         $result=search($recherche,$type);
         return($result);
+
     }
 }
-function envoyerMessage($destinataire,$expediteur){
+function envoyerMessage($destinataire,$expéditeur){
     if ($_POST["contenu"]){
         $contenu=htmlspecialchars($_POST["contenu"]);
-        InsertMessage(date('d-m-y h:i:s'),$expediteur,$destinataire,$contenu);
+        InsertMessage(date('d-m-y h:i:s'),$expéditeur,$destinataire,$contenu);
 
     }
 }

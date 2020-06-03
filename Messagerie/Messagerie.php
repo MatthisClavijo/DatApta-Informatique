@@ -1,12 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
-<title>Messagerie</title>
-
 <head>
     <meta charset="utf-8">
-    <title>Accueil</title>
+    <title>Messagerie</title>
     <link rel="stylesheet" href="Messagerie/Messagerie.css">
-    <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
 <?php require "header/header.php";?>
@@ -28,7 +27,7 @@
         $user2=$listeconv[0][$i][0];
         echo ($listeconv[0][$i][0]);
         echo ("  ");
-        echo ("<a href='conv/$user2/$user' class='conv'>Voir conversation</a>");
+        echo ("<a href='conv/$user2/$user'class='conv'>Voir conversation</a>");
         echo ("</br>");
         echo ("</br>");
     }
@@ -52,4 +51,4 @@
 <?php
 require "footer/footer.php"
 ?>
-</html>=)
+</html>

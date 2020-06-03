@@ -11,6 +11,7 @@ body{
     align-items: start;
 }
 
+
 .contentBlock {
     background-color: rgba(238, 231, 228, 0.6);
     padding: 10px 20px;
@@ -29,8 +30,8 @@ h3 {
 /* ------ Search block ------ */
 
 #searchBlock {
-    margin-top: 16vh;
-    margin-bottom: 16vh;
+    margin-top: 110px;
+    margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
