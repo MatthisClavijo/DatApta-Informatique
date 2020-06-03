@@ -126,8 +126,8 @@ if (isset($_GET["action"])) {
             viewMessage();
             break;
         case "conv" :
-            $_SESSION["destinataire"]=$action[2];
-            $_SESSION["expéditeur"]=$action[1];
+            $_SESSION["destinataire"]=$action[1];
+            $_SESSION["expéditeur"]=$action[2];
             if ($action[2] != "send"){
                 viewConversation();
             }
@@ -135,7 +135,7 @@ if (isset($_GET["action"])) {
                 $user2=$_SESSION["destinataire"];
                 $user=$_SESSION['nom'];
                 envoyerMessage($_SESSION["destinataire"],$_SESSION["nom"]);
-                header("Location: http://infinite-measures.com:16555/conv/$user/$user2");
+                header("Location: http://infinite-measures.com:16555/conv/$user2/$user");
                 exit;
             }
             if ($action[2]=="retour"){
