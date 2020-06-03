@@ -49,8 +49,11 @@
             }
         echo ("</div>");
     }
-    
+
     if ($_SESSION['search'] != "vide") {
+        echo ("<p class='contentBlock'>");
+        $user=$_SESSION['nom'];
+        $user2=$_SESSION['search'][0];
         echo($_SESSION['search'][0]);
         echo("  ");
         echo($_SESSION['search'][1]);
@@ -60,6 +63,7 @@
         echo("</br>");
         $_SESSION['search'] = "vide";
     }
+    echo ("</p>");
     ?>
 </div>
 </body>
