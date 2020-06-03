@@ -4,14 +4,97 @@ body {
     color: black;
     margin-top: 135px;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
     background: url("../Images/background.jpg") fixed no-repeat left 15vh;
 }
 
-p {
-    background-color: rgba(240, 240, 240, 0.6);
-    padding: 20px;
-    border-radius: 20px;
+#title {
+    margin-top: 25vh;
+    margin-bottom: 2vh;
+    font-size: 5.5em;
+    font-weight: bold;
+}
+
+#slogan {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 25vh;
+}
+
+strong {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+/* ------ Bloc For who ------ */
+#forWho {
+    width: 100vw;
+    margin-top: 15vh;
+    padding: 50px 0;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.75);
+}
+
+#forWho img {
+    margin: 0 3vw;
+}
+
+#forWho p {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 15px 0;
+    width: 50vw;
+}
+
+.infinite {
+    font-size: 1.3em;
+}
+
+/* ------ Bloc Tests ------ */
+#tests {
+    width: 100vw;
+    margin-bottom: -20px;
+    padding: 0;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(163, 175, 182, 0.75);
+}
+
+#tests h3 {
+    font-size: 1.3em;
+    font-weight: normal;
+    padding-bottom: 1vw;
+}
+
+#tests h3 strong {
+    font-size: 1.35em;
+    font-weight: bold;
+}
+
+#heartRate, #temperature, #reaction, #sound {
+    width: 50vw;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#heartRate img, #temperature img, #reaction img, #sound img {
+    width: 10vw;
+}
+
+#heartRate p, #temperature p, #reaction p, #sound p {
+    text-align: center;
+    padding: 1vw 5vw 3vw 5vw;
 }

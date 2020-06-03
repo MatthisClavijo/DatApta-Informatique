@@ -10,53 +10,57 @@
 <?php require "header/header.php" ?>
 
 <body>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis sodales feugiat. Curabitur finibus
-        nec ligula a volutpat. Nullam ut purus metus. Vivamus condimentum, dolor quis maximus suscipit, magna dolor
-        scelerisque lectus, at congue dolor felis at nisi. Suspendisse ac turpis rhoncus, sodales nisl vel, laoreet
-        nisl. Maecenas nec varius justo. Suspendisse luctus augue ut libero sagittis, sit amet efficitur erat fermentum.
-
-        Aenean quis tempor neque. Integer a pretium nunc, in volutpat purus. Donec justo massa, accumsan eget elit
-        vitae, viverra sodales libero. Maecenas a vulputate mi. In lobortis gravida placerat. Aenean commodo porttitor
-        varius. Proin suscipit dui vitae cursus convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-        Aliquam a arcu vel tortor suscipit lobortis.
-
-        Sed viverra ipsum sapien, in tempus felis gravida maximus. Phasellus sit amet ligula accumsan, posuere sapien
-        vitae, imperdiet nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ut sagittis
-        nunc. Nam vel purus magna. Sed vitae nibh vitae ex interdum mattis id at dui. Integer efficitur sit amet metus
-        vel finibus. Fusce in placerat leo.
-
-        Morbi feugiat, elit ac pretium auctor, mauris ex scelerisque mi, accumsan dictum nulla eros eget nisi. Aliquam
-        erat volutpat. Phasellus in eleifend magna. Sed et arcu ac enim sagittis ultricies nec non risus. Donec
-        consectetur a velit nec dignissim. Sed vel orci aliquet, porttitor eros sed, aliquam nisl. Nulla placerat
-        commodo accumsan. Sed nisi nisi, viverra eu luctus et, commodo tempor neque. Donec a porttitor ligula. Cras at
-        justo eu risus hendrerit molestie non et felis. Nullam condimentum augue et venenatis malesuada. Nunc porta enim
-        eu felis rhoncus facilisis.</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis sodales feugiat. Curabitur finibus
-        nec ligula a volutpat. Nullam ut purus metus. Vivamus condimentum, dolor quis maximus suscipit, magna dolor
-        scelerisque lectus, at congue dolor felis at nisi. Suspendisse ac turpis rhoncus, sodales nisl vel, laoreet
-        nisl. Maecenas nec varius justo. Suspendisse luctus augue ut libero sagittis, sit amet efficitur erat fermentum.
-
-        Aenean quis tempor neque. Integer a pretium nunc, in volutpat purus. Donec justo massa, accumsan eget elit
-        vitae, viverra sodales libero. Maecenas a vulputate mi. In lobortis gravida placerat. Aenean commodo porttitor
-        varius. Proin suscipit dui vitae cursus convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-        Aliquam a arcu vel tortor suscipit lobortis.
-
-        Sed viverra ipsum sapien, in tempus felis gravida maximus. Phasellus sit amet ligula accumsan, posuere sapien
-        vitae, imperdiet nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ut sagittis
-        nunc. Nam vel purus magna. Sed vitae nibh vitae ex interdum mattis id at dui. Integer efficitur sit amet metus
-        vel finibus. Fusce in placerat leo.
-
-        Morbi feugiat, elit ac pretium auctor, mauris ex scelerisque mi, accumsan dictum nulla eros eget nisi. Aliquam
-        erat volutpat. Phasellus in eleifend magna. Sed et arcu ac enim sagittis ultricies nec non risus. Donec
-        consectetur a velit nec dignissim. Sed vel orci aliquet, porttitor eros sed, aliquam nisl. Nulla placerat
-        commodo accumsan. Sed nisi nisi, viverra eu luctus et, commodo tempor neque. Donec a porttitor ligula. Cras at
-        justo eu risus hendrerit molestie non et felis. Nullam condimentum augue et venenatis malesuada. Nunc porta enim
-        eu felis rhoncus facilisis.</p>
-
+    <h1 id="title">Infinite Measures</h1>
+    <h2 id="slogan">L'excellence dans la mesure.</h2>
+    <div id="forWho">
+        <img src="Images/Infinite_measures_1.gif" alt="Logo transparent">
+        <div>
+            <p>
+                Parce que les pilotes d'aéronefs font preuve d'exigence envers leur précision dans leur activité,
+                <strong class="infinite">Infinite Measures</strong> s'impose la même exigence pour leur fournir des
+                tests
+                <strong>précis</strong> qui répondent réellement à leurs besoins.
+            </p>
+            <p>
+                Parce qu'ils ont besoin de connaître leur condition de <strong>manière sûre</strong> pour ne pas se
+                mettre
+                en danger, <strong class="infinite">Infinite Measures</strong> leur fournit des tests
+                <strong>fiables</strong>.
+            </p>
+        </div>
+    </div>
+    <div id="tests">
+        <h3>Des <strong>tests variés</strong> pour une estimation de la gestion du stress <strong>optimale</strong></h3>
+        <div id="heartRate">
+            <img src="Images/heart rate.png" alt="Logo fréquence cardiaque">
+            <p>
+                Le <strong>rythme cardiaque</strong> est l'indicateur de stress par excellence. Apprendre à contrôler
+                son rythme cardiaque, c'est apprendre à réguler son stress dans une situation critique.
+            </p>
+        </div>
+        <div id="temperature">
+            <img src="Images/Temperature.png" alt="Logo température">
+            <p>
+                Combinée au rythme cardiaque, la <strong>température</strong> est un indicateur efficace du niveau de
+                stress et permet de d'obtenir plus d'informations sur la réaction physiologique du patient à une
+                situation hautement stressante pour prévenir des incidents lourds de conséquences (malaise).
+            </p>
+        </div>
+        <div id="reaction">
+            <img src="Images/Time.png" alt="Logo temps de réaction">
+            <p>
+                En vol, le moindre instant compte. Un pilote doit donc avoir le <strong>temps de réaction</strong> le
+                plus faible possible pour voler sereinement.
+            </p>
+        </div>
+        <div id="sound">
+            <img src="Images/Sound.png" alt="Logo reproduction de son">
+            <p>
+                Infinite Measures propose également d'évaluer les facultés auditives du pilote en mesurant sa capacité
+                à <strong>reproduire une fréquence sonore</strong>.
+            </p>
+        </div>
+    </div>
 </body>
 
 <?php require "footer/footer.php" ?>

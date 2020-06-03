@@ -31,7 +31,7 @@
             <a href="">
                 <img src="Images\twitter.png" alt="Twitter" id="twitter">
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/infinite_measures/">
                 <img src="Images\instagram-Logo-PNG-Transparent-Background-download-1-1.png" alt="Instagram" id="instagram">
             </a>
             <a href="https://www.linkedin.com/in/infinite-measures-8454771a5/">
