@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>FAQ</title>
+    <title>Q&A</title>
     <link rel="stylesheet" type="text/css" href="FoireAuxQuestions/FAQ.css">
     <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "headerEN/header.php" ?>
+<?php require "header/headerEN.php" ?>
 
 <body>
 <?php
@@ -20,10 +20,10 @@ for ($i=0;$i <$nombre;$i++){
         <h3>Q : </h3>
         <p><?php echo ($faq[$i]['Question']); ?></p>
         <h3>A : </h3>
-        <p><?php echo ($faq[$i]['Answer']); ?></p>
+        <p><?php echo ($faq[$i]['Réponse']); ?></p>
     </div>
 <?php } ?>
 </body>
 
-<?php require "footerEN/footer.php"; ?>
+<?php require "footer/footerEN.php"; ?>
 </html>

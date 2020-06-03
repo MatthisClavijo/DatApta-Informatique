@@ -7,7 +7,7 @@
     <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "headerEN/header.php"; ?>
+<?php require "header/headerEN.php"; ?>
 
 <body>
 
@@ -15,30 +15,69 @@
     <div id="userInfos">
         <img src="Images/avatar_vide.jpg" alt="Image de profil">
         <p>
-            <?php if (isset($_SESSION['prénom'])) { echo ($_SESSION['prénom']); } else { echo ("First name"); } ?><br>
-            <?php if (isset($_SESSION['nom'])) { echo ($_SESSION['nom']); } else { echo ("Name"); } ?>
+            <?php if (isset($_SESSION['prénom'])) { echo ($_SESSION['prénom']); } else { echo ("Prénom"); } ?><br>
+            <?php if (isset($_SESSION['nom'])) { echo ($_SESSION['nom']); } else { echo ("Nom"); } ?>
         </p>
     </div>
     <div id="lastData">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis massa ac urna tempor sollicitudin. Pellentesque vulputate risus et nisi ultricies rutrum. Maecenas feugiat id elit sollicitudin sagittis. Ut imperdiet malesuada ligula, eu fringilla leo bibendum quis. Donec viverra lacus vitae neque pellentesque, quis pellentesque felis vehicula. Sed ut pulvinar erat, quis sollicitudin risus. Pellentesque eleifend pellentesque velit a scelerisque.</p>
+        <p><?php
+
+            $data = SelectResult($_SESSION['ID']);
+            if (sizeof($data )!=0){
+                $data2 = SelectUnit($data[sizeof($data) - 1][4]);
+                echo($data[sizeof($data) - 1][2]);
+                echo("</br>");
+                echo($data[sizeof($data) - 1][4]);
+                echo("</br>");
+                echo($data[sizeof($data) - 1][5]);
+                echo("  ");
+                echo($data2[0][0]);
+            }
+            else{
+                echo "You haven't done any tests! ";
+            }
+
+
+            ?></p>
     </div>
     <div id="startTest">
-        <a href="">Start a test</a>
+        <a href="">Launch a test</a>
     </div>
 </aside>
 
 <div id="mainContent">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis sodales feugiat. Curabitur finibus nec ligula a volutpat. Nullam ut purus metus. Vivamus condimentum, dolor quis maximus suscipit, magna dolor scelerisque lectus, at congue dolor felis at nisi. Suspendisse ac turpis rhoncus, sodales nisl vel, laoreet nisl. Maecenas nec varius justo. Suspendisse luctus augue ut libero sagittis, sit amet efficitur erat fermentum.
+    <p>
+        <?php
 
-        Aenean quis tempor neque. Integer a pretium nunc, in volutpat purus. Donec justo massa, accumsan eget elit vitae, viverra sodales libero. Maecenas a vulputate mi. In lobortis gravida placerat. Aenean commodo porttitor varius. Proin suscipit dui vitae cursus convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam a arcu vel tortor suscipit lobortis.
+        if (sizeof($data )!=0) {
+            for ($i = 0; $i < sizeof($data); $i++) {
+                $data2 = SelectUnit($data[$i][4]);
+                if ($i == 0) {
+                    echo($data[$i][2]);
+                } elseif ($data[$i][2] != $data[$i - 1][2]) {
+                    echo($data[$i][2]);
+                }
+                echo("</br>");
+                echo($data[$i][4]);
+                echo(" : ");
+                echo($data[$i][5]);
+                echo("  ");
+                echo($data2[0][0]);
+                echo("</br>");
+                echo("</br>");
+            }
+        }
+        else{
+            echo "You have no results! ";
+        }
 
-        Sed viverra ipsum sapien, in tempus felis gravida maximus. Phasellus sit amet ligula accumsan, posuere sapien vitae, imperdiet nunc. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque ut sagittis nunc. Nam vel purus magna. Sed vitae nibh vitae ex interdum mattis id at dui. Integer efficitur sit amet metus vel finibus. Fusce in placerat leo.
+        ?>
 
-        Morbi feugiat, elit ac pretium auctor, mauris ex scelerisque mi, accumsan dictum nulla eros eget nisi. Aliquam erat volutpat. Phasellus in eleifend magna. Sed et arcu ac enim sagittis ultricies nec non risus. Donec consectetur a velit nec dignissim. Sed vel orci aliquet, porttitor eros sed, aliquam nisl. Nulla placerat commodo accumsan. Sed nisi nisi, viverra eu luctus et, commodo tempor neque. Donec a porttitor ligula. Cras at justo eu risus hendrerit molestie non et felis. Nullam condimentum augue et venenatis malesuada. Nunc porta enim eu felis rhoncus facilisis.</p>
+    </p>
 </div>
 
 </body>
 
-<?php require "footerEN/footer.php"; ?>
+<?php require "footer/footerEN.php"; ?>
 
 </html>

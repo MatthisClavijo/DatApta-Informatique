@@ -171,6 +171,10 @@ if (isset($_GET["action"])) {
             header("Location: http://infinite-measures.com:16555/Ticket");
             exit;
             break;
+        case "english" :
+            language();
+            viewAccueil();
+            break;
 
     }
 }
@@ -182,5 +186,6 @@ else {
     $_SESSION['isConnected']=false;
     $_SESSION['type']="vide";
     $_SESSION['search']="vide";
+    $_SESSION["langue"]="french";
     viewAccueil();
 }

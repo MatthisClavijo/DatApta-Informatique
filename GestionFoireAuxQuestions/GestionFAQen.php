@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>FAQ management</title>
+    <title>Q&A management</title>
     <link rel="stylesheet" type="text/css" href="GestionFoireAuxQuestions/GestionFAQ.css">
     <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "headerEN/header.php" ?>
+<?php require "header/headerEN.php" ?>
 
 <body>
+<p>
 <form id="Ajouter" method="post" action="add_QR">
     <p>Add : <label for="question">Question</label> : <input type="text" name="Question" id="question">
         <label for="rep">Answer</label> : <input type="text" name="Réponse" id="rep">
         <input type="submit" value="Add" name="submit">
     </p>
 </form>
+</p>
 <?php
 $faq=selectFAQ();
 $nombre=count($faq);
@@ -32,7 +34,7 @@ for ($i=0;$i <$nombre;$i++){
             </form>");
         ?>
         <h3>A : </h3>
-        <p><?php echo ($faq[$i]['Answer']); ?></p>
+        <p><?php echo ($faq[$i]['Réponse']); ?></p>
         <?php
         echo ("<form method='post' action='edit_R/$ID'>
                 <input type='text' name='Edit_R'>
@@ -45,5 +47,5 @@ for ($i=0;$i <$nombre;$i++){
 <?php } ?>
 </body>
 
-<?php require "footerEN/footer.php"; ?>
+<?php require "footer/footerEN.php"; ?>
 </html>
