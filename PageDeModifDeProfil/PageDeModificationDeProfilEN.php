@@ -7,7 +7,7 @@
     <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
 
-<?php require "headerEN/header.php" ?>
+<?php require "header/headerEN.php" ?>
 
 <body>
 <div class="contentBlock" id="modifBlock">
@@ -34,5 +34,5 @@
 </div>
 </body>
 
-<?php require "footerEN/footer.php"; ?>
+<?php require "footer/footerEN.php"; ?>
 </html>
