@@ -172,6 +172,7 @@ if (isset($_GET["action"])) {
             exit;
             break;
         case "english" :
+            language();
             viewAccueil();
             break;
     }
