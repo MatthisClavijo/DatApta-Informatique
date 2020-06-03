@@ -5,7 +5,7 @@ require "encryption.php";
 
 try
 {
-    $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '-DatApta-');
+    $db = new PDO('mysql:host=localhost;dbname=site_app;charset=utf8', 'root', '');
     return $db;
 }
 
@@ -41,7 +41,7 @@ function adduser( ){
         viewAccueil();
     }
     else{
-        echo ("<script>alert(\"Une erreur est survenu lors de votre inscription, veuillez réessayer plus tard. Si le problème persiste veuillez nous contacter \")</script>");
+        echo ("<script>alert(\"Une erreur est survenu lors de votre inscription, veuillez réessayer plus tard \nSi le problème persiste veuillez nous contacter \")</script>");
         viewInscription();
     }
 
@@ -181,7 +181,12 @@ function sendTicket(){
         }
 
     }
-
+function language(){
+        if ($_POST["language"]){
+            $langue=htmlspecialchars($_POST["language"]);
+            $_SESSION["langue"]=$langue;
+        }
+}
 
 
 }
