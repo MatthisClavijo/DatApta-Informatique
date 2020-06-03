@@ -10,12 +10,14 @@
 <?php require "header/headerEN.php" ?>
 
 <body>
+<p>
 <form id="Ajouter" method="post" action="add_QR">
     <p>Add : <label for="question">Question</label> : <input type="text" name="Question" id="question">
         <label for="rep">Answer</label> : <input type="text" name="Réponse" id="rep">
         <input type="submit" value="Add" name="submit">
     </p>
 </form>
+</p>
 <?php
 $faq=selectFAQ();
 $nombre=count($faq);
