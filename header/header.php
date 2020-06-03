@@ -19,12 +19,8 @@
                 <?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected']) {
                     echo("<div><a href=\"recherche\">Chercher utilisateur</a></div>
                 <div><a href='mess'>Messagerie</a></div>");
-
                 }
                     ?>
-
-
-
             </div>
         </div>
         <?php if(isset($_SESSION['type']) && $_SESSION['type'] == "admin") { ?>
@@ -43,14 +39,16 @@
                 <a href="inscription" class="registration">Sign up</a>
                 <a class="login" onclick="openForm()">Sign in</a>
             <?php } else { ?>
+                <div id="infoBlock">
+                    <?php
+                    echo ("<p>".$_SESSION['prénom']."</p>");
+                    echo ("<p>".$_SESSION['nom']."</p>");
+                    if (isset($_SESSION['type']) && $_SESSION['type'] == "admin") echo ("<p id='grade'>Administrateur</p>");
+                    ?>
+                </div>
                 <a href="deconnexion" class="logout">Log out</a>
             <?php } ?>
         </div>
-
-        <div class="languageSection">
-            <a href="english"></a><img src="Images/Union_jack.jpg" alt="logo-anglais" id="flag">
-        </div>
-
     </nav>
 
     <!-- ------ Login Form part ------ -->
@@ -59,7 +57,7 @@
             <form action="connexion" method="post">
                 <h1>Connexion</h1>
                 <p><label for="userName">Nom d'utilisateur</label> :
-                    <input type="text" name="email" id="userName" placeholder="Email" required autofocus></p>
+                    <input type="email" name="email" id="userName" placeholder="Email" required autofocus></p>
                 <p><label for="password">Mot de passe</label> :
                     <input type="password" name="psw" id="password" placeholder="Mot de passe" required></p>
                 <input type="submit" value="Connexion" id="submit">

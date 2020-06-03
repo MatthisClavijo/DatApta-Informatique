@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Messagerie</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="Messagerie/Messagerie.css">
     <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
@@ -33,11 +33,14 @@
         echo ("</br>");
     }
     for ($j=0;$j<sizeof($listeconv[1]);$j++){
-       if ($listeconv[1][$j][0] != "") {
+       if ($listeconv[1][$j][0]==""){
+
+       }
+       else{
            $user2=$listeconv[1][$j][0];
            echo ($listeconv[1][$j][0]);
            echo ("  ");
-           echo ("<a href='conv/$user/$user2' class='conv'>Voir conversation</a>");
+           echo ("<a href='conv/$user2/$user' class='conv'>Voir conversation</a>");
            echo ("</br>");
            echo ("</br>");
        }
@@ -46,6 +49,7 @@
     ?>
 </p>
 </body>
-
-<?php require "footer/footer.php" ?>
-</html>
+<?php
+require "footer/footer.php"
+?>
+</html>=)

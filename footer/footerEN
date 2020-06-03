@@ -30,7 +30,7 @@
             <a href=""><img src="Images\Linkedin_circle.svg.png" alt="LinkedIn" id="linkedin"></a>
         </div>
     </div>
-    <div id="copyright"><p>© DatApta - All rights reserved</p></div>
+    <div id="bottomBlock"><p>© DatApta - All rights reserved</p></div>
 </footer>
 
 </html>

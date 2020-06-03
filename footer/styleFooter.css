@@ -7,6 +7,7 @@ footer {
     width: 100vw;
     margin-bottom: -8px;
     margin-top: 20px;
+    padding: 0;
 }
 
 #content {
@@ -16,6 +17,7 @@ footer {
     justify-content: stretch;
     align-content: space-around;
     width: 100vw;
+    padding: 0;
 }
 
 #content div {
@@ -79,12 +81,24 @@ a {
 }
 
 /* ------ Copyright ------ */
-#copyright {
-    font-size: 0.7em;
-    text-align: right;
-    margin-right: 12px;
+#bottomBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    padding: 0;
 }
 
-#copyright p {
-    padding: 0;
+#languageForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#copyright {
+    font-size: 0.7em;
+    padding: 0 20px;
+    text-align: right;
 }

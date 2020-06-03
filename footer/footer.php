@@ -25,13 +25,33 @@
             <p><a href="help" id="help">Faire remonter un problème</a></p>
         </div>
         <div class="socialNetworks">
-            <a href="https://www.facebook.com/InfiniteMeasuresFr/"><img src="Images\facebook-3-logo-png-transparent.png" alt="Facebook" id="facebook"></a>
-            <a href=""><img src="Images\twitter.png" alt="Twitter" id="twitter"></a>
-            <a href=""><img src="Images\instagram-Logo-PNG-Transparent-Background-download-1-1.png" alt="Instagram" id="instagram"></a>
-            <a href=""><img src="Images\Linkedin_circle.svg.png" alt="LinkedIn" id="linkedin"></a>
+            <a href="https://www.facebook.com/InfiniteMeasuresFr/">
+                <img src="Images\facebook-3-logo-png-transparent.png" alt="Facebook" id="facebook">
+            </a>
+            <a href="">
+                <img src="Images\twitter.png" alt="Twitter" id="twitter">
+            </a>
+            <a href="">
+                <img src="Images\instagram-Logo-PNG-Transparent-Background-download-1-1.png" alt="Instagram" id="instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/infinite-measures-8454771a5/">
+                <img src="Images\Linkedin_circle.svg.png" alt="LinkedIn" id="linkedin">
+            </a>
         </div>
     </div>
-    <div id="copyright"><p>© DatApta - Tous droits réservés</p></div>
+
+    <div id="bottomBlock">
+        <form action="english" method="post" id="languageForm">
+            <select name="language" onchange="submitForm()">
+                <option value="french">Français</option>
+                <option value="english">English</option>
+            </select>
+        </form>
+        <p id="copyright">© DatApta - Tous droits réservés</p>
+    </div>
+    <script type="application/javascript">
+        const submitForm = () => document.getElementById("languageForm").submit();
+    </script>
 </footer>
 
 </html>
