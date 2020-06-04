@@ -63,7 +63,7 @@
                     <input type="text" name="email" id="userName" placeholder="Email" required autofocus></p>
                 <p><label for="password">Password</label> :
                     <input type="password" name="psw" id="password" placeholder="Mot de passe" required></p>
-                <input type="submit" value="Connexion" id="submit">
+                <input type="submit" value="Sign in" id="submit">
                 <button type="button" id="cancelButton" onclick="closeForm()">Cancel and close</button>
             </form>
         </div>

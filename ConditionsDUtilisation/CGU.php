@@ -1,33 +1,13 @@
-<html>
+<html lang="fr">
 <head>
+    <meta charset="utf-8">
+    <title>CGU</title>
     <link rel="stylesheet" href="ConditionsDUtilisation/CGU.css">
-    </p>
-    <ul>
-        <img src = 'Images/Infinite_measures_logo.png'width = "170"height="145">
-        <li><a class = "active" href="accueil">Accueil</a></li>
-        <li><a href="statistiques">Statistiques</a></li>
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Communauté</a>
-            <div class="dropdown-content">
-                <a href="foire">FAQ</a>
-                <a href="#">Classement</a>
-                <a href="recherche">Recherche Utilisateur</a>
-            </div>
-        </li>
-        <li><a href="profil">Mon profil</a></li>
-        <?php
-        if($_SESSION['type']=="admin"){
-            echo"  <li class=\"dropdown\">
-                <a href=\"javascript:void(0)\" class=\"dropbtn\">Gestion</a>
-                <div class=\"dropdown-content\">
-                    <a href=\"gestion_u\">Gestion Utilisateur</a>
-                    <a href=\"gestion_faq\">Gestion FAQ</a>
-                    <a href=\"capteur\">Gestion Capteurs</a>
-                </div>";
-        }
-        ?>
-    </ul>
+    <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
+
+<?php require "header/header.php" ?>
+
 <body>
 <strong>La seule contrepartie à l'utilisation de ces mentions légales, est l'engagement total à laisser le lien crédit subdelirium sur cette page de mentions légales.</strong><br />
 Vos mentions légales :

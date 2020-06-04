@@ -1,33 +1,13 @@
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="ConditionsDUtilisation/CGU.css">
-    </p>
-    <ul>
-        <img src = 'Images/Infinite_measures_logo.png'width = "170"height="145">
-        <li><a class = "active" href="accueil">Home</a></li>
-        <li><a href="statistiques">Statistics</a></li>
-        <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Community</a>
-            <div class="dropdown-content">
-                <a href="foire">FAQ</a>
-                <a href="#">Ranking</a>
-                <a href="recherche">User search</a>
-            </div>
-        </li>
-        <li><a href="profil">My profile</a></li>
-        <?php
-        if($_SESSION['type']=="admin"){
-            echo"  <li class=\"dropdown\">
-                <a href=\"javascript:void(0)\" class=\"dropbtn\">Admin</a>
-                <div class=\"dropdown-content\">
-                    <a href=\"gestion_u\">Users manager</a>
-                    <a href=\"gestion_faq\">FAQ manager</a>
-                    <a href=\"capteur\">Sensors manager</a>
-                </div>";
-        }
-        ?>
-    </ul>
+    <meta charset="utf-8">
+    <title>Terms and conditions</title>
+    <link rel="stylesheet" type="text/css" href="ConditionsDUtilisation/CGU.css">
+    <link rel="icon" type="image" href="Images/Infinite_measures_1.gif">
 </head>
+
+<?php require "header/header.php" ?>
+
 <body>
 <strong>The only consideration for the use of these legal notices, is the total commitment to leave the subdelirium credit link on this page of legal notices.</strong><br />
 Your legal notices :
