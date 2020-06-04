@@ -1,0 +1,37 @@
+body{
+    font-family: Trebuchet MS, Arial, serif;
+    font-size: 1em;
+    color: black;
+    margin-top: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.delete {
+    color: darkred ;
+}
+
+.edit{
+
+    color: darkblue;
+}
+
+
+.question_block {
+    width: 60vw;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 20px;
+    background-color: rgba(238, 231, 228, 0.6);
+}
