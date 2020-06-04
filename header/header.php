@@ -20,7 +20,7 @@
                     echo("<div><a href=\"recherche\">Chercher utilisateur</a></div>
                 <div><a href='mess'>Messagerie</a></div>");
                 }
-                    ?>
+                ?>
             </div>
         </div>
         <?php if(isset($_SESSION['type']) && $_SESSION['type'] == "admin") { ?>

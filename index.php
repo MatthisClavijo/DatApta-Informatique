@@ -28,7 +28,7 @@ if (isset($_GET["action"])) {
                 viewProfil();
             }
             else{
-                echo ("<script>alert(\"Il faut vous connecter pour voir votre profil\")</script>");
+                echo ("<script>alert(\"Please sign in to see your profile\")</script>");
                 viewAccueil();
 
             }

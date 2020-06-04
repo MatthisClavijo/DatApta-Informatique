@@ -11,10 +11,7 @@
         <img src="Images/Infinite_measures_logo.png" alt="Logo d'Infinite Measures" id="logo">
         <div class="accueil"><a href="accueil" >Home</a></div>
         <div class="profil"><a href="profil" >Profile</a></div>
-        <?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected']){
-            echo "<div class=\"stats\"><a href=\"statistiques\" >Statistics</a></div>";
-        }?>
-
+        <div class="stats"><a href="statistiques" >Statistics</a></div>
         <div class="commu"><a href="javascript:void(0)" class="dropbtn" >Community</a>
             <div class="sousMenuCommu">
                 <div><a href="foire">Q&A</a></div>
@@ -22,12 +19,8 @@
                 <?php if(isset($_SESSION['isConnected']) && $_SESSION['isConnected']) {
                     echo("<div><a href=\"recherche\">Search User</a></div>
                 <div><a href='mess'>Message</a></div>");
-
                 }
                 ?>
-
-
-
             </div>
         </div>
         <?php if(isset($_SESSION['type']) && $_SESSION['type'] == "admin") { ?>
@@ -65,7 +58,7 @@
     <?php if(!isset($_SESSION['isConnected']) || !$_SESSION['isConnected']) { ?>
         <div id="loginForm">
             <form action="connexion" method="post">
-                <h1>Connexion</h1>
+                <h1>Connection</h1>
                 <p><label for="userName">User name</label> :
                     <input type="text" name="email" id="userName" placeholder="Email" required autofocus></p>
                 <p><label for="password">Password</label> :
