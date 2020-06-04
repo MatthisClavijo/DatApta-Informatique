@@ -11,7 +11,7 @@
 
 <body>
     <h1 id="title">Infinite Measures</h1>
-    <h2 id="slogan">L'excellence dans la mesure.</h2>
+    <h2 id="slogan">L'excellence dans la mesure</h2>
     <div id="forWho">
         <img src="Images/Infinite_measures_1.gif" alt="Logo transparent">
         <div>
