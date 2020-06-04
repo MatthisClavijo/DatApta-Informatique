@@ -6,7 +6,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
+    background: url("../Images/background_1566.jpg") fixed no-repeat left 15vh;
 }
 
 a {

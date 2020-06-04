@@ -6,7 +6,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
+    background: url("../Images/background_1610.jpg") fixed no-repeat left 15vh;
+}
+
+@media screen and (min-width: 1610px) {
+    body {
+        background: url("../Images/background_2120.jpg") fixed no-repeat left 15vh;
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    body {
+        background: url("../Images/background_1320.jpg") fixed no-repeat left 15vh;
+    }
 }
 
 #title {
@@ -41,7 +53,7 @@ strong {
 }
 
 #forWho img {
-    margin: 0 3vw;
+    margin: 10px 3vw;
 }
 
 #forWho p {
@@ -53,6 +65,17 @@ strong {
 
 .infinite {
     font-size: 1.3em;
+}
+
+@media all and (max-width: 420px) {
+    #forWho {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #forWho p {
+        width: 80vw;
+    }
 }
 
 /* ------ Bloc Tests ------ */
@@ -97,4 +120,13 @@ strong {
 #heartRate p, #temperature p, #reaction p, #sound p {
     text-align: center;
     padding: 1vw 5vw 3vw 5vw;
+}
+
+@media all and (max-width: 420px) {
+    #heartRate, #temperature, #reaction, #sound {
+        width: 80vw;
+    }
+    #heartRate img, #temperature img, #reaction img, #sound img {
+        width: 30vw;
+    }
 }

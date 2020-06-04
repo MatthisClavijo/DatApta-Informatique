@@ -8,7 +8,19 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: start;
-    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
+    background: url("../Images/background_1610.jpg") fixed no-repeat left 15vh;
+}
+
+@media screen and (min-width: 1610px) {
+    body {
+        background: url("../Images/background_2120.jpg") fixed no-repeat left 15vh;
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    body {
+        background: url("../Images/background_1320.jpg") fixed no-repeat left 15vh;
+    }
 }
 
 .contentBlock {

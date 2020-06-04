@@ -3,11 +3,23 @@ body{
     font-size: 1em;
     color: black;
     margin-top: 135px;
-    background: url("../Images/background.jpg") fixed no-repeat left 15vh;
+    background: url("../Images/background_1610.jpg") fixed no-repeat left 15vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (min-width: 1610px) {
+    body {
+        background: url("../Images/background_2120.jpg") fixed no-repeat left 15vh;
+    }
+}
+
+@media screen and (max-width: 1320px) {
+    body {
+        background: url("../Images/background_1320.jpg") fixed no-repeat left 15vh;
+    }
 }
 
 .contentBlock {
